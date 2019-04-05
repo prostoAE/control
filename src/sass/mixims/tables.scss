@@ -1,0 +1,20 @@
+/* Стиль таблиц */
+@mixin report-table () {
+  table {
+    margin: 0 auto;
+    th, td {
+      border: 1px solid #79e0ff;
+      border-collapse: collapse;
+      padding: .4rem;
+      font-size: .8rem;
+      text-align: left;
+      white-space: nowrap;
+    }
+    th {
+      position: sticky;
+      top: 0;
+      background: $thead;
+      color: $white;
+    }
+  }
+}

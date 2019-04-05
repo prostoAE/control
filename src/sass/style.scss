@@ -1,0 +1,236 @@
+/* import SCSS components */
+@import 'variables/colors';
+@import "mixims/tables";
+
+
+/* Basic settings */
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  font-family: sans-serif;
+  dl, ol, ul, label {
+    margin: 0;
+    padding: 0;
+  }
+
+  a, ul, li {
+    text-decoration: none;
+    list-style: none;
+  }
+}
+
+/* HEADER */
+.header {
+  width: 100vw;
+  height: 4rem;
+  background: linear-gradient(rgba(93, 203, 204, 0.8), rgba(5, 126, 137, 0.78));
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 1.5rem;
+  background: linear-gradient(rgba(93, 203, 204, 0.8), rgba(5, 126, 137, 0.78));
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.4);
+  span {
+    margin-right: .5rem;
+  }
+  p {
+    color: $white;
+    font-size: 1rem;
+    text-align: center;
+    line-height: inherit;
+  }
+}
+
+/* MENU */
+.toogle {
+  margin-right: 20px;
+  margin-left: auto;
+  width: 4rem;
+  height: 2rem;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  font-size: .8rem;
+  text-transform: uppercase;
+  background: $dark-bg;
+  z-index: 10;
+  border: 1px solid #ffffff;
+  transition: all .5s;
+  &::before {
+    content: "Menu";
+    color: $white;
+    line-height: 2rem;
+  }
+  &.active::before {
+    content: "Close";
+    color: $white;
+    line-height: 2rem;
+  }
+}
+
+.menu {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  background: $dark-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .5s;
+  ul {
+    position: relative;
+    li {
+      list-style: none;
+      text-align: center;
+      a {
+        display: block;
+        padding: 5px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $white;
+        font-size: 1rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+        transition: all .5s;
+        &:hover {
+          color: $hover-color;
+        }
+        &::before {
+          content: attr(data-text);
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: $white;
+          font-size: 8rem;
+          opacity: 0;
+          pointer-events: none;
+          font-family: initial;
+          transition: all .5s;
+        }
+        &:hover::before {
+          opacity: .08;
+          top: 50%;
+        }
+      }
+    }
+  }
+  &.active {
+    left: 0;
+  }
+}
+
+/* index Page */
+
+
+/* Page SUP */
+.filters {
+  margin: 15px auto;
+  padding: 2rem;
+  width: 98%;
+  background: $light-blue;
+  border-radius: 1rem;
+  .form-header {
+    color: $text-color;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .filter-form {
+    margin: 0 auto;
+    width: 1000px;
+    .form-row {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    select {
+      padding: .2rem;
+      background: $thead;
+      font-size: 1rem;
+      color: $white;
+      //text-transform: uppercase;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+    }
+    input[type=text] {
+      width: 6rem;
+      padding: .2rem;
+      background: $thead;
+      font-size: 1rem;
+      line-height: 1rem;
+      text-align: center;
+      color: $white;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      &::placeholder {
+        padding: .2rem;
+        font-size: .8rem;
+        line-height: 1rem;
+        color: $white;
+      }
+    }
+    input[type=date] {
+      width: 9rem;
+      padding: .1rem;
+      background: $thead;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: $white;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      &::placeholder {
+        padding: .2rem;
+        font-size: 1rem;
+        line-height: 1rem;
+        color: $white;
+      }
+    }
+    button {
+      position: relative;
+      padding: .3rem .8rem;
+      background: $text-color;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: $white;
+      border: 1px solid $white;
+      border-radius: 5px;
+      outline: none;
+      &:hover {
+        background: lighten($text-color, 10%);
+      }
+      .fa-filter {
+        margin-left: .5rem;
+        font-size: .8rem;
+      }
+    }
+  }
+}
+
+.table-box {
+  margin: 1rem  auto;
+  max-width: 98%;
+  max-height: 29rem;
+  overflow: auto;
+  background: $white;
+  box-shadow: 0 0 30px rgba(0,0,0,0.2);
+  @include report-table();
+}
+

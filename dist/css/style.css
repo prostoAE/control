@@ -1,0 +1,285 @@
+@charset "UTF-8";
+/* import SCSS components */
+/* colors */
+/* Стиль таблиц */
+/* Basic settings */
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  font-family: sans-serif; }
+  body dl, body ol, body ul, body label {
+    margin: 0;
+    padding: 0; }
+  body a, body ul, body li {
+    text-decoration: none;
+    list-style: none; }
+
+/* HEADER */
+.header {
+  width: 100vw;
+  height: 4rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(93, 203, 204, 0.8)), to(rgba(5, 126, 137, 0.78)));
+  background: -webkit-linear-gradient(rgba(93, 203, 204, 0.8), rgba(5, 126, 137, 0.78));
+  background: -o-linear-gradient(rgba(93, 203, 204, 0.8), rgba(5, 126, 137, 0.78));
+  background: linear-gradient(rgba(93, 203, 204, 0.8), rgba(5, 126, 137, 0.78));
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.4);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 1.5rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(93, 203, 204, 0.8)), to(rgba(5, 126, 137, 0.78)));
+  background: -webkit-linear-gradient(rgba(93, 203, 204, 0.8), rgba(5, 126, 137, 0.78));
+  background: -o-linear-gradient(rgba(93, 203, 204, 0.8), rgba(5, 126, 137, 0.78));
+  background: linear-gradient(rgba(93, 203, 204, 0.8), rgba(5, 126, 137, 0.78));
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.4); }
+  .footer span {
+    margin-right: .5rem; }
+  .footer p {
+    color: #ffffff;
+    font-size: 1rem;
+    text-align: center;
+    line-height: inherit; }
+
+/* MENU */
+.toogle {
+  margin-right: 20px;
+  margin-left: auto;
+  width: 4rem;
+  height: 2rem;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  font-size: .8rem;
+  text-transform: uppercase;
+  background: #353835;
+  z-index: 10;
+  border: 1px solid #ffffff;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s; }
+  .toogle::before {
+    content: "Menu";
+    color: #ffffff;
+    line-height: 2rem; }
+  .toogle.active::before {
+    content: "Close";
+    color: #ffffff;
+    line-height: 2rem; }
+
+.menu {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  background: #353835;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s; }
+  .menu ul {
+    position: relative; }
+    .menu ul li {
+      list-style: none;
+      text-align: center; }
+      .menu ul li a {
+        display: block;
+        padding: 5px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #ffffff;
+        font-size: 1rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+        -webkit-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s; }
+        .menu ul li a:hover {
+          color: #4381ff; }
+        .menu ul li a::before {
+          content: attr(data-text);
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+                  transform: translate(-50%, -50%);
+          color: #ffffff;
+          font-size: 8rem;
+          opacity: 0;
+          pointer-events: none;
+          font-family: initial;
+          -webkit-transition: all .5s;
+          -o-transition: all .5s;
+          transition: all .5s; }
+        .menu ul li a:hover::before {
+          opacity: .08;
+          top: 50%; }
+  .menu.active {
+    left: 0; }
+
+/* index Page */
+/* Page SUP */
+.filters {
+  margin: 15px auto;
+  padding: 2rem;
+  width: 98%;
+  background: rgba(123, 213, 246, 0.2);
+  border-radius: 1rem; }
+  .filters .form-header {
+    color: #989898;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center; }
+  .filters .filter-form {
+    margin: 0 auto;
+    width: 1000px; }
+    .filters .filter-form .form-row {
+      margin-top: 20px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-justify-content: space-around;
+          -ms-flex-pack: distribute;
+              justify-content: space-around;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    .filters .filter-form select {
+      padding: .2rem;
+      background: #5acbd2;
+      font-size: 1rem;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      outline: none; }
+    .filters .filter-form input[type=text] {
+      width: 6rem;
+      padding: .2rem;
+      background: #5acbd2;
+      font-size: 1rem;
+      line-height: 1rem;
+      text-align: center;
+      color: #ffffff;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 5px;
+      outline: none; }
+      .filters .filter-form input[type=text]::-webkit-input-placeholder {
+        padding: .2rem;
+        font-size: .8rem;
+        line-height: 1rem;
+        color: #ffffff; }
+      .filters .filter-form input[type=text]:-ms-input-placeholder {
+        padding: .2rem;
+        font-size: .8rem;
+        line-height: 1rem;
+        color: #ffffff; }
+      .filters .filter-form input[type=text]::-ms-input-placeholder {
+        padding: .2rem;
+        font-size: .8rem;
+        line-height: 1rem;
+        color: #ffffff; }
+      .filters .filter-form input[type=text]::placeholder {
+        padding: .2rem;
+        font-size: .8rem;
+        line-height: 1rem;
+        color: #ffffff; }
+    .filters .filter-form input[type=date] {
+      width: 9rem;
+      padding: .1rem;
+      background: #5acbd2;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      outline: none; }
+      .filters .filter-form input[type=date]::-webkit-input-placeholder {
+        padding: .2rem;
+        font-size: 1rem;
+        line-height: 1rem;
+        color: #ffffff; }
+      .filters .filter-form input[type=date]:-ms-input-placeholder {
+        padding: .2rem;
+        font-size: 1rem;
+        line-height: 1rem;
+        color: #ffffff; }
+      .filters .filter-form input[type=date]::-ms-input-placeholder {
+        padding: .2rem;
+        font-size: 1rem;
+        line-height: 1rem;
+        color: #ffffff; }
+      .filters .filter-form input[type=date]::placeholder {
+        padding: .2rem;
+        font-size: 1rem;
+        line-height: 1rem;
+        color: #ffffff; }
+    .filters .filter-form button {
+      position: relative;
+      padding: .3rem .8rem;
+      background: #989898;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 5px;
+      outline: none; }
+      .filters .filter-form button:hover {
+        background: #b2b2b2; }
+      .filters .filter-form button .fa-filter {
+        margin-left: .5rem;
+        font-size: .8rem; }
+
+.table-box {
+  margin: 1rem  auto;
+  max-width: 98%;
+  max-height: 29rem;
+  overflow: auto;
+  background: #ffffff;
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); }
+  .table-box table {
+    margin: 0 auto; }
+    .table-box table th, .table-box table td {
+      border: 1px solid #79e0ff;
+      border-collapse: collapse;
+      padding: .4rem;
+      font-size: .8rem;
+      text-align: left;
+      white-space: nowrap; }
+    .table-box table th {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      background: #5acbd2;
+      color: #ffffff; }
