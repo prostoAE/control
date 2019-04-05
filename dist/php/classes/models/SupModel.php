@@ -234,10 +234,10 @@ class SupModel {
     $dateFrom = ' and start_date >= '. "'" .$array['date-from'] . "'";
     $dateTo = ' and end_date <= '. "'" . $array['date-to'] . "'";
     if($array['buyer'] != '' && $array['buyer'] != 'BUYER') {
-      $buyer = ' and buyer = ' . $array['buyer'];
+      $buyer = ' and buyer = ' . "'" . $array['buyer'] . "'";
     }
     if($array['group'] != '' && $array['group'] != 'GROUP') {
-      $group = ' and short_condition = ' . $array['group'];
+      $group = ' and short_condition = ' . "'" . $array['group'] . "'";
     }
     if($array['supplier'] != '' && $array['supplier'] != 'supplier') {
       $supplier = ' and frs = ' . $array['supplier'];

@@ -46,7 +46,6 @@ class SupController extends AppController {
       $filters['article'] = $_POST['article'];
 
       $query = $this->sup->filter($filters);
-
 //      $this->ccaUpdate('2019');
 //      $this->serviceUpdate('2019');
       return $query;
