@@ -8,7 +8,7 @@ class App {
 
   public function __construct() {
     session_start();
-    echo $query = trim(substr($_SERVER['REQUEST_URI'], 13), '/');
+    $query = trim(substr($_SERVER['REQUEST_URI'], 5), '/');
     Router::dispatch($query);
   }
 

@@ -232,5 +232,13 @@ body {
   background: $white;
   box-shadow: 0 0 30px rgba(0,0,0,0.2);
   @include report-table();
+  .edit-cost {
+    margin-left: .5rem;
+    cursor: pointer;
+    color: $edit-color;
+    &:hover {
+      color: lighten($edit-color, 30%);
+    }
+  }
 }
 

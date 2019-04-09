@@ -283,3 +283,9 @@ body {
       top: 0;
       background: #5acbd2;
       color: #ffffff; }
+  .table-box .edit-cost {
+    margin-left: .5rem;
+    cursor: pointer;
+    color: #ff0c00; }
+    .table-box .edit-cost:hover {
+      color: #ff9e99; }
