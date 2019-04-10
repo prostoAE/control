@@ -30,8 +30,8 @@ class SupController extends AppController {
     $this->sup->insertSourceData($sourceData);
   }
 
-  public function loadToFinalTable($fateStart, $dateEnd) {
-    $data = $this->sup->getDataFromSourceTable($fateStart, $dateEnd);
+  public function loadToFinalTable($dateStart, $dateEnd) {
+    $data = $this->sup->getDataFromSourceTable($dateStart, $dateEnd);
     $this->sup->insertToFinalTable($data);
   }
 
@@ -46,8 +46,12 @@ class SupController extends AppController {
       $filters['article'] = $_POST['article'];
 
       $query = $this->sup->filter($filters);
+
 //      $this->ccaUpdate('2019');
 //      $this->serviceUpdate('2019');
+//      $this->getSource('01.01.2019', '31.03.2019');
+//      $this->loadToFinalTable('01.01.2019', '31.03.2019');
+
       return $query;
     }
   }

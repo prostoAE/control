@@ -29,7 +29,7 @@
             </select>
           </label>
           <label>
-            <input name="date-from" type="text" placeholder="Дата с:" onfocus="(this.type='date')" onblur="(this.type='text')" required value="2019.01.01">
+            <input name="date-from" type="text" placeholder="Дата с:" onfocus="(this.type='date')" onblur="(this.type='text')" required value="2019.03.01">
           </label>
           <label>
             <input name="date-to" type="text" placeholder="Дата по:" onfocus="(this.type='date')" onblur="(this.type='text')" required value="2019.03.31">
@@ -76,6 +76,23 @@
           <th>mag_014</th>
           <th>mag_015</th>
           <th>mag_016</th>
+          <th>mag_018</th>
+          <th>mag_020</th>
+          <th>mag_022</th>
+          <th>mag_023</th>
+          <th>mag_024</th>
+          <th>mag_025</th>
+          <th>mag_026</th>
+          <th>mag_027</th>
+          <th>mag_028</th>
+          <th>mag_029</th>
+          <th>mag_030</th>
+          <th>mag_031</th>
+          <th>mag_032</th>
+          <th>mag_033</th>
+          <th>mag_034</th>
+          <th>mag_035</th>
+          <th>mag_037</th>
         </tr>
         <?php
         foreach ($table as $val):
@@ -102,6 +119,23 @@
             <td><?= $val['mag_014'] ?></td>
             <td><?= $val['mag_015'] ?></td>
             <td><?= $val['mag_016'] ?></td>
+            <td><?= $val['mag_018'] ?></td>
+            <td><?= $val['mag_020'] ?></td>
+            <td><?= $val['mag_022'] ?></td>
+            <td><?= $val['mag_023'] ?></td>
+            <td><?= $val['mag_024'] ?></td>
+            <td><?= $val['mag_025'] ?></td>
+            <td><?= $val['mag_026'] ?></td>
+            <td><?= $val['mag_027'] ?></td>
+            <td><?= $val['mag_028'] ?></td>
+            <td><?= $val['mag_029'] ?></td>
+            <td><?= $val['mag_030'] ?></td>
+            <td><?= $val['mag_031'] ?></td>
+            <td><?= $val['mag_032'] ?></td>
+            <td><?= $val['mag_033'] ?></td>
+            <td><?= $val['mag_034'] ?></td>
+            <td><?= $val['mag_035'] ?></td>
+            <td><?= $val['mag_037'] ?></td>
           </tr>
         <?php
         endforeach;
