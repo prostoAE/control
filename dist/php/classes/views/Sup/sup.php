@@ -8,7 +8,7 @@
     </div>
     <div class="row">
       <?php
-//      require_once 'php/supTableLoad.php';
+      $anee = new \php\classes\models\AneeModel();
       ?>
       <form class="filter-form" method="post">
         <div class="form-row">
@@ -62,6 +62,7 @@
           <th>n_agreement</th>
           <th>segment</th>
           <th>frs</th>
+          <th>frs< name/th>
           <th>article</th>
           <th>type_promo</th>
           <th>comments</th>
@@ -105,6 +106,7 @@
             <td><?= $val['n_agreement'] ?></td>
             <td><?= $val['segment'] ?></td>
             <td><?= $val['frs'] ?></td>
+            <td><?= $anee->getSupplierName($val['frs']) ?></td>
             <td><?= $val['article'] ?></td>
             <td><?= $val['type_promo'] ?></td>
             <td><?= $val['comments'] ?></td>

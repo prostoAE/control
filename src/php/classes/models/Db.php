@@ -72,6 +72,12 @@ class Db {
     return self::$sth->fetchAll(PDO::FETCH_ASSOC);
   }
 
+  public static function selectOne($connection, $query, $param = array()) {
+    self::$sth = $connection->prepare($query);
+    self::$sth->execute((array) $param);
+    return self::$sth->fetchColumn();
+  }
+
   public static function insert($connection, $query, $param = array()) {
     self::$sth = $connection->prepare($query);
     self::$sth->execute((array) $param);

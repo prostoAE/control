@@ -185,7 +185,7 @@ class SupModel {
     and an.id_negotiation_group = src.segment
     and an.id_service_type = src.type_promo
   left join
-    cca_2018 cca
+    cca_2019 cca
     on src.frs = cca.supplier
     and src.segment = cca.id_negotiation_group
   where src.start_date >= str_to_date(?, '%Y.%m.%d')

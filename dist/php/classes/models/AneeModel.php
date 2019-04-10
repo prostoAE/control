@@ -4,7 +4,6 @@ namespace php\classes\models;
 
 class AneeModel {
 
-
   /**
    * Метод получает из АНЕЕ перечень закупщиков за указаный год
    * @param int $year
@@ -114,6 +113,18 @@ class AneeModel {
 
     $result = Db::select(Db::connectAnee(), $query, [$year]);
     return $result;
+  }
+
+  /**
+   * Метод получает название поставщика
+   * @param $supplier
+   * @return false|string
+   */
+  public static function getSupplierName($supplier) {
+    $query = 'select name from supplier where cod_utl_supplier = ?';
+    $result = Db::selectOne(Db::connectAnee(), $query, [$supplier]);
+    $name = iconv('windows-1251', 'utf-8', $result);
+    return $name;
   }
 
 }
