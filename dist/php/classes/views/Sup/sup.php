@@ -91,7 +91,7 @@
             <td><?= $val['article'] ?></td>
             <td><?= $val['type_promo'] ?></td>
             <td><?= $val['comments'] ?></td>
-            <td><?= $val['billing_cost_per_service'] ?><i class="far fa-edit edit-cost"></i></td>
+            <td><?= $val['billing_cost_per_service'] ?><i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
             <td><?= $val['mag_001'] ?></td>
             <td><?= $val['mag_003'] ?></td>
             <td><?= $val['mag_007'] ?></td>

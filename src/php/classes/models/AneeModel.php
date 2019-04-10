@@ -12,7 +12,7 @@ class AneeModel {
    */
   public function getBuyersList($year = 2019) {
     $query = "SELECT usr.name AS buyer FROM agreement agr LEFT JOIN USER_ACCOUNT usr ON agr.ID_KEY_BUYER = usr.ID_USER_ACCOUNT WHERE agr.YEAR = ? AND usr.name IS not null GROUP BY usr.name ORDER BY usr.name";
-// TODO   $buyers = Db::select(Db::connectAnee(), $query, [$year]);
+    $buyers = Db::select(Db::connectAnee(), $query, [$year]);
     return $buyers;
   }
 
@@ -23,7 +23,7 @@ class AneeModel {
    */
   public function getGroupList($year = 2019) {
     $query = "select short_condition as groupe from agreement where id_agr_status in ('SGN', 'CAN', 'WFS') and year = ? group by short_condition order by short_condition";
-// TODO   $groups = Db::select(Db::connectAnee(), $query, [$year]);
+    $groups = Db::select(Db::connectAnee(), $query, [$year]);
     return $groups;
   }
 
@@ -54,7 +54,7 @@ class AneeModel {
 		    and agr_vers.id_agr_status in ('SGN', 'CAN', 'WFS', 'INK')
 		    and agr_vers.n_agreement = agr.n_agreement)
        and supplier.id_supplier = agr_condition.id_supplier";
-//  TODO  $result = Db::select(Db::connectAnee(), $query, [$year]);
+    $result = Db::select(Db::connectAnee(), $query, [$year]);
     return $result;
   }
 
@@ -112,7 +112,7 @@ class AneeModel {
     serv.TOTAL_QTY,
     serv.TOTAL_AMOUNT";
 
-//  TODO  $result = Db::select(Db::connectAnee(), $query, [$year]);
+    $result = Db::select(Db::connectAnee(), $query, [$year]);
     return $result;
   }
 

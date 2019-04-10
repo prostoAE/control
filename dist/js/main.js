@@ -11,3 +11,11 @@ function toogleClassMenu() {
     menu.toggleClass('active');
   })
 }
+
+// $('.edit-cost').on('click', function (e) {
+//   e.preventDefault();
+//
+//   var edit = $(this).parent().text();
+//   console.log(edit);
+// });
+
