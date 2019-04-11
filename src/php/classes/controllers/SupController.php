@@ -49,8 +49,8 @@ class SupController extends AppController {
 
 //      $this->ccaUpdate('2019');
 //      $this->serviceUpdate('2019');
-//      $this->getSource('01.01.2019', '31.03.2019');
-//      $this->loadToFinalTable('01.12.2018', '31.03.2019');
+//      $this->getSource('13.03.2019', '26.03.2019');
+//      $this->loadToFinalTable('13.03.2019', '26.03.2019');
 
       return $query;
     }

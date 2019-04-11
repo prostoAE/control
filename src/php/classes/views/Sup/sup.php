@@ -110,34 +110,142 @@
             <td><?= $val['article'] ?></td>
             <td><?= $val['type_promo'] ?></td>
             <td><?= $val['comments'] ?></td>
-            <td><?= $val['billing_cost_per_service'] ?><i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?= $val['billing_cost_per_service'] ?></td>
+            <?php if($val['mag_001'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_001'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_001'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_003'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_003'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_003'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_007'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_007'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_007'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_009'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_009'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_009'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_010'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_010'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_010'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_011'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_011'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_011'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_012'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_012'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_012'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_014'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_014'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_014'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_015'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_015'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_015'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_016'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_016'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_016'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_018'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_018'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_018'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_020'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_020'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_020'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_022'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_022'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_022'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_023'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_023'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_023'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_024'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_024'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_024'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_025'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_025'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_025'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_026'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_026'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_026'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_027'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_027'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_027'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_028'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_028'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_028'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_029'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_029'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_029'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_030'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_030'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_030'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_031'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_031'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_031'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_032'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_032'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_032'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_033'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_033'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_033'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_034'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_034'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_034'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_035'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_035'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_035'] ?></td>
+            <?php endif; ?>
+            <?php if($val['mag_037'] == 0 || $val['comments'] == 'TP'): ?>
+            <td><?= $val['mag_037'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
+            <?php else: ?>
             <td><?= $val['mag_037'] ?></td>
+            <?php endif; ?>
           </tr>
         <?php
         endforeach;
@@ -146,3 +254,4 @@
     </table>
   </div>
 </section>
+
