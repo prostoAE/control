@@ -162,7 +162,6 @@ body {
       background: $thead;
       font-size: 1rem;
       color: $white;
-      //text-transform: uppercase;
       border: none;
       border-radius: 5px;
       outline: none;
@@ -242,3 +241,67 @@ body {
   }
 }
 
+/* Tarif modal window */
+.modal {
+  display: none;
+  width: 15rem;
+  height: 8rem;
+  background: $white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid $light-blue;
+  border-radius: .5rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  &--close {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: $white;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+  }
+  &__header {
+    padding: .3rem;
+    font-size: 1rem;
+    color: $white;
+    text-align: center;
+    background: $thead;
+  }
+  .tarif-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    &__select {
+      display: block;
+      width: 50%;
+      padding: .3rem;
+      background: $thead;
+      font-size: 1rem;
+      color: $white;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+    }
+    &__button {
+      margin-top: 1rem;
+      display: block;
+      padding: .3rem .8rem;
+      background: $text-color;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: $white;
+      border-radius: 5px;
+      outline: none;
+      &:hover {
+        background: lighten($text-color, 10%);
+      }
+    }
+  }
+}

@@ -289,3 +289,75 @@ body {
     color: #ff0c00; }
     .table-box .edit-cost:hover {
       color: #ff9e99; }
+
+/* Tarif modal window */
+.modal {
+  display: none;
+  width: 15rem;
+  height: 8rem;
+  background: #ffffff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 2px solid rgba(123, 213, 246, 0.2);
+  border-radius: .5rem;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); }
+  .modal--close {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #ffffff;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer; }
+  .modal__header {
+    padding: .3rem;
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: center;
+    background: #5acbd2; }
+  .modal .tarif-form {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+    .modal .tarif-form__select {
+      display: block;
+      width: 50%;
+      padding: .3rem;
+      background: #5acbd2;
+      font-size: 1rem;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      outline: none; }
+    .modal .tarif-form__button {
+      margin-top: 1rem;
+      display: block;
+      padding: .3rem .8rem;
+      background: #989898;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: #ffffff;
+      border-radius: 5px;
+      outline: none; }
+      .modal .tarif-form__button:hover {
+        background: #b2b2b2; }

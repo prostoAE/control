@@ -107,7 +107,7 @@
             <td><?= $val['article'] ?></td>
             <td><?= $val['type_promo'] ?></td>
             <td><?= $val['comments'] ?></td>
-            <td><?= $val['billing_cost_per_service'] ?></td>
+            <td id="cost"><?= $val['billing_cost_per_service'] ?></td>
             <?php if($val['mag_001'] == 0 || $val['comments'] == 'TP'): ?>
             <td><?= $val['mag_001'] ?> <i class="far fa-edit edit-cost" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
@@ -252,3 +252,17 @@
   </div>
 </section>
 
+<!--MODAL-->
+<div class="modal">
+  <span class="modal--close">x</span>
+  <h2 class="modal__header">Изменение тарифа</h2>
+  <div class="modal__body">
+    <form action="#" class="tarif-form">
+      <select class="tarif-form__select">
+        <option id="curentCost">0</option>
+        <option id="newCost"></option>
+      </select>
+      <button class="tarif-form__button">Подтвердить</button>
+    </form>
+  </div>
+</div>
