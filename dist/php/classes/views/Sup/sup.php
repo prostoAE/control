@@ -7,9 +7,6 @@
       </div>
     </div>
     <div class="row">
-      <?php
-      $anee = new \php\classes\models\AneeModel();
-      ?>
       <form class="filter-form" method="post">
         <div class="form-row">
           <label>
@@ -106,7 +103,7 @@
             <td><?= $val['n_agreement'] ?></td>
             <td><?= $val['segment'] ?></td>
             <td><?= $val['frs'] ?></td>
-            <td><?= $anee->getSupplierName($val['frs']) ?></td>
+            <td><?= \php\classes\models\AneeModel::getSupplierName($val['frs']) ?></td>
             <td><?= $val['article'] ?></td>
             <td><?= $val['type_promo'] ?></td>
             <td><?= $val['comments'] ?></td>
