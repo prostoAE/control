@@ -48,7 +48,7 @@ $(".tarif-form__button").on('click', function (e) {
 
   $.ajax({
     type: 'post',
-    url: 'ajax/index',
+    url: 'ajax/tarif-confirm',
     dataType: 'text',
     data: 'test',
     success:function (response) {

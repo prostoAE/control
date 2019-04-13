@@ -37,7 +37,7 @@ class Router {
         $action = self::lowerCamelCase(self::$route['action']) . 'Action';
         if(method_exists($controllerObject, $action)) {
           $controllerObject->$action();
-          if(self::$route['controller'] != 'Ajax') {
+          if(self::$route['controller'] != 'ajax') {
             $controllerObject->getView();
           }
         } else {

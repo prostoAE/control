@@ -9,7 +9,7 @@ class SupController extends AppController {
   public $sup;
   private static $anee;
 
-  public function supAction() {
+  public function indexAction() {
     $this->setMeta('Система СУП', 'Система управления промо', 'Promo, sup, тарифы');
     $this->sup = new SupModel();
     self::$anee = new AneeController();

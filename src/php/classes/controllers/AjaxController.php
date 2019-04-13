@@ -2,9 +2,9 @@
 
 namespace php\classes\controllers;
 
-class AjaxController {
+class AjaxController extends AppController {
 
-  public function indexAction() {
+  public function tarifConfirmAction() {
     echo 'test';
   }
 
