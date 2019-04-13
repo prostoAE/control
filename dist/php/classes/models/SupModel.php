@@ -31,18 +31,17 @@ class SupModel {
    */
   public function loadSourceData() {
     $query = "SELECT DISTINCT
-  --	mnt.id AS mount_id,
-  --	pr.ID AS promoaction_id,
+    --	mnt.id AS mount_id,
+    --	pr.ID AS promoaction_id,
     TRUNC(per.START_DATE) AS START_DATE,
     TRUNC(per.END_DATE) AS END_DATE,
     segm.AID AS segment,
     TO_NUMBER(spl.CODE) AS frs,
-    spl.NAME AS frs_name,
     art.AUCHAN_CODE AS article,
-    (case typ.CODE when 'Ponton' then 'PPSC' when 'TG' then 'TGSC' else 'PISC' end) as type_promo,
+    (case mnt.COMMENTS when 'TP' then (case typ.CODE when 'Ponton' then 'TGSC' when 'TG' then 'PPSC' else 'PISC' end) else (case typ.CODE when 'Ponton' then 'PPSC' when 'TG' then 'TGSC' else 'PISC' end) end) as type_promo,
     mnt.COMMENTS,
-  --	mnt.BUDGET,
-  --	mag.CODE AS num_mag,
+    --	mnt.BUDGET,
+    --	mag.CODE AS num_mag,
     sum(CASE mag.CODE WHEN '001' then mnt.BUDGET ELSE 0 end) AS \"001\",
     sum(CASE mag.CODE WHEN '003' then mnt.BUDGET ELSE 0 end) AS \"003\",
     sum(CASE mag.CODE WHEN '007' then mnt.BUDGET ELSE 0 end) AS \"007\",
@@ -70,51 +69,51 @@ class SupModel {
     sum(CASE mag.CODE WHEN '034' then mnt.BUDGET ELSE 0 end) AS \"034\",
     sum(CASE mag.CODE WHEN '035' then mnt.BUDGET ELSE 0 end) AS \"035\",
     sum(CASE mag.CODE WHEN '037' then mnt.BUDGET ELSE 0 end) AS \"037\"
-    FROM
-      PROMO6.PROMOACTION pr
-    LEFT JOIN
-      PROMO6.PERIOD_CALENDAR per
-      ON pr.PERIOD_CALENDAR_ID = per.ID
-    LEFT JOIN
-      PROMO6.SEGMENT segm
-      ON segm.ID = pr.SEGMENT_ID
-    LEFT JOIN
-      PROMO6.MOUNT mnt
-      ON mnt.PROMOACTION_ID = pr.ID
-    LEFT JOIN
-      PROMO6.STORE mag
-      ON mnt.STORE_ID = mag.ID
-    LEFT JOIN
-      PROMO6.SUPPLIER spl
-      ON mnt.SUPPLIER_ID = spl.ID
-    --LEFT JOIN
-    --	PROMO6.PROMOACTION_GOODS pag
-    --	ON pag.PROMOACTION_ID = pr.ID
-    LEFT JOIN
-      PROMO6.MOUNT_GOODS art
-      ON mnt.ID = art.MOUNT_ID
-    LEFT JOIN
-      PROMO6.PA_TYPE typ
-      ON pr.PA_TYPE_ID = typ.ID
-    WHERE
-      per.START_DATE >= TO_DATE(?)
-      AND per.END_DATE <= TO_DATE(?)
-      AND pr.IS_BROKEN = '0'
-      AND mnt.PROMOACTION_ID IS NOT NULL
+  FROM
+    PROMO6.PROMOACTION pr
+      LEFT JOIN
+    PROMO6.PERIOD_CALENDAR per
+    ON pr.PERIOD_CALENDAR_ID = per.ID
+      LEFT JOIN
+    PROMO6.SEGMENT segm
+    ON segm.ID = pr.SEGMENT_ID
+      LEFT JOIN
+    PROMO6.MOUNT mnt
+    ON mnt.PROMOACTION_ID = pr.ID
+      LEFT JOIN
+    PROMO6.STORE mag
+    ON mnt.STORE_ID = mag.ID
+      LEFT JOIN
+    PROMO6.SUPPLIER spl
+    ON mnt.SUPPLIER_ID = spl.ID
+      --LEFT JOIN
+      --	PROMO6.PROMOACTION_GOODS pag
+      --	ON pag.PROMOACTION_ID = pr.ID
+      LEFT JOIN
+    PROMO6.MOUNT_GOODS art
+    ON mnt.ID = art.MOUNT_ID
+      LEFT JOIN
+    PROMO6.PA_TYPE typ
+    ON pr.PA_TYPE_ID = typ.ID
+  WHERE
+    per.START_DATE >= TO_DATE(?)
+    AND per.END_DATE <= TO_DATE(?)
+    AND pr.IS_BROKEN = '0'
+    AND mnt.PROMOACTION_ID IS NOT NULL
     -- AND art.AUCHAN_CODE = '338192'
-    --	AND spl.CODE = '1660'
+    -- AND spl.CODE = '535'
     --	AND mag.CODE = 24
-    GROUP BY
+  GROUP BY
     --	mnt.id,
     --	pr.ID,
-      TRUNC(per.START_DATE),
-      TRUNC(per.END_DATE),
-      segm.AID,
-      TO_NUMBER(spl.CODE),
-      spl.NAME,
-      art.AUCHAN_CODE,
-      typ.CODE,
-      mnt.COMMENTS";
+    TRUNC(per.START_DATE),
+    TRUNC(per.END_DATE),
+    segm.AID,
+    TO_NUMBER(spl.CODE),
+    spl.NAME,
+    art.AUCHAN_CODE,
+    typ.CODE,
+    mnt.COMMENTS";
 
     $result = Db::select(Db::connectSup(), $query, [$this->startDate, $this->endDate]);
 
@@ -127,8 +126,8 @@ class SupModel {
    */
   public function insertSourceData($array) {
     foreach ($array as $k => $v) {
-      $query = "INSERT INTO sup_source (start_date,end_date,segment,frs,frs_name,article,type_promo,comments,mag_001,mag_003,mag_007,mag_009,mag_010,mag_011,mag_012,mag_014,mag_015,mag_016,mag_018,mag_020,mag_022,mag_023,mag_024,mag_025,mag_026,mag_027,mag_028,mag_029,mag_030,mag_031,mag_032,mag_033,mag_034,mag_035,mag_037)
-    VALUES (STR_TO_DATE('{$v['START_DATE']}', '%d.%m.%Y'), STR_TO_DATE('{$v['END_DATE']}', '%d.%m.%Y'),'{$v['SEGMENT']}','{$v['FRS']}','{$v['FRS_NAME']}','{$v['ARTICLE']}','{$v['TYPE_PROMO']}','{$v['COMMENTS']}', '{$v['001']}', '{$v['003']}', '{$v['007']}', '{$v['009']}', '{$v['010']}', '{$v['011']}', '{$v['012']}', '{$v['014']}', '{$v['015']}', '{$v['016']}', '{$v['018']}', '{$v['020']}', '{$v['022']}', '{$v['023']}', '{$v['024']}', '{$v['025']}', '{$v['026']}', '{$v['027']}', '{$v['028']}', '{$v['029']}', '{$v['030']}', '{$v['031']}', '{$v['032']}', '{$v['033']}', '{$v['034']}', '{$v['035']}', '{$v['037']}')";
+      $query = "INSERT INTO sup_source (start_date,end_date,segment,frs,article,type_promo,comments,mag_001,mag_003,mag_007,mag_009,mag_010,mag_011,mag_012,mag_014,mag_015,mag_016,mag_018,mag_020,mag_022,mag_023,mag_024,mag_025,mag_026,mag_027,mag_028,mag_029,mag_030,mag_031,mag_032,mag_033,mag_034,mag_035,mag_037)
+    VALUES (STR_TO_DATE('{$v['START_DATE']}', '%d.%m.%Y'), STR_TO_DATE('{$v['END_DATE']}', '%d.%m.%Y'),'{$v['SEGMENT']}','{$v['FRS']}','{$v['ARTICLE']}','{$v['TYPE_PROMO']}','{$v['COMMENTS']}', '{$v['001']}', '{$v['003']}', '{$v['007']}', '{$v['009']}', '{$v['010']}', '{$v['011']}', '{$v['012']}', '{$v['014']}', '{$v['015']}', '{$v['016']}', '{$v['018']}', '{$v['020']}', '{$v['022']}', '{$v['023']}', '{$v['024']}', '{$v['025']}', '{$v['026']}', '{$v['027']}', '{$v['028']}', '{$v['029']}', '{$v['030']}', '{$v['031']}', '{$v['032']}', '{$v['033']}', '{$v['034']}', '{$v['035']}', '{$v['037']}')";
       Db::insert(Db::connectSql(), $query);
     }
   }
@@ -185,7 +184,7 @@ class SupModel {
     and an.id_negotiation_group = src.segment
     and an.id_service_type = src.type_promo
   left join
-    cca_2018 cca
+    cca_2019 cca
     on src.frs = cca.supplier
     and src.segment = cca.id_negotiation_group
   where src.start_date >= str_to_date(?, '%Y.%m.%d')
@@ -288,7 +287,6 @@ class SupModel {
   /**
    * Метод загружает массив данных (тарифы промо) в таблицу anee_service
    * @param $array
-   * @param $year
    */
   public function insertServiceToTable($array) {
     Db::set(Db::connectSql(), "TRUNCATE TABLE anee_service");
