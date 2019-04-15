@@ -108,141 +108,332 @@
             <td><?= $val['type_promo'] ?></td>
             <td><?= $val['comments'] ?></td>
             <td id="cost"><?= $val['billing_cost_per_service'] ?></td>
+
             <?php if($val['mag_001'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_001'] ?> <i class="far fa-edit edit-cost" data-store="001" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_001_confirmed'] >= "0") {
+                echo $val['mag_001'] . '/' . $val['mag_001_confirmed'];
+              } else {
+                echo $val['mag_001'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="001" data-id="<?= $val['id'] ?>"></i>
+            </td>
             <?php else: ?>
             <td><?= $val['mag_001'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_003'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_003'] ?> <i class="far fa-edit edit-cost" data-store="003" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_003_confirmed'] >= "0") {
+                echo $val['mag_003'] . '/' . $val['mag_003_confirmed'];
+              } else {
+                echo $val['mag_003'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="003" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_003'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_007'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_007'] ?> <i class="far fa-edit edit-cost" data-store="007" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_007_confirmed'] >= "0") {
+                echo $val['mag_007'] . '/' . $val['mag_007_confirmed'];
+              } else {
+                echo $val['mag_007'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="007" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_007'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_009'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_009'] ?> <i class="far fa-edit edit-cost" data-store="009" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_009_confirmed'] >= "0") {
+                echo $val['mag_009'] . '/' . $val['mag_009_confirmed'];
+              } else {
+                echo $val['mag_009'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="009" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_009'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_010'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_010'] ?> <i class="far fa-edit edit-cost" data-store="010" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_010_confirmed'] >= "0") {
+                echo $val['mag_010'] . '/' . $val['mag_010_confirmed'];
+              } else {
+                echo $val['mag_010'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="010" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_010'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_011'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_011'] ?> <i class="far fa-edit edit-cost" data-store="011" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_011_confirmed'] >= "0") {
+                echo $val['mag_011'] . '/' . $val['mag_011_confirmed'];
+              } else {
+                echo $val['mag_011'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="011" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_011'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_012'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_012'] ?> <i class="far fa-edit edit-cost" data-store="012" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_012_confirmed'] >= "0") {
+                echo $val['mag_012'] . '/' . $val['mag_012_confirmed'];
+              } else {
+                echo $val['mag_012'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="012" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_012'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_014'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_014'] ?> <i class="far fa-edit edit-cost" data-store="014" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_014_confirmed'] >= "0") {
+                echo $val['mag_014'] . '/' . $val['mag_014_confirmed'];
+              } else {
+                echo $val['mag_014'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="014" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_014'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_015'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_015'] ?> <i class="far fa-edit edit-cost" data-store="015" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_015_confirmed'] >= "0") {
+                echo $val['mag_015'] . '/' . $val['mag_015_confirmed'];
+              } else {
+                echo $val['mag_015'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="015" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_015'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_016'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_016'] ?> <i class="far fa-edit edit-cost" data-store="016" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_016_confirmed'] >= "0") {
+                echo $val['mag_016'] . '/' . $val['mag_016_confirmed'];
+              } else {
+                echo $val['mag_016'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="016" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_016'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_018'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_018'] ?> <i class="far fa-edit edit-cost" data-store="018" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_018_confirmed'] >= "0") {
+                echo $val['mag_018'] . '/' . $val['mag_018_confirmed'];
+              } else {
+                echo $val['mag_018'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="018" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_018'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_020'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_020'] ?> <i class="far fa-edit edit-cost" data-store="020" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_020_confirmed'] >= "0") {
+                echo $val['mag_020'] . '/' . $val['mag_020_confirmed'];
+              } else {
+                echo $val['mag_020'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="020" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_020'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_022'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_022'] ?> <i class="far fa-edit edit-cost" data-store="022" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_022_confirmed'] >= "0") {
+                echo $val['mag_022'] . '/' . $val['mag_022_confirmed'];
+              } else {
+                echo $val['mag_022'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="022" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_022'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_023'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_023'] ?> <i class="far fa-edit edit-cost" data-store="023" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_023_confirmed'] >= "0") {
+                echo $val['mag_023'] . '/' . $val['mag_023_confirmed'];
+              } else {
+                echo $val['mag_023'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="023" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_023'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_024'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_024'] ?> <i class="far fa-edit edit-cost" data-store="024" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_024_confirmed'] >= "0") {
+                echo $val['mag_024'] . '/' . $val['mag_024_confirmed'];
+              } else {
+                echo $val['mag_024'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="024" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_024'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_025'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_025'] ?> <i class="far fa-edit edit-cost" data-store="025" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_025_confirmed'] >= "0") {
+                echo $val['mag_025'] . '/' . $val['mag_025_confirmed'];
+              } else {
+                echo $val['mag_025'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="025" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_025'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_026'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_026'] ?> <i class="far fa-edit edit-cost" data-store="026" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_026_confirmed'] >= "0") {
+                echo $val['mag_026'] . '/' . $val['mag_026_confirmed'];
+              } else {
+                echo $val['mag_026'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="026" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_026'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_027'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_027'] ?> <i class="far fa-edit edit-cost" data-store="027" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_027_confirmed'] >= "0") {
+                echo $val['mag_027'] . '/' . $val['mag_027_confirmed'];
+              } else {
+                echo $val['mag_027'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="027" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_027'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_028'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_028'] ?> <i class="far fa-edit edit-cost" data-store="028" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_028_confirmed'] >= "0") {
+                echo $val['mag_028'] . '/' . $val['mag_028_confirmed'];
+              } else {
+                echo $val['mag_028'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="028" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_028'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_029'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_029'] ?> <i class="far fa-edit edit-cost" data-store="029" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_029_confirmed'] >= "0") {
+                echo $val['mag_029'] . '/' . $val['mag_029_confirmed'];
+              } else {
+                echo $val['mag_029'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="029" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_029'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_030'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_030'] ?> <i class="far fa-edit edit-cost" data-store="030" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_030_confirmed'] >= "0") {
+                echo $val['mag_030'] . '/' . $val['mag_030_confirmed'];
+              } else {
+                echo $val['mag_030'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="030" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_030'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_031'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_031'] ?> <i class="far fa-edit edit-cost" data-store="031" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_031_confirmed'] >= "0") {
+                echo $val['mag_031'] . '/' . $val['mag_031_confirmed'];
+              } else {
+                echo $val['mag_031'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="031" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_031'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_032'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_032'] ?> <i class="far fa-edit edit-cost" data-store="032" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_032_confirmed'] >= "0") {
+                echo $val['mag_032'] . '/' . $val['mag_032_confirmed'];
+              } else {
+                echo $val['mag_032'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="032" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_032'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_033'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_033'] ?> <i class="far fa-edit edit-cost" data-store="033" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_033_confirmed'] >= "0") {
+                echo $val['mag_033'] . '/' . $val['mag_033_confirmed'];
+              } else {
+                echo $val['mag_033'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="033" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_033'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_034'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_034'] ?> <i class="far fa-edit edit-cost" data-store="034" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_034_confirmed'] >= "0") {
+                echo $val['mag_034'] . '/' . $val['mag_034_confirmed'];
+              } else {
+                echo $val['mag_034'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="034" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_034'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_035'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_035'] ?> <i class="far fa-edit edit-cost" data-store="035" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_035_confirmed'] >= "0") {
+                echo $val['mag_035'] . '/' . $val['mag_035_confirmed'];
+              } else {
+                echo $val['mag_035'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="035" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_035'] ?></td>
             <?php endif; ?>
+
             <?php if($val['mag_037'] == 0 || $val['comments'] == 'TP'): ?>
-            <td><?= $val['mag_037'] ?> <i class="far fa-edit edit-cost" data-store="037" data-id="<?= $val['id'] ?>"></i></td>
+            <td><?php
+              if($val['mag_037_confirmed'] >= "0") {
+                echo $val['mag_037'] . '/' . $val['mag_037_confirmed'];
+              } else {
+                echo $val['mag_037'];
+              }
+              ?> <i class="far fa-edit edit-cost" data-store="037" data-id="<?= $val['id'] ?>"></i></td>
             <?php else: ?>
             <td><?= $val['mag_037'] ?></td>
             <?php endif; ?>
+
           </tr>
         <?php
         endforeach;

@@ -46,15 +46,34 @@ function hideTarifModal() {
 $(".tarif-form__button").on('click', function (e) {
   e.preventDefault();
 
+  var data = {};
+  var cell = '';
+
+  data['id'] = $(this).attr('data-id');
+  data['store'] = $(this).attr('data-store');
+  data['tarif'] = $('.tarif-form__select').val();
+
   $.ajax({
     type: 'post',
     url: 'ajax/tarif-confirm',
-    dataType: 'text',
-    data: 'test',
-    success:function (response) {
-      console.log(response);
+    dataType: 'json',
+    data: data,
+    complete:function () {
+      cell = updateCell(data['id'], data['store'], data['tarif']);
       hideTarifModal();
     }
-  })
-
+  });
 });
+
+
+function updateCell(id, store, tarif) {
+  var oldTarif;
+  var newTarif;
+  var path = $('.edit-cost[data-id='+id+'][data-store='+store+']').parent();
+  var re = /[^\/]*/;
+
+  oldTarif = path.text().match(re);
+  path.text("");
+  newTarif = path.text(oldTarif+'/'+tarif);
+  return newTarif;
+}

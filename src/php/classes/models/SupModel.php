@@ -35,7 +35,7 @@ class SupModel {
     --	pr.ID AS promoaction_id,
     TRUNC(per.START_DATE) AS START_DATE,
     TRUNC(per.END_DATE) AS END_DATE,
-    segm.AID AS segment,
+    segm.AID AS segment,getDataFromFinal
     TO_NUMBER(spl.CODE) AS frs,
     art.AUCHAN_CODE AS article,
     (case mnt.COMMENTS when 'TP' then (case typ.CODE when 'Ponton' then 'TGSC' when 'TG' then 'PPSC' else 'PISC' end) else (case typ.CODE when 'Ponton' then 'PPSC' when 'TG' then 'TGSC' else 'PISC' end) end) as type_promo,
