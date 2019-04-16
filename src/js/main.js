@@ -70,9 +70,9 @@ function updateCell(id, store, tarif) {
   var oldTarif;
   var newTarif;
   var path = $('.edit-cost[data-id='+id+'][data-store='+store+']').parent();
-  var re = /[^\/]*/;
+  var regExp = /[^\/]*/;
 
-  oldTarif = path.text().match(re);
+  oldTarif = path.text().match(regExp);
   path.text("");
   newTarif = path.text(oldTarif+'/'+tarif);
 

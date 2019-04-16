@@ -105,11 +105,15 @@
             <td><?= $val['frs'] ?></td>
             <td><?= \php\classes\models\AneeModel::getSupplierName($val['frs']) ?></td>
             <td><?= $val['article'] ?></td>
+            <?php if($val['super_ind'] == 1): ?>
+            <td><?= $val['type_promo'] . ' - super' ?></td>
+            <?php else: ?>
             <td><?= $val['type_promo'] ?></td>
+            <?php endif; ?>
             <td><?= $val['comments'] ?></td>
             <td id="cost"><?= $val['billing_cost_per_service'] ?></td>
 
-            <?php if($val['mag_001'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_001'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_001_confirmed'] >= "0") {
                 echo $val['mag_001'] . '/' . $val['mag_001_confirmed'];
@@ -122,7 +126,7 @@
             <td><?= $val['mag_001'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_003'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_003'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_003_confirmed'] >= "0") {
                 echo $val['mag_003'] . '/' . $val['mag_003_confirmed'];
@@ -134,7 +138,7 @@
             <td><?= $val['mag_003'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_007'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_007'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_007_confirmed'] >= "0") {
                 echo $val['mag_007'] . '/' . $val['mag_007_confirmed'];
@@ -146,7 +150,7 @@
             <td><?= $val['mag_007'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_009'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_009'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_009_confirmed'] >= "0") {
                 echo $val['mag_009'] . '/' . $val['mag_009_confirmed'];
@@ -158,7 +162,7 @@
             <td><?= $val['mag_009'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_010'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_010'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_010_confirmed'] >= "0") {
                 echo $val['mag_010'] . '/' . $val['mag_010_confirmed'];
@@ -170,7 +174,7 @@
             <td><?= $val['mag_010'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_011'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_011'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_011_confirmed'] >= "0") {
                 echo $val['mag_011'] . '/' . $val['mag_011_confirmed'];
@@ -182,7 +186,7 @@
             <td><?= $val['mag_011'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_012'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_012'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_012_confirmed'] >= "0") {
                 echo $val['mag_012'] . '/' . $val['mag_012_confirmed'];
@@ -194,7 +198,7 @@
             <td><?= $val['mag_012'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_014'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_014'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_014_confirmed'] >= "0") {
                 echo $val['mag_014'] . '/' . $val['mag_014_confirmed'];
@@ -206,7 +210,7 @@
             <td><?= $val['mag_014'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_015'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_015'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_015_confirmed'] >= "0") {
                 echo $val['mag_015'] . '/' . $val['mag_015_confirmed'];
@@ -218,7 +222,7 @@
             <td><?= $val['mag_015'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_016'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_016'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_016_confirmed'] >= "0") {
                 echo $val['mag_016'] . '/' . $val['mag_016_confirmed'];
@@ -230,7 +234,7 @@
             <td><?= $val['mag_016'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_018'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_018'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_018_confirmed'] >= "0") {
                 echo $val['mag_018'] . '/' . $val['mag_018_confirmed'];
@@ -242,7 +246,7 @@
             <td><?= $val['mag_018'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_020'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_020'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_020_confirmed'] >= "0") {
                 echo $val['mag_020'] . '/' . $val['mag_020_confirmed'];
@@ -254,7 +258,7 @@
             <td><?= $val['mag_020'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_022'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_022'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_022_confirmed'] >= "0") {
                 echo $val['mag_022'] . '/' . $val['mag_022_confirmed'];
@@ -266,7 +270,7 @@
             <td><?= $val['mag_022'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_023'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_023'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_023_confirmed'] >= "0") {
                 echo $val['mag_023'] . '/' . $val['mag_023_confirmed'];
@@ -278,7 +282,7 @@
             <td><?= $val['mag_023'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_024'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_024'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_024_confirmed'] >= "0") {
                 echo $val['mag_024'] . '/' . $val['mag_024_confirmed'];
@@ -290,7 +294,7 @@
             <td><?= $val['mag_024'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_025'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_025'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_025_confirmed'] >= "0") {
                 echo $val['mag_025'] . '/' . $val['mag_025_confirmed'];
@@ -302,7 +306,7 @@
             <td><?= $val['mag_025'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_026'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_026'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_026_confirmed'] >= "0") {
                 echo $val['mag_026'] . '/' . $val['mag_026_confirmed'];
@@ -314,7 +318,7 @@
             <td><?= $val['mag_026'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_027'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_027'] == 0 && $val['super_ind'] == 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_027_confirmed'] >= "0") {
                 echo $val['mag_027'] . '/' . $val['mag_027_confirmed'];
@@ -326,7 +330,7 @@
             <td><?= $val['mag_027'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_028'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_028'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_028_confirmed'] >= "0") {
                 echo $val['mag_028'] . '/' . $val['mag_028_confirmed'];
@@ -338,7 +342,7 @@
             <td><?= $val['mag_028'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_029'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_029'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_029_confirmed'] >= "0") {
                 echo $val['mag_029'] . '/' . $val['mag_029_confirmed'];
@@ -350,7 +354,7 @@
             <td><?= $val['mag_029'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_030'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_030'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_030_confirmed'] >= "0") {
                 echo $val['mag_030'] . '/' . $val['mag_030_confirmed'];
@@ -362,7 +366,7 @@
             <td><?= $val['mag_030'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_031'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_031'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_031_confirmed'] >= "0") {
                 echo $val['mag_031'] . '/' . $val['mag_031_confirmed'];
@@ -374,7 +378,7 @@
             <td><?= $val['mag_031'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_032'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_032'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_032_confirmed'] >= "0") {
                 echo $val['mag_032'] . '/' . $val['mag_032_confirmed'];
@@ -386,7 +390,7 @@
             <td><?= $val['mag_032'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_033'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_033'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_033_confirmed'] >= "0") {
                 echo $val['mag_033'] . '/' . $val['mag_033_confirmed'];
@@ -398,7 +402,7 @@
             <td><?= $val['mag_033'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_034'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_034'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_034_confirmed'] >= "0") {
                 echo $val['mag_034'] . '/' . $val['mag_034_confirmed'];
@@ -410,7 +414,7 @@
             <td><?= $val['mag_034'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_035'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_035'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_035_confirmed'] >= "0") {
                 echo $val['mag_035'] . '/' . $val['mag_035_confirmed'];
@@ -422,7 +426,7 @@
             <td><?= $val['mag_035'] ?></td>
             <?php endif; ?>
 
-            <?php if($val['mag_037'] == 0 || $val['comments'] == 'TP'): ?>
+            <?php if($val['mag_037'] == 0 && $val['super_ind'] == 1 || $val['comments'] == 'TP'): ?>
             <td><?php
               if($val['mag_037_confirmed'] >= "0") {
                 echo $val['mag_037'] . '/' . $val['mag_037_confirmed'];

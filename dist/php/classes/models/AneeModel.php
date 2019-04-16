@@ -98,7 +98,7 @@ class AneeModel {
          AND vers.ID_AGR_STATUS IN ('SGN', 'CAN', 'WFS', 'INK')
          AND agr.N_AGREEMENT = vers.N_AGREEMENT
       )
-    AND serv.ID_SERVICE_TYPE IN ('TGSC', 'PPSC', 'PISC')
+    AND serv.ID_SERVICE_TYPE IN ('TGSC', 'PPSC', 'PISC', 'TGMF', 'PPMF', 'PIMF')
     /*   AND spl.COD_UTL_SUPPLIER = '141'*/
   GROUP BY
     agr.N_AGREEMENT,

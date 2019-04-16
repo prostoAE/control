@@ -30,16 +30,18 @@ class SupModel {
    * метод получает данные из СУП за указаный период и загружает в таблицу источник
    */
   public function loadSourceData() {
-    $query = "SELECT DISTINCT
+    $query = /** @lang Oracle */
+        "SELECT DISTINCT
     --	mnt.id AS mount_id,
     --	pr.ID AS promoaction_id,
     TRUNC(per.START_DATE) AS START_DATE,
     TRUNC(per.END_DATE) AS END_DATE,
-    segm.AID AS segment,getDataFromFinal
+    segm.AID AS segment,
     TO_NUMBER(spl.CODE) AS frs,
     art.AUCHAN_CODE AS article,
     (case mnt.COMMENTS when 'TP' then (case typ.CODE when 'Ponton' then 'TGSC' when 'TG' then 'PPSC' else 'PISC' end) else (case typ.CODE when 'Ponton' then 'PPSC' when 'TG' then 'TGSC' else 'PISC' end) end) as type_promo,
     mnt.COMMENTS,
+    null as super_ind,
     --	mnt.BUDGET,
     --	mag.CODE AS num_mag,
     sum(CASE mag.CODE WHEN '001' then mnt.BUDGET ELSE 0 end) AS \"001\",
@@ -59,7 +61,7 @@ class SupModel {
     sum(CASE mag.CODE WHEN '024' then mnt.BUDGET ELSE 0 end) AS \"024\",
     sum(CASE mag.CODE WHEN '025' then mnt.BUDGET ELSE 0 end) AS \"025\",
     sum(CASE mag.CODE WHEN '026' then mnt.BUDGET ELSE 0 end) AS \"026\",
-    sum(CASE mag.CODE WHEN '027' then mnt.BUDGET ELSE 0 end) AS \"027\",
+    null AS \"027\",
     sum(CASE mag.CODE WHEN '028' then mnt.BUDGET ELSE 0 end) AS \"028\",
     sum(CASE mag.CODE WHEN '029' then mnt.BUDGET ELSE 0 end) AS \"029\",
     sum(CASE mag.CODE WHEN '030' then mnt.BUDGET ELSE 0 end) AS \"030\",
@@ -68,7 +70,7 @@ class SupModel {
     sum(CASE mag.CODE WHEN '033' then mnt.BUDGET ELSE 0 end) AS \"033\",
     sum(CASE mag.CODE WHEN '034' then mnt.BUDGET ELSE 0 end) AS \"034\",
     sum(CASE mag.CODE WHEN '035' then mnt.BUDGET ELSE 0 end) AS \"035\",
-    sum(CASE mag.CODE WHEN '037' then mnt.BUDGET ELSE 0 end) AS \"037\"
+    null AS \"037\"
   FROM
     PROMO6.PROMOACTION pr
       LEFT JOIN
@@ -113,9 +115,95 @@ class SupModel {
     spl.NAME,
     art.AUCHAN_CODE,
     typ.CODE,
-    mnt.COMMENTS";
+    mnt.COMMENTS
+  UNION ALL
+    SELECT DISTINCT
+  --	mnt.id AS mount_id,
+  --	pr.ID AS promoaction_id,
+  TRUNC(per.START_DATE) AS START_DATE,
+  TRUNC(per.END_DATE) AS END_DATE,
+  segm.AID AS segment,
+  TO_NUMBER(spl.CODE) AS frs,
+  art.AUCHAN_CODE AS article,
+  (case mnt.COMMENTS when 'TP' then (case typ.CODE when 'Ponton' then 'TGMF' when 'TG' then 'PPMF' else 'PIMF' end) else (case typ.CODE when 'Ponton' then 'PPMF' when 'TG' then 'TGMF' else 'PIMF' end) end) as type_promo,
+  mnt.COMMENTS,
+  '1' as super_ind,
+  --	mnt.BUDGET,
+  --	mag.CODE AS num_mag,
+  null AS \"001\",
+  null AS \"003\",
+  null AS \"007\",
+  null AS \"009\",
+  null AS \"010\",
+  null AS \"011\",
+  null AS \"012\",
+  null AS \"014\",
+  null AS \"015\",
+  null AS \"016\",
+  null AS \"018\",
+  null AS \"020\",
+  null AS \"022\",
+  null AS \"023\",
+  null AS \"024\",
+  null AS \"025\",
+  null AS \"026\",
+  sum(CASE mag.CODE WHEN '027' then mnt.BUDGET ELSE 0 end) AS \"027\",
+  null AS \"028\",
+  null AS \"029\",
+  null AS \"030\",
+  null AS \"031\",
+  null AS \"032\",
+  null AS \"033\",
+  null AS \"034\",
+  null AS \"035\",
+  sum(CASE mag.CODE WHEN '037' then mnt.BUDGET ELSE 0 end) AS \"037\"
+FROM
+  PROMO6.PROMOACTION pr
+    LEFT JOIN
+  PROMO6.PERIOD_CALENDAR per
+  ON pr.PERIOD_CALENDAR_ID = per.ID
+    LEFT JOIN
+  PROMO6.SEGMENT segm
+  ON segm.ID = pr.SEGMENT_ID
+    LEFT JOIN
+  PROMO6.MOUNT mnt
+  ON mnt.PROMOACTION_ID = pr.ID
+    LEFT JOIN
+  PROMO6.STORE mag
+  ON mnt.STORE_ID = mag.ID
+    LEFT JOIN
+  PROMO6.SUPPLIER spl
+  ON mnt.SUPPLIER_ID = spl.ID
+    --LEFT JOIN
+    --	PROMO6.PROMOACTION_GOODS pag
+    --	ON pag.PROMOACTION_ID = pr.ID
+    LEFT JOIN
+  PROMO6.MOUNT_GOODS art
+  ON mnt.ID = art.MOUNT_ID
+    LEFT JOIN
+  PROMO6.PA_TYPE typ
+  ON pr.PA_TYPE_ID = typ.ID
+WHERE
+    per.START_DATE >= TO_DATE(?)
+  AND per.END_DATE <= TO_DATE(?)
+  AND pr.IS_BROKEN = '0'
+  AND mnt.PROMOACTION_ID IS NOT NULL
+  -- AND art.AUCHAN_CODE = '338192'
+  -- AND spl.CODE = '535'
+  --	AND mag.CODE = 24
+GROUP BY
+  --	mnt.id,
+  --	pr.ID,
+  TRUNC(per.START_DATE),
+  TRUNC(per.END_DATE),
+  segm.AID,
+  TO_NUMBER(spl.CODE),
+  spl.NAME,
+  art.AUCHAN_CODE,
+  typ.CODE,
+  mnt.COMMENTS";
 
-    $result = Db::select(Db::connectSup(), $query, [$this->startDate, $this->endDate]);
+    $result = Db::select(Db::connectSup(), $query, [$this->startDate, $this->endDate, $this->startDate, $this->endDate]);
 
     return $result;
   }
@@ -126,8 +214,8 @@ class SupModel {
    */
   public function insertSourceData($array) {
     foreach ($array as $k => $v) {
-      $query = "INSERT INTO sup_source (start_date,end_date,segment,frs,article,type_promo,comments,mag_001,mag_003,mag_007,mag_009,mag_010,mag_011,mag_012,mag_014,mag_015,mag_016,mag_018,mag_020,mag_022,mag_023,mag_024,mag_025,mag_026,mag_027,mag_028,mag_029,mag_030,mag_031,mag_032,mag_033,mag_034,mag_035,mag_037)
-    VALUES (STR_TO_DATE('{$v['START_DATE']}', '%d.%m.%Y'), STR_TO_DATE('{$v['END_DATE']}', '%d.%m.%Y'),'{$v['SEGMENT']}','{$v['FRS']}','{$v['ARTICLE']}','{$v['TYPE_PROMO']}','{$v['COMMENTS']}', '{$v['001']}', '{$v['003']}', '{$v['007']}', '{$v['009']}', '{$v['010']}', '{$v['011']}', '{$v['012']}', '{$v['014']}', '{$v['015']}', '{$v['016']}', '{$v['018']}', '{$v['020']}', '{$v['022']}', '{$v['023']}', '{$v['024']}', '{$v['025']}', '{$v['026']}', '{$v['027']}', '{$v['028']}', '{$v['029']}', '{$v['030']}', '{$v['031']}', '{$v['032']}', '{$v['033']}', '{$v['034']}', '{$v['035']}', '{$v['037']}')";
+      $query = "INSERT INTO sup_source (start_date,end_date,segment,frs,article,type_promo,comments,super_ind,mag_001,mag_003,mag_007,mag_009,mag_010,mag_011,mag_012,mag_014,mag_015,mag_016,mag_018,mag_020,mag_022,mag_023,mag_024,mag_025,mag_026,mag_027,mag_028,mag_029,mag_030,mag_031,mag_032,mag_033,mag_034,mag_035,mag_037)
+    VALUES (STR_TO_DATE('{$v['START_DATE']}', '%d.%m.%Y'), STR_TO_DATE('{$v['END_DATE']}', '%d.%m.%Y'),'{$v['SEGMENT']}','{$v['FRS']}','{$v['ARTICLE']}','{$v['TYPE_PROMO']}','{$v['COMMENTS']}','{$v['SUPER_IND']}','{$v['001']}', '{$v['003']}', '{$v['007']}', '{$v['009']}', '{$v['010']}', '{$v['011']}', '{$v['012']}', '{$v['014']}', '{$v['015']}', '{$v['016']}', '{$v['018']}', '{$v['020']}', '{$v['022']}', '{$v['023']}', '{$v['024']}', '{$v['025']}', '{$v['026']}', '{$v['027']}', '{$v['028']}', '{$v['029']}', '{$v['030']}', '{$v['031']}', '{$v['032']}', '{$v['033']}', '{$v['034']}', '{$v['035']}', '{$v['037']}')";
       Db::insert(Db::connectSql(), $query);
     }
   }
@@ -137,7 +225,8 @@ class SupModel {
    * @return mixed
    */
   public function getDataFromSourceTable($startDate, $endDate) {
-    $query = "select
+    $query = /** @lang MySQL */
+        "select
     src.start_date,
     src.end_date,
     cca.buyer,
@@ -148,6 +237,7 @@ class SupModel {
     max(src.article) as article,
     src.type_promo,
     src.comments,
+    src.super_ind,
     an.billing_cost_per_service,
     src.mag_001,
     src.mag_003,
@@ -199,6 +289,7 @@ class SupModel {
     src.frs,
     src.type_promo,
     src.comments,
+    src.proxy_ind,
     an.billing_cost_per_service";
 
     $result = Db::select(Db::connectSql(), $query, [$startDate, $endDate]);
@@ -212,8 +303,8 @@ class SupModel {
    */
   public function insertToFinalTable($array) {
     foreach ($array as $item) {
-      $query = "insert into sup_final (start_date, end_date, buyer, short_condition, n_agreement, segment, frs, article, type_promo, comments, billing_cost_per_service, mag_001, mag_003, mag_007, mag_009, mag_010, mag_011, mag_012, mag_014, mag_015, mag_016, mag_018, mag_020, mag_022, mag_023, mag_024, mag_025, mag_026, mag_027, mag_028, mag_029, mag_030, mag_031, mag_032, mag_033, mag_034, mag_035, mag_037)
-      values ('{$item['start_date']}', '{$item['end_date']}', '{$item['buyer']}', '{$item['short_condition']}', '{$item['n_agreement']}', '{$item['segment']}', '{$item['frs']}', '{$item['article']}', '{$item['type_promo']}', '{$item['comments']}', '{$item['billing_cost_per_service']}', '{$item['mag_001']}', '{$item['mag_003']}', '{$item['mag_007']}', '{$item['mag_009']}', '{$item['mag_010']}', '{$item['mag_011']}', '{$item['mag_012']}', '{$item['mag_014']}', '{$item['mag_015']}', '{$item['mag_016']}', '{$item['mag_018']}', '{$item['mag_020']}', '{$item['mag_022']}', '{$item['mag_023']}', '{$item['mag_024']}', '{$item['mag_025']}', '{$item['mag_026']}', '{$item['mag_027']}', '{$item['mag_028']}', '{$item['mag_029']}', '{$item['mag_030']}', '{$item['mag_031']}', '{$item['mag_032']}', '{$item['mag_033']}', '{$item['mag_034']}', '{$item['mag_035']}', '{$item['mag_037']}')";
+      $query = "insert into sup_final (start_date, end_date, buyer, short_condition, n_agreement, segment, frs, article, type_promo, comments, billing_cost_per_service,super_ind, mag_001, mag_003, mag_007, mag_009, mag_010, mag_011, mag_012, mag_014, mag_015, mag_016, mag_018, mag_020, mag_022, mag_023, mag_024, mag_025, mag_026, mag_027, mag_028, mag_029, mag_030, mag_031, mag_032, mag_033, mag_034, mag_035, mag_037)
+      values ('{$item['start_date']}', '{$item['end_date']}', '{$item['buyer']}', '{$item['short_condition']}', '{$item['n_agreement']}', '{$item['segment']}', '{$item['frs']}', '{$item['article']}', '{$item['type_promo']}', '{$item['comments']}', '{$item['billing_cost_per_service']}', '{$item['super_ind']}', '{$item['mag_001']}', '{$item['mag_003']}', '{$item['mag_007']}', '{$item['mag_009']}', '{$item['mag_010']}', '{$item['mag_011']}', '{$item['mag_012']}', '{$item['mag_014']}', '{$item['mag_015']}', '{$item['mag_016']}', '{$item['mag_018']}', '{$item['mag_020']}', '{$item['mag_022']}', '{$item['mag_023']}', '{$item['mag_024']}', '{$item['mag_025']}', '{$item['mag_026']}', '{$item['mag_027']}', '{$item['mag_028']}', '{$item['mag_029']}', '{$item['mag_030']}', '{$item['mag_031']}', '{$item['mag_032']}', '{$item['mag_033']}', '{$item['mag_034']}', '{$item['mag_035']}', '{$item['mag_037']}')";
 
       Db::insert(Db::connectSql(),$query);
     }

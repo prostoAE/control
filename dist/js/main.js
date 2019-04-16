@@ -42,7 +42,7 @@ function hideTarifModal() {
   tarifModal.fadeOut();
 }
 
-
+/* Изменение тарифа */
 $(".tarif-form__button").on('click', function (e) {
   e.preventDefault();
 
@@ -65,15 +65,16 @@ $(".tarif-form__button").on('click', function (e) {
   });
 });
 
-
+/* Обновление тарифов в таблицу промо после AJAX запроса */
 function updateCell(id, store, tarif) {
   var oldTarif;
   var newTarif;
   var path = $('.edit-cost[data-id='+id+'][data-store='+store+']').parent();
-  var re = /[^\/]*/;
+  var regExp = /[^\/]*/;
 
-  oldTarif = path.text().match(re);
+  oldTarif = path.text().match(regExp);
   path.text("");
   newTarif = path.text(oldTarif+'/'+tarif);
+
   return newTarif;
 }

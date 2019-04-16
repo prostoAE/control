@@ -26,7 +26,7 @@ class SupController extends AppController {
   public function getSource($startDate, $endDate) {
     $this->sup->setStartDate($startDate);
     $this->sup->setEndDate($endDate);
-    $sourceData = $this->sup->loadSourceData();
+    debug($sourceData = $this->sup->loadSourceData());
     $this->sup->insertSourceData($sourceData);
   }
 
