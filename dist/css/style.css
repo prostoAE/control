@@ -2,6 +2,7 @@
 /* import SCSS components */
 /* colors */
 /* Стиль таблиц */
+/* Стиль кнопок */
 /* Basic settings */
 body {
   margin: 0;
@@ -244,7 +245,7 @@ body {
         font-size: 1rem;
         line-height: 1rem;
         color: #ffffff; }
-    .filters .filter-form button {
+    .filters .filter-form .filter-btn {
       position: relative;
       padding: .3rem .8rem;
       background: #989898;
@@ -254,11 +255,23 @@ body {
       border: 1px solid #ffffff;
       border-radius: 5px;
       outline: none; }
-      .filters .filter-form button:hover {
+      .filters .filter-form .filter-btn:hover {
         background: #b2b2b2; }
-      .filters .filter-form button .fa-filter {
+      .filters .filter-form .filter-btn .fa-filter {
         margin-left: .5rem;
         font-size: .8rem; }
+    .filters .filter-form .excel-btn {
+      position: relative;
+      padding: .3rem .8rem;
+      background: #23af40;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 5px;
+      outline: none; }
+      .filters .filter-form .excel-btn:hover {
+        background: #30d652; }
 
 .table-box {
   margin: 1rem  auto;

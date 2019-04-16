@@ -18,3 +18,19 @@
     }
   }
 }
+
+/* Стиль кнопок */
+@mixin primary-btn($color) {
+  position: relative;
+  padding: .3rem .8rem;
+  background: $color;
+  font-size: 1rem;
+  line-height: 1rem;
+  color: $white;
+  border: 1px solid $white;
+  border-radius: 5px;
+  outline: none;
+  &:hover {
+    background: lighten($color, 10%);
+  }
+}

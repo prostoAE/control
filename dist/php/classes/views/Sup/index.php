@@ -39,7 +39,8 @@
           <label>
             <input name="article" type="text" placeholder="article">
           </label>
-          <button name="submit" type="submit">Применить<i class="fas fa-filter"></i></button>
+          <button class="filter-btn" name="submit" type="submit">Применить<i class="fas fa-filter"></i></button>
+          <button class="excel-btn" name="to-excel">В ексель</button>
         </div>
       </form>
     </div>

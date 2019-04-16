@@ -78,3 +78,18 @@ function updateCell(id, store, tarif) {
 
   return newTarif;
 }
+
+/* Export to Excel */
+$('.excel-btn').on('click', function (e) {
+  e.preventDefault();
+
+  $.ajax({
+    type: 'post',
+    url: 'ajax/export-excel',
+    dataType: 'html',
+    data: '',
+    success: function (responce) {
+      console.log(responce);
+    }
+  });
+});

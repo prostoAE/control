@@ -10,9 +10,11 @@ spl_autoload_register(function ($class) {
 require_once 'php/config.php';
 require_once PHP . '/functions.php';
 require_once PHP . '/routes.php';
+require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 use php\core\App;
 
 new App();
+
 
 //debug(\php\core\Router::getRoutes());

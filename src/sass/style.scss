@@ -202,23 +202,15 @@ body {
         color: $white;
       }
     }
-    button {
-      position: relative;
-      padding: .3rem .8rem;
-      background: $text-color;
-      font-size: 1rem;
-      line-height: 1rem;
-      color: $white;
-      border: 1px solid $white;
-      border-radius: 5px;
-      outline: none;
-      &:hover {
-        background: lighten($text-color, 10%);
-      }
+    .filter-btn {
+      @include primary-btn($text-color);
       .fa-filter {
         margin-left: .5rem;
         font-size: .8rem;
       }
+    }
+    .excel-btn {
+      @include primary-btn($button-color);
     }
   }
 }
