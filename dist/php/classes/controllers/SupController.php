@@ -26,7 +26,7 @@ class SupController extends AppController {
   public function getSource($startDate, $endDate) {
     $this->sup->setStartDate($startDate);
     $this->sup->setEndDate($endDate);
-    debug($sourceData = $this->sup->loadSourceData());
+    $sourceData = $this->sup->loadSourceData();
     $this->sup->insertSourceData($sourceData);
   }
 
@@ -49,9 +49,10 @@ class SupController extends AppController {
 
 //      $this->ccaUpdate('2019');
 //      $this->serviceUpdate('2019');
-//      $this->getSource('01.12.2018', '31.03.2019');
-//      $this->loadToFinalTable('01.12.2018', '31.03.2019');
+//      $this->getSource('13.03.2019', '26.03.2019');
+//      $this->loadToFinalTable('13.03.2019', '26.03.2019');
 
+      $_SESSION['supQuery'] = $query;
       return $query;
     }
   }

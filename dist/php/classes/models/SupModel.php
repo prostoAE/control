@@ -33,7 +33,7 @@ class SupModel {
     $query = /** @lang Oracle */
         "SELECT DISTINCT
     --	mnt.id AS mount_id,
-    --	pr.ID AS promoaction_id,
+    pr.ID AS promoaction_id,
     TRUNC(per.START_DATE) AS START_DATE,
     TRUNC(per.END_DATE) AS END_DATE,
     segm.AID AS segment,
@@ -107,7 +107,7 @@ class SupModel {
     --	AND mag.CODE = 24
   GROUP BY
     --	mnt.id,
-    --	pr.ID,
+    pr.ID,
     TRUNC(per.START_DATE),
     TRUNC(per.END_DATE),
     segm.AID,
@@ -119,7 +119,7 @@ class SupModel {
   UNION ALL
     SELECT DISTINCT
   --	mnt.id AS mount_id,
-  --	pr.ID AS promoaction_id,
+  pr.ID AS promoaction_id,
   TRUNC(per.START_DATE) AS START_DATE,
   TRUNC(per.END_DATE) AS END_DATE,
   segm.AID AS segment,
@@ -193,7 +193,7 @@ WHERE
   --	AND mag.CODE = 24
 GROUP BY
   --	mnt.id,
-  --	pr.ID,
+  pr.ID,
   TRUNC(per.START_DATE),
   TRUNC(per.END_DATE),
   segm.AID,
@@ -214,8 +214,8 @@ GROUP BY
    */
   public function insertSourceData($array) {
     foreach ($array as $k => $v) {
-      $query = "INSERT INTO sup_source (start_date,end_date,segment,frs,article,type_promo,comments,super_ind,mag_001,mag_003,mag_007,mag_009,mag_010,mag_011,mag_012,mag_014,mag_015,mag_016,mag_018,mag_020,mag_022,mag_023,mag_024,mag_025,mag_026,mag_027,mag_028,mag_029,mag_030,mag_031,mag_032,mag_033,mag_034,mag_035,mag_037)
-    VALUES (STR_TO_DATE('{$v['START_DATE']}', '%d.%m.%Y'), STR_TO_DATE('{$v['END_DATE']}', '%d.%m.%Y'),'{$v['SEGMENT']}','{$v['FRS']}','{$v['ARTICLE']}','{$v['TYPE_PROMO']}','{$v['COMMENTS']}','{$v['SUPER_IND']}','{$v['001']}', '{$v['003']}', '{$v['007']}', '{$v['009']}', '{$v['010']}', '{$v['011']}', '{$v['012']}', '{$v['014']}', '{$v['015']}', '{$v['016']}', '{$v['018']}', '{$v['020']}', '{$v['022']}', '{$v['023']}', '{$v['024']}', '{$v['025']}', '{$v['026']}', '{$v['027']}', '{$v['028']}', '{$v['029']}', '{$v['030']}', '{$v['031']}', '{$v['032']}', '{$v['033']}', '{$v['034']}', '{$v['035']}', '{$v['037']}')";
+      $query = "INSERT INTO sup_source (promoaction_id,start_date,end_date,segment,frs,article,type_promo,comments,super_ind,mag_001,mag_003,mag_007,mag_009,mag_010,mag_011,mag_012,mag_014,mag_015,mag_016,mag_018,mag_020,mag_022,mag_023,mag_024,mag_025,mag_026,mag_027,mag_028,mag_029,mag_030,mag_031,mag_032,mag_033,mag_034,mag_035,mag_037)
+    VALUES ('{$v['PROMOACTION_ID']}', STR_TO_DATE('{$v['START_DATE']}', '%d.%m.%Y'), STR_TO_DATE('{$v['END_DATE']}', '%d.%m.%Y'),'{$v['SEGMENT']}','{$v['FRS']}','{$v['ARTICLE']}','{$v['TYPE_PROMO']}','{$v['COMMENTS']}','{$v['SUPER_IND']}','{$v['001']}', '{$v['003']}', '{$v['007']}', '{$v['009']}', '{$v['010']}', '{$v['011']}', '{$v['012']}', '{$v['014']}', '{$v['015']}', '{$v['016']}', '{$v['018']}', '{$v['020']}', '{$v['022']}', '{$v['023']}', '{$v['024']}', '{$v['025']}', '{$v['026']}', '{$v['027']}', '{$v['028']}', '{$v['029']}', '{$v['030']}', '{$v['031']}', '{$v['032']}', '{$v['033']}', '{$v['034']}', '{$v['035']}', '{$v['037']}')";
       Db::insert(Db::connectSql(), $query);
     }
   }
@@ -227,6 +227,7 @@ GROUP BY
   public function getDataFromSourceTable($startDate, $endDate) {
     $query = /** @lang MySQL */
         "select
+    src.promoaction_id,
     src.start_date,
     src.end_date,
     cca.buyer,
@@ -280,6 +281,7 @@ GROUP BY
   where src.start_date >= str_to_date(?, '%Y.%m.%d')
     and src.end_date <= str_to_date(?, '%Y.%m.%d')
   group by
+    src.promoaction_id,
     src.start_date,
     src.end_date,
     cca.buyer,
@@ -303,8 +305,8 @@ GROUP BY
    */
   public function insertToFinalTable($array) {
     foreach ($array as $item) {
-      $query = "insert into sup_final (start_date, end_date, buyer, short_condition, n_agreement, segment, frs, article, type_promo, comments, billing_cost_per_service,super_ind, mag_001, mag_003, mag_007, mag_009, mag_010, mag_011, mag_012, mag_014, mag_015, mag_016, mag_018, mag_020, mag_022, mag_023, mag_024, mag_025, mag_026, mag_027, mag_028, mag_029, mag_030, mag_031, mag_032, mag_033, mag_034, mag_035, mag_037)
-      values ('{$item['start_date']}', '{$item['end_date']}', '{$item['buyer']}', '{$item['short_condition']}', '{$item['n_agreement']}', '{$item['segment']}', '{$item['frs']}', '{$item['article']}', '{$item['type_promo']}', '{$item['comments']}', '{$item['billing_cost_per_service']}', '{$item['super_ind']}', '{$item['mag_001']}', '{$item['mag_003']}', '{$item['mag_007']}', '{$item['mag_009']}', '{$item['mag_010']}', '{$item['mag_011']}', '{$item['mag_012']}', '{$item['mag_014']}', '{$item['mag_015']}', '{$item['mag_016']}', '{$item['mag_018']}', '{$item['mag_020']}', '{$item['mag_022']}', '{$item['mag_023']}', '{$item['mag_024']}', '{$item['mag_025']}', '{$item['mag_026']}', '{$item['mag_027']}', '{$item['mag_028']}', '{$item['mag_029']}', '{$item['mag_030']}', '{$item['mag_031']}', '{$item['mag_032']}', '{$item['mag_033']}', '{$item['mag_034']}', '{$item['mag_035']}', '{$item['mag_037']}')";
+      $query = "insert into sup_final (promoaction_id,start_date, end_date, buyer, short_condition, n_agreement, segment, frs, article, type_promo, comments, billing_cost_per_service,super_ind, mag_001, mag_003, mag_007, mag_009, mag_010, mag_011, mag_012, mag_014, mag_015, mag_016, mag_018, mag_020, mag_022, mag_023, mag_024, mag_025, mag_026, mag_027, mag_028, mag_029, mag_030, mag_031, mag_032, mag_033, mag_034, mag_035, mag_037)
+      values ('{$item['promoaction_id']}', '{$item['start_date']}', '{$item['end_date']}', '{$item['buyer']}', '{$item['short_condition']}', '{$item['n_agreement']}', '{$item['segment']}', '{$item['frs']}', '{$item['article']}', '{$item['type_promo']}', '{$item['comments']}', '{$item['billing_cost_per_service']}', '{$item['super_ind']}', '{$item['mag_001']}', '{$item['mag_003']}', '{$item['mag_007']}', '{$item['mag_009']}', '{$item['mag_010']}', '{$item['mag_011']}', '{$item['mag_012']}', '{$item['mag_014']}', '{$item['mag_015']}', '{$item['mag_016']}', '{$item['mag_018']}', '{$item['mag_020']}', '{$item['mag_022']}', '{$item['mag_023']}', '{$item['mag_024']}', '{$item['mag_025']}', '{$item['mag_026']}', '{$item['mag_027']}', '{$item['mag_028']}', '{$item['mag_029']}', '{$item['mag_030']}', '{$item['mag_031']}', '{$item['mag_032']}', '{$item['mag_033']}', '{$item['mag_034']}', '{$item['mag_035']}', '{$item['mag_037']}')";
 
       Db::insert(Db::connectSql(),$query);
     }
