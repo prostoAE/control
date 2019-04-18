@@ -86,10 +86,10 @@ $('.excel-btn').on('click', function (e) {
   $.ajax({
     type: 'post',
     url: 'ajax/export-excel',
-    dataType: 'text',
     data: '',
     success: function (responce) {
       console.log(responce);
+      document.location.href = 'ajax/export-excel';
     }
   });
 });
