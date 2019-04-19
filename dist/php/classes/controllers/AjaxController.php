@@ -112,19 +112,249 @@ class AjaxController extends AppController {
       $sheet->setCellValue('AJ' . $row, $v['mag_034_confirmed'] >= '0'? $v['mag_034_confirmed']: $v['mag_034']);
       $sheet->setCellValue('AK' . $row, $v['mag_035_confirmed'] >= '0'? $v['mag_035_confirmed']: $v['mag_035']);
       $sheet->setCellValue('AL' . $row, $v['mag_037_confirmed'] >= '0'? $v['mag_037_confirmed']: $v['mag_037']);
+
+      /* ЗЗамена нулей на пустую строку */
+      if($sheet->getCell('L' . $row)->getValue() == '0') {
+        $sheet->setCellValue('L' . $row, '');
+      }
+      if($sheet->getCell('M' . $row)->getValue() == '0') {
+        $sheet->setCellValue('M' . $row, '');
+      }
+      if($sheet->getCell('N' . $row)->getValue() == '0') {
+        $sheet->setCellValue('N' . $row, '');
+      }
+      if($sheet->getCell('O' . $row)->getValue() == '0') {
+        $sheet->setCellValue('O' . $row, '');
+      }
+      if($sheet->getCell('P' . $row)->getValue() == '0') {
+        $sheet->setCellValue('P' . $row, '');
+      }
+      if($sheet->getCell('Q' . $row)->getValue() == '0') {
+        $sheet->setCellValue('Q' . $row, '');
+      }
+      if($sheet->getCell('R' . $row)->getValue() == '0') {
+        $sheet->setCellValue('R' . $row, '');
+      }
+      if($sheet->getCell('S' . $row)->getValue() == '0') {
+        $sheet->setCellValue('S' . $row, '');
+      }
+      if($sheet->getCell('T' . $row)->getValue() == '0') {
+        $sheet->setCellValue('T' . $row, '');
+      }
+      if($sheet->getCell('U' . $row)->getValue() == '0') {
+        $sheet->setCellValue('U' . $row, '');
+      }
+      if($sheet->getCell('V' . $row)->getValue() == '0') {
+        $sheet->setCellValue('V' . $row, '');
+      }
+      if($sheet->getCell('W' . $row)->getValue() == '0') {
+        $sheet->setCellValue('W' . $row, '');
+      }
+      if($sheet->getCell('X' . $row)->getValue() == '0') {
+        $sheet->setCellValue('X' . $row, '');
+      }
+      if($sheet->getCell('Y' . $row)->getValue() == '0') {
+        $sheet->setCellValue('Y' . $row, '');
+      }
+      if($sheet->getCell('Z' . $row)->getValue() == '0') {
+        $sheet->setCellValue('Z' . $row, '');
+      }
+      if($sheet->getCell('AA' . $row)->getValue() == '0') {
+        $sheet->setCellValue('AA' . $row, '');
+      }
+      if($sheet->getCell('AB' . $row)->getValue() == '0') {
+        $sheet->setCellValue('AB' . $row, '');
+      }
+      if($sheet->getCell('AC' . $row)->getValue() == '0') {
+        $sheet->setCellValue('AC' . $row, '');
+      }
+      if($sheet->getCell('AD' . $row)->getValue() == '0') {
+        $sheet->setCellValue('AD' . $row, '');
+      }
+      if($sheet->getCell('AE' . $row)->getValue() == '0') {
+        $sheet->setCellValue('AE' . $row, '');
+      }
+      if($sheet->getCell('AF' . $row)->getValue() == '0') {
+        $sheet->setCellValue('AF' . $row, '');
+      }
+      if($sheet->getCell('AG' . $row)->getValue() == '0') {
+        $sheet->setCellValue('AG' . $row, '');
+      }
+      if($sheet->getCell('AH' . $row)->getValue() == '0') {
+        $sheet->setCellValue('AH' . $row, '');
+      }
+      if($sheet->getCell('AI' . $row)->getValue() == '0') {
+        $sheet->setCellValue('AI' . $row, '');
+      }
+      if($sheet->getCell('AJ' . $row)->getValue() == '0') {
+        $sheet->setCellValue('AJ' . $row, '');
+      }
+      if($sheet->getCell('AK' . $row)->getValue() == '0') {
+        $sheet->setCellValue('AK' . $row, '');
+      }
+      if($sheet->getCell('AL' . $row)->getValue() == '0') {
+        $sheet->setCellValue('AL' . $row, '');
+      }
+
+      /* Заливка ячеек с измененным тарифом */
+      if($v['mag_001_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('L' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+        }
+      if($v['mag_003_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('M' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_007_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('N' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_009_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('O' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_010_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('P' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_011_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('Q' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_012_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('R' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_014_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('S' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_015_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('T' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_016_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('U' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_018_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('V' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_020_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('W' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_022_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('X' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_023_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('Y' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_024_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('Z' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_025_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('AA' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_026_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('AB' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_027_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('AC' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_028_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('AD' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_029_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('AE' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_030_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('AF' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_031_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('AG' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_032_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('AH' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_033_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('AI' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_034_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('AJ' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_035_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('AK' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+      if($v['mag_037_confirmed'] >= '0') {
+        $spreadsheet->getActiveSheet()->getStyle('AL' . $row)->getFill()
+            ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
+            ->getStartColor()->setARGB('FEFFCF');
+      }
+
       $row++;
     }
 
+    /* Ширина столбцов */
+    $spreadsheet->getActiveSheet()->getColumnDimension('A')->setAutoSize(true);
+    $spreadsheet->getActiveSheet()->getColumnDimension('B')->setAutoSize(true);
+    $spreadsheet->getActiveSheet()->getColumnDimension('C')->setAutoSize(true);
+    $spreadsheet->getActiveSheet()->getColumnDimension('D')->setAutoSize(true);
+    $spreadsheet->getActiveSheet()->getColumnDimension('E')->setAutoSize(true);
+    $spreadsheet->getActiveSheet()->getColumnDimension('F')->setAutoSize(true);
+    $spreadsheet->getActiveSheet()->getColumnDimension('G')->setAutoSize(true);
+    $spreadsheet->getActiveSheet()->getColumnDimension('H')->setAutoSize(true);
+    $spreadsheet->getActiveSheet()->getColumnDimension('I')->setAutoSize(true);
+    $spreadsheet->getActiveSheet()->getColumnDimension('J')->setAutoSize(true);
+    $spreadsheet->getActiveSheet()->getColumnDimension('K')->setAutoSize(true);
 
-//    $writer = new Xlsx($spreadsheet);
-//    $writer->save(ROOT . '/hello world.xlsx');
 
-    header("Content-Type:   application/vnd.ms-excel; charset=utf-8");
-    header("Content-type:   application/x-msexcel; charset=utf-8");
-    header("Content-Disposition: attachment; filename=Promo.xlsx");
-    header("Expires: 0");
-    header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-    header("Cache-Control: private",false);
+
+    /* Set Headers */
+    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    header('Content-Disposition: attachment;filename="myfile.xlsx"');
+    header('Cache-Control: max-age=0');
 
 
     $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
