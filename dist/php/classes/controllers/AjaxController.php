@@ -114,87 +114,33 @@ class AjaxController extends AppController {
       $sheet->setCellValue('AL' . $row, $v['mag_037_confirmed'] >= '0'? $v['mag_037_confirmed']: $v['mag_037']);
 
       /* ЗЗамена нулей на пустую строку */
-      if($sheet->getCell('L' . $row)->getValue() == '0') {
-        $sheet->setCellValue('L' . $row, '');
-      }
-      if($sheet->getCell('M' . $row)->getValue() == '0') {
-        $sheet->setCellValue('M' . $row, '');
-      }
-      if($sheet->getCell('N' . $row)->getValue() == '0') {
-        $sheet->setCellValue('N' . $row, '');
-      }
-      if($sheet->getCell('O' . $row)->getValue() == '0') {
-        $sheet->setCellValue('O' . $row, '');
-      }
-      if($sheet->getCell('P' . $row)->getValue() == '0') {
-        $sheet->setCellValue('P' . $row, '');
-      }
-      if($sheet->getCell('Q' . $row)->getValue() == '0') {
-        $sheet->setCellValue('Q' . $row, '');
-      }
-      if($sheet->getCell('R' . $row)->getValue() == '0') {
-        $sheet->setCellValue('R' . $row, '');
-      }
-      if($sheet->getCell('S' . $row)->getValue() == '0') {
-        $sheet->setCellValue('S' . $row, '');
-      }
-      if($sheet->getCell('T' . $row)->getValue() == '0') {
-        $sheet->setCellValue('T' . $row, '');
-      }
-      if($sheet->getCell('U' . $row)->getValue() == '0') {
-        $sheet->setCellValue('U' . $row, '');
-      }
-      if($sheet->getCell('V' . $row)->getValue() == '0') {
-        $sheet->setCellValue('V' . $row, '');
-      }
-      if($sheet->getCell('W' . $row)->getValue() == '0') {
-        $sheet->setCellValue('W' . $row, '');
-      }
-      if($sheet->getCell('X' . $row)->getValue() == '0') {
-        $sheet->setCellValue('X' . $row, '');
-      }
-      if($sheet->getCell('Y' . $row)->getValue() == '0') {
-        $sheet->setCellValue('Y' . $row, '');
-      }
-      if($sheet->getCell('Z' . $row)->getValue() == '0') {
-        $sheet->setCellValue('Z' . $row, '');
-      }
-      if($sheet->getCell('AA' . $row)->getValue() == '0') {
-        $sheet->setCellValue('AA' . $row, '');
-      }
-      if($sheet->getCell('AB' . $row)->getValue() == '0') {
-        $sheet->setCellValue('AB' . $row, '');
-      }
-      if($sheet->getCell('AC' . $row)->getValue() == '0') {
-        $sheet->setCellValue('AC' . $row, '');
-      }
-      if($sheet->getCell('AD' . $row)->getValue() == '0') {
-        $sheet->setCellValue('AD' . $row, '');
-      }
-      if($sheet->getCell('AE' . $row)->getValue() == '0') {
-        $sheet->setCellValue('AE' . $row, '');
-      }
-      if($sheet->getCell('AF' . $row)->getValue() == '0') {
-        $sheet->setCellValue('AF' . $row, '');
-      }
-      if($sheet->getCell('AG' . $row)->getValue() == '0') {
-        $sheet->setCellValue('AG' . $row, '');
-      }
-      if($sheet->getCell('AH' . $row)->getValue() == '0') {
-        $sheet->setCellValue('AH' . $row, '');
-      }
-      if($sheet->getCell('AI' . $row)->getValue() == '0') {
-        $sheet->setCellValue('AI' . $row, '');
-      }
-      if($sheet->getCell('AJ' . $row)->getValue() == '0') {
-        $sheet->setCellValue('AJ' . $row, '');
-      }
-      if($sheet->getCell('AK' . $row)->getValue() == '0') {
-        $sheet->setCellValue('AK' . $row, '');
-      }
-      if($sheet->getCell('AL' . $row)->getValue() == '0') {
-        $sheet->setCellValue('AL' . $row, '');
-      }
+      if($sheet->getCell('L' . $row)->getValue() == '0') {$sheet->setCellValue('L' . $row, '');}
+      if($sheet->getCell('M' . $row)->getValue() == '0') {$sheet->setCellValue('M' . $row, '');}
+      if($sheet->getCell('N' . $row)->getValue() == '0') {$sheet->setCellValue('N' . $row, '');}
+      if($sheet->getCell('O' . $row)->getValue() == '0') {$sheet->setCellValue('O' . $row, '');}
+      if($sheet->getCell('P' . $row)->getValue() == '0') {$sheet->setCellValue('P' . $row, '');}
+      if($sheet->getCell('Q' . $row)->getValue() == '0') {$sheet->setCellValue('Q' . $row, '');}
+      if($sheet->getCell('R' . $row)->getValue() == '0') {$sheet->setCellValue('R' . $row, '');}
+      if($sheet->getCell('S' . $row)->getValue() == '0') {$sheet->setCellValue('S' . $row, '');}
+      if($sheet->getCell('T' . $row)->getValue() == '0') {$sheet->setCellValue('T' . $row, '');}
+      if($sheet->getCell('U' . $row)->getValue() == '0') {$sheet->setCellValue('U' . $row, '');}
+      if($sheet->getCell('V' . $row)->getValue() == '0') {$sheet->setCellValue('V' . $row, '');}
+      if($sheet->getCell('W' . $row)->getValue() == '0') {$sheet->setCellValue('W' . $row, '');}
+      if($sheet->getCell('X' . $row)->getValue() == '0') {$sheet->setCellValue('X' . $row, '');}
+      if($sheet->getCell('Y' . $row)->getValue() == '0') {$sheet->setCellValue('Y' . $row, '');}
+      if($sheet->getCell('Z' . $row)->getValue() == '0') {$sheet->setCellValue('Z' . $row, '');}
+      if($sheet->getCell('AA' . $row)->getValue() == '0') {$sheet->setCellValue('AA' . $row, '');}
+      if($sheet->getCell('AB' . $row)->getValue() == '0') {$sheet->setCellValue('AB' . $row, '');}
+      if($sheet->getCell('AC' . $row)->getValue() == '0') {$sheet->setCellValue('AC' . $row, '');}
+      if($sheet->getCell('AD' . $row)->getValue() == '0') {$sheet->setCellValue('AD' . $row, '');}
+      if($sheet->getCell('AE' . $row)->getValue() == '0') {$sheet->setCellValue('AE' . $row, '');}
+      if($sheet->getCell('AF' . $row)->getValue() == '0') {$sheet->setCellValue('AF' . $row, '');}
+      if($sheet->getCell('AG' . $row)->getValue() == '0') {$sheet->setCellValue('AG' . $row, '');}
+      if($sheet->getCell('AH' . $row)->getValue() == '0') {$sheet->setCellValue('AH' . $row, '');}
+      if($sheet->getCell('AI' . $row)->getValue() == '0') {$sheet->setCellValue('AI' . $row, '');}
+      if($sheet->getCell('AJ' . $row)->getValue() == '0') {$sheet->setCellValue('AJ' . $row, '');}
+      if($sheet->getCell('AK' . $row)->getValue() == '0') {$sheet->setCellValue('AK' . $row, '');}
+      if($sheet->getCell('AL' . $row)->getValue() == '0') {$sheet->setCellValue('AL' . $row, '');}
 
       /* Заливка ячеек с измененным тарифом */
       if($v['mag_001_confirmed'] >= '0') {
@@ -349,14 +295,12 @@ class AjaxController extends AppController {
     $spreadsheet->getActiveSheet()->getColumnDimension('J')->setAutoSize(true);
     $spreadsheet->getActiveSheet()->getColumnDimension('K')->setAutoSize(true);
 
-
-
     /* Set Headers */
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
     header('Content-Disposition: attachment;filename="myfile.xlsx"');
     header('Cache-Control: max-age=0');
 
-
+    /* Експорт в Ексель */
     $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
     $writer->save('php://output');
   }
