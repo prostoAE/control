@@ -50,8 +50,9 @@
 <!--REPORT TABLE-->
 <section class="report-table">
   <div class="table-box">
-    <table>
+    <table class="sortable">
       <?php if($table): ?>
+      <thead>
         <tr>
           <th>start_date</th>
           <th>end_date</th>
@@ -60,7 +61,7 @@
           <th>n_agreement</th>
           <th>segment</th>
           <th>frs</th>
-          <th>frs< name/th>
+          <th>frs name</th>
           <th>article</th>
           <th>type_promo</th>
           <th>comments</th>
@@ -93,6 +94,7 @@
           <th>mag_035</th>
           <th>mag_037</th>
         </tr>
+      </thead>
         <?php
         foreach ($table as $val):
           ?>
