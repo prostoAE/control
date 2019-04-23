@@ -46,6 +46,7 @@ class AjaxController extends AppController {
     $sheet->getRowDimension('2')->setRowHeight(30);
 
     /* Заголовок таблицы */
+    /* Первая строка */
     $sheet->setCellValue('O1', 'PETR_001 PETROVKA');
     $sheet->setCellValue('P1', 'ELEC_003 KILTSEVA');
     $sheet->setCellValue('Q1', 'BERK_007 BELICHI');
@@ -74,6 +75,7 @@ class AjaxController extends AppController {
     $sheet->setCellValue('AN1', 'KHTA_027  Kharkiv - Tarasivs\'ka');
     $sheet->setCellValue('AO1', 'DAFI_037 Зоряный');
 
+    /* Вторая строка */
     $sheet->setCellValue('A2', 'отдел');
     $sheet->setCellValue('B2', 'закупщик');
     $sheet->setCellValue('C2', 'Negotiation group');
@@ -130,7 +132,7 @@ class AjaxController extends AppController {
       $sheet->setCellValue('I' . $row, $v['article'] . ', ' . $v['start_date'] . ' - ' . $v['end_date']);
       $sheet->setCellValue('J' . $row, date('d.m.Y'));
       $sheet->setCellValue('K' . $row, '');
-      $sheet->setCellValue('L' . $row, 'Добавить сумму');
+      $sheet->setCellValue('L' . $row, $v['cost_total']);
       $sheet->setCellValue('M' . $row, '');
       $sheet->setCellValue('N' . $row, $v['type_promo']);
       $sheet->setCellValue('O' . $row, $v['mag_001_confirmed'] >= '0'? $v['mag_001_confirmed']: $v['mag_001']);

@@ -1,6 +1,20 @@
 /* import SCSS components */
 @import 'variables/colors';
 @import "mixims/tables";
+@import "loader/loaders";
+
+
+/* Loader */
+.loader-bg {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.23);
+  .loader {
+    @include loader12($size: 10px, $gap: 18px, $duration: 1s, $align: middle);
+  }
+}
 
 
 /* Basic settings */

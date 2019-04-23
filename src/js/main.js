@@ -1,5 +1,6 @@
 $(document).ready(function () {
   toogleClassMenu();
+  hideLoader();
 });
 
 /*Смена класса меню*/
@@ -11,6 +12,16 @@ function toogleClassMenu() {
     menu.toggleClass('active');
   })
 }
+
+/* Показать / скрыть прелоадер */
+function showLoader() {
+  $(".loader-bg").fadeIn(500);
+}
+
+function hideLoader() {
+  $(".loader-bg").fadeOut(500);
+}
+
 
 /* Show tarif modal */
 $('.edit-cost').on('click', showTarifModal);
@@ -83,13 +94,21 @@ function updateCell(id, store, tarif) {
 $('.excel-btn').on('click', function (e) {
   e.preventDefault();
 
+  showLoader();
+
   $.ajax({
     type: 'post',
     url: 'ajax/export-excel',
     data: '',
+    beforeSend: function() {
+      showLoader();
+    },
     success: function (responce) {
       console.log(responce);
       document.location.href = 'ajax/export-excel';
+    },
+    complete: function() {
+      hideLoader();
     }
   });
 });

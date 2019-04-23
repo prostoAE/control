@@ -1,3 +1,7 @@
+<div class="loader-bg">
+  <div class="loader"></div>
+</div>
+
 <!--FILTER-->
 <section class="filters">
   <div class="container-fluid">

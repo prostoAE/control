@@ -351,7 +351,36 @@ GROUP BY
       $cond .= $item;
     }
     $cond = substr($cond, 4);
-    $query = "select * from sup_final where {$cond}";
+    $query = /** @lang MySQL */
+        "select *,
+       (if(mag_001_confirmed is null, mag_001, mag_001_confirmed) +
+       if(mag_003_confirmed is null, mag_003, mag_003_confirmed) +
+       if(mag_007_confirmed is null, mag_007, mag_007_confirmed) +
+       if(mag_009_confirmed is null, mag_009, mag_009_confirmed) +
+       if(mag_010_confirmed is null, mag_010, mag_010_confirmed) +
+       if(mag_011_confirmed is null, mag_011, mag_011_confirmed) +
+       if(mag_012_confirmed is null, mag_012, mag_012_confirmed) +
+       if(mag_014_confirmed is null, mag_014, mag_014_confirmed) +
+       if(mag_015_confirmed is null, mag_015, mag_015_confirmed) +
+       if(mag_016_confirmed is null, mag_016, mag_016_confirmed) +
+       if(mag_018_confirmed is null, mag_018, mag_018_confirmed) +
+       if(mag_020_confirmed is null, mag_020, mag_020_confirmed) +
+       if(mag_022_confirmed is null, mag_022, mag_022_confirmed) +
+       if(mag_023_confirmed is null, mag_023, mag_023_confirmed) +
+       if(mag_024_confirmed is null, mag_024, mag_024_confirmed) +
+       if(mag_025_confirmed is null, mag_025, mag_025_confirmed) +
+       if(mag_026_confirmed is null, mag_026, mag_026_confirmed) +
+       if(mag_028_confirmed is null, mag_028, mag_028_confirmed) +
+       if(mag_029_confirmed is null, mag_029, mag_029_confirmed) +
+       if(mag_030_confirmed is null, mag_030, mag_030_confirmed) +
+       if(mag_031_confirmed is null, mag_031, mag_031_confirmed) +
+       if(mag_032_confirmed is null, mag_032, mag_032_confirmed) +
+       if(mag_033_confirmed is null, mag_033, mag_033_confirmed) +
+       if(mag_034_confirmed is null, mag_034, mag_034_confirmed) +
+       if(mag_035_confirmed is null, mag_035, mag_035_confirmed) +
+       if(mag_027_confirmed is null, mag_027, mag_027_confirmed) +
+       if(mag_037_confirmed is null, mag_037, mag_037_confirmed)) as cost_total
+      from sup_final where {$cond}";
 
     return $query;
   }
