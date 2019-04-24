@@ -1,7 +1,7 @@
 
 <!-- Grid container -->
 <div class="container">
-  <h3>Главная</h3>
+  <h3 class="text-center">Главная</h3>
 
   <!--Grid row-->
   <div class="row d-flex justify-content-center">
