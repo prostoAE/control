@@ -223,6 +223,10 @@ body {
         font-size: .8rem;
       }
     }
+    .reset-btn {
+      @include primary-btn(#ff8377);
+      margin-left: -7rem;
+    }
     .excel-btn {
       @include primary-btn($button-color);
     }

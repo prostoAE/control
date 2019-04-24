@@ -14,7 +14,7 @@
       <form class="filter-form" method="post">
         <div class="form-row">
           <label>
-            <select name="buyer">
+            <select id="buyer" name="buyer">
               <option style="display: none" selected>BUYER</option>
               <?php foreach ($buyers as $value): ?>
                 <option><?= $value['BUYER'] ?></option>
@@ -22,7 +22,7 @@
             </select>
           </label>
           <label>
-            <select name="group">
+            <select id="group" name="group">
               <option style="display: none" selected>GROUP</option>
               <?php foreach ($groups as $value): ?>
                 <option><?= $value['GROUPE'] ?></option>
@@ -30,20 +30,21 @@
             </select>
           </label>
           <label>
-            <input name="date-from" type="text" placeholder="Дата с:" onfocus="(this.type='date')" onblur="(this.type='text')" required value="2019.03.01">
+            <input id="from" name="date-from" type="text" placeholder="Дата с:" onfocus="(this.type='date')" onblur="(this.type='text')" required value="2019.03.01">
           </label>
           <label>
-            <input name="date-to" type="text" placeholder="Дата по:" onfocus="(this.type='date')" onblur="(this.type='text')" required value="2019.03.31">
+            <input id="to" name="date-to" type="text" placeholder="Дата по:" onfocus="(this.type='date')" onblur="(this.type='text')" required value="2019.03.31">
           </label>
         </div>
         <div class="form-row">
           <label>
-            <input name="supplier" type="text" placeholder="supplier">
+            <input id="frs" name="supplier" type="text" placeholder="supplier">
           </label>
           <label>
-            <input name="article" type="text" placeholder="article">
+            <input id="article" name="article" type="text" placeholder="article">
           </label>
           <button class="filter-btn" name="submit" type="submit">Применить<i class="fas fa-filter"></i></button>
+          <button class="reset-btn" title="Сбросить фильтры"><i class="fas fa-power-off"></i></button>
           <button class="excel-btn" name="to-excel">В ексель</button>
         </div>
       </form>

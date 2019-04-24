@@ -15,12 +15,12 @@
     height: 10px;
     border-radius: 50%;
     position: relative;
-    -webkit-animation: loader12-uf6a61da7 1s linear alternate infinite;
-            animation: loader12-uf6a61da7 1s linear alternate infinite;
+    -webkit-animation: loader12-u0aff5f64 1s linear alternate infinite;
+            animation: loader12-u0aff5f64 1s linear alternate infinite;
     top: 350px;
     margin: -25px auto 0; }
 
-@-webkit-keyframes loader12-uf6a61da7 {
+@-webkit-keyframes loader12-u0aff5f64 {
   0% {
     -webkit-box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2);
             box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2); }
@@ -37,7 +37,7 @@
     -webkit-box-shadow: -36px 20px 0 0 rgba(0, 82, 236, 0.2), -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 2px #0052ec;
             box-shadow: -36px 20px 0 0 rgba(0, 82, 236, 0.2), -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 2px #0052ec; } }
 
-@keyframes loader12-uf6a61da7 {
+@keyframes loader12-u0aff5f64 {
   0% {
     -webkit-box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2);
             box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2); }
@@ -311,6 +311,19 @@ body {
       .filters .filter-form .filter-btn .fa-filter {
         margin-left: .5rem;
         font-size: .8rem; }
+    .filters .filter-form .reset-btn {
+      position: relative;
+      padding: .3rem .8rem;
+      background: #ff8377;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 5px;
+      outline: none;
+      margin-left: -7rem; }
+      .filters .filter-form .reset-btn:hover {
+        background: #ffb2aa; }
     .filters .filter-form .excel-btn {
       position: relative;
       padding: .3rem .8rem;

@@ -129,7 +129,7 @@ class AjaxController extends AppController {
       $sheet->setCellValue('F' . $row, '');
       $sheet->setCellValue('G' . $row, '');
       $sheet->setCellValue('H' . $row, '');
-      $sheet->setCellValue('I' . $row, $v['article'] . ', ' . $v['start_date'] . ' - ' . $v['end_date']);
+      $sheet->setCellValue('I' . $row, $v['article'] . ', ' . date("d.m.Y", strtotime($v['start_date'])) . ' - ' . date("d.m.Y", strtotime($v['end_date'])));
       $sheet->setCellValue('J' . $row, date('d.m.Y'));
       $sheet->setCellValue('K' . $row, '');
       $sheet->setCellValue('L' . $row, $v['cost_total']);

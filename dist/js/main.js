@@ -1,6 +1,7 @@
 $(document).ready(function () {
   toogleClassMenu();
   hideLoader();
+  setFilterFromStorage();
 });
 
 /*Смена класса меню*/
@@ -94,8 +95,6 @@ function updateCell(id, store, tarif) {
 $('.excel-btn').on('click', function (e) {
   e.preventDefault();
 
-  showLoader();
-
   $.ajax({
     type: 'post',
     url: 'ajax/export-excel',
@@ -104,7 +103,6 @@ $('.excel-btn').on('click', function (e) {
       showLoader();
     },
     success: function (responce) {
-      console.log(responce);
       document.location.href = 'ajax/export-excel';
     },
     complete: function() {
@@ -112,3 +110,42 @@ $('.excel-btn').on('click', function (e) {
     }
   });
 });
+
+/* Запись значений фильтра в сессию */
+$(".filter-btn").on("click", function () {
+  var data = $(".filter-form").serializeArray();
+  var formData = JSON.stringify(data);
+  sessionStorage.setItem("filter", formData);
+});
+
+/* Установка фильтра из сессии */
+function setFilterFromStorage() {
+  var stor = sessionStorage.getItem("filter");
+
+  if(stor) {
+    var arr = JSON.parse(stor);
+    var data = {};
+
+    for (var i = 0; i < arr.length; i++) {
+      data[arr[i]['name']] = arr[i]['value'];
+    }
+
+    $("#buyer").val(data['buyer']);
+    $("#group").val(data['group']);
+    $("#from").val(data['date-from']);
+    $("#to").val(data['date-to']);
+    $("#frs").val(data['supplier']);
+    $("#article").val(data['article']);
+  }
+}
+
+/* Сброс фильтров */
+$(".reset-btn").on("click", function (e) {
+  sessionStorage.removeItem("filter");
+});
+
+
+
+
+
+
