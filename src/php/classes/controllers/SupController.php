@@ -10,6 +10,7 @@ class SupController extends AppController {
   private static $anee;
 
   public function indexAction() {
+    $this->layout = 'supLayout';
     $this->setMeta('Система СУП', 'Система управления промо', 'Promo, sup, тарифы');
     $this->sup = new SupModel();
     self::$anee = new AneeController();
@@ -49,8 +50,8 @@ class SupController extends AppController {
 
 //      $this->ccaUpdate('2019');
 //      $this->serviceUpdate('2019');
-//      $this->getSource('13.03.2019', '26.03.2019');
-//      $this->loadToFinalTable('13.03.2019', '26.03.2019');
+//      $this->getSource('27.03.2019', '23.04.2019');
+//      $this->loadToFinalTable('27.03.2019', '23.04.2019');
 
       $_SESSION['supQuery'] = $query;
       return $query;

@@ -33,7 +33,7 @@
             <input id="from" name="date-from" type="text" placeholder="Дата с:" onfocus="(this.type='date')" onblur="(this.type='text')" required value="2019.03.01">
           </label>
           <label>
-            <input id="to" name="date-to" type="text" placeholder="Дата по:" onfocus="(this.type='date')" onblur="(this.type='text')" required value="2019.03.31">
+            <input id="to" name="date-to" type="text" placeholder="Дата по:" onfocus="(this.type='date')" onblur="(this.type='text')" required value="2019.04.30">
           </label>
         </div>
         <div class="form-row">

@@ -278,8 +278,8 @@ GROUP BY
     cca_2019 cca
     on src.frs = cca.supplier
     and src.segment = cca.id_negotiation_group
-  where src.start_date >= str_to_date(?, '%Y.%m.%d')
-    and src.end_date <= str_to_date(?, '%Y.%m.%d')
+  where src.start_date >= str_to_date(?, '%d.%m.%Y')
+    and src.end_date <= str_to_date(?, '%d.%m.%Y')
   group by
     src.promoaction_id,
     src.start_date,

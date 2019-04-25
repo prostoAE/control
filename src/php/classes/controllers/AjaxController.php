@@ -2,6 +2,7 @@
 
 namespace php\classes\controllers;
 
+use php\classes\models\AneeModel;
 use php\classes\models\Db;
 use php\classes\models\SupModel;
 use PhpOffice\PhpSpreadsheet\IOFactory;
@@ -117,6 +118,7 @@ class AjaxController extends AppController {
     $sheet->setCellValue('AM2', 'mag_035');
     $sheet->setCellValue('AN2', 'KHTA');
     $sheet->setCellValue('AO2', 'DAFI');
+    $sheet->setCellValue('AO2', 'Tarif');
 
     /* Заполнение ячеек */
     $row = 3;
@@ -125,9 +127,9 @@ class AjaxController extends AppController {
       $sheet->setCellValue('B' . $row, $v['buyer']);
       $sheet->setCellValue('C' . $row, $v['segment']);
       $sheet->setCellValue('D' . $row, $v['frs']);
-      $sheet->setCellValue('E' . $row, '');
-      $sheet->setCellValue('F' . $row, '');
-      $sheet->setCellValue('G' . $row, '');
+      $sheet->setCellValue('E' . $row, AneeModel::getSupplierName($v['frs']));
+      $sheet->setCellValue('F' . $row, $v['billing_cost_per_service']);
+      $sheet->setCellValue('G' . $row, $v['comments']);
       $sheet->setCellValue('H' . $row, '');
       $sheet->setCellValue('I' . $row, $v['article'] . ', ' . date("d.m.Y", strtotime($v['start_date'])) . ' - ' . date("d.m.Y", strtotime($v['end_date'])));
       $sheet->setCellValue('J' . $row, date('d.m.Y'));

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
   <?= $this->getMeta(); ?>
   <!-- Required meta tags -->
