@@ -2,6 +2,8 @@
 
 namespace php\classes\controllers;
 
+use php\classes\models\ldap;
+
 class MainController extends AppController {
 
   public function indexAction() {
@@ -10,6 +12,13 @@ class MainController extends AppController {
 //    $name = 'Тузик';
 //    $rang = ['caption', 'general'];
 //    $this->set(compact('name', 'rang'));
+    $ldap = new ldap();
+    if ($ldap->bind('ukr0000096', 'Auchan+04')) {
+      echo 'Done!';
+    } else {
+      echo 'error...';
+    }
+
   }
 
 }
