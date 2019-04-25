@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96c001f4-0f35-4dd9-88a0-4f7874ce13bb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/php/classes/views/Login/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/dist/php/classes/views/Login/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/php/classes/views/Login/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/php/classes/views/Login/index.php" afterDir="false" />
     </list>
@@ -83,8 +85,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/php/classes/controllers/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+            <state relative-caret-position="264">
+              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -101,7 +103,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/php/classes/controllers/AjaxController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3384">
+            <state relative-caret-position="-6057">
               <caret line="139" column="27" lean-forward="true" selection-start-line="139" selection-start-column="27" selection-end-line="139" selection-end-column="27" />
               <folding>
                 <element signature="e#43#76#0#PHP" expanded="true" />
@@ -414,7 +416,7 @@
       <workItem from="1555938631921" duration="6582000" />
       <workItem from="1556005196426" duration="7062000" />
       <workItem from="1556091498747" duration="16728000" />
-      <workItem from="1556172983478" duration="23557000" />
+      <workItem from="1556172983478" duration="23820000" />
     </task>
     <task id="LOCAL-00001" summary="fix SUP filter">
       <created>1554475292017</created>
@@ -623,7 +625,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="319270000" />
+    <option name="totallyTimeSpent" value="319533000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -636,9 +638,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.2503383" visible="true" weight="0.17930591" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.2503383" visible="true" weight="0.17930591" />
       <window_info id="Structure" order="1" sideWeight="0.7496617" side_tool="true" weight="0.17930591" />
       <window_info id="Favorites" order="2" sideWeight="0.5006766" side_tool="true" weight="0.18766066" />
       <window_info id="Gulp" order="3" sideWeight="0.5006766" side_tool="true" weight="0.18766066" />
@@ -653,7 +654,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.32882273" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32882273" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50064266" side_tool="true" weight="0.32882273" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4993573" weight="0.32611638" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4993573" visible="true" weight="0.32611638" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.3585927" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1067,16 +1068,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/php/classes/views/Login/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/php/classes/controllers/AjaxController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3384">
+        <state relative-caret-position="-6057">
           <caret line="139" column="27" lean-forward="true" selection-start-line="139" selection-start-column="27" selection-end-line="139" selection-end-column="27" />
           <folding>
             <element signature="e#43#76#0#PHP" expanded="true" />
@@ -1085,10 +1079,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/php/classes/views/Login/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/php/classes/controllers/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="19" lean-forward="true" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        <state relative-caret-position="264">
+          <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
         </state>
       </provider>
     </entry>
