@@ -60,7 +60,7 @@ class AjaxController extends AppController {
     $sheet->setCellValue('X1', 'FONT_016 FONTANKA');
     $sheet->setCellValue('Y1', 'MAGN_018 TCHERNIGIVS');
     $sheet->setCellValue('Z1', 'LPI_020 PIVDENNYI');
-    $sheet->setCellValue('AA1', 'LAVА_020');
+    $sheet->setCellValue('AA1', 'LAVА_022');
     $sheet->setCellValue('AB1', 'KMAG_023 Hluckova');
     $sheet->setCellValue('AC1', 'KSOS_024 Sosninykh');
     $sheet->setCellValue('AD1', 'KLUG_025 LUGOVA');
@@ -103,7 +103,7 @@ class AjaxController extends AppController {
     $sheet->setCellValue('X2', 'FONT');
     $sheet->setCellValue('Y2', 'MAGN');
     $sheet->setCellValue('Z2', 'LPI');
-    $sheet->setCellValue('AA2', 'Какой магазин?');
+    $sheet->setCellValue('AA2', 'LAVA');
     $sheet->setCellValue('AB2', 'KMAG');
     $sheet->setCellValue('AC2', 'KSOS');
     $sheet->setCellValue('AD2', 'KLUG');
@@ -118,7 +118,6 @@ class AjaxController extends AppController {
     $sheet->setCellValue('AM2', 'mag_035');
     $sheet->setCellValue('AN2', 'KHTA');
     $sheet->setCellValue('AO2', 'DAFI');
-    $sheet->setCellValue('AO2', 'Tarif');
 
     /* Заполнение ячеек */
     $row = 3;

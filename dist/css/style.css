@@ -15,12 +15,12 @@
     height: 10px;
     border-radius: 50%;
     position: relative;
-    -webkit-animation: loader12-u0f1c445b 1s linear alternate infinite;
-            animation: loader12-u0f1c445b 1s linear alternate infinite;
+    -webkit-animation: loader12-u3eba3787 1s linear alternate infinite;
+            animation: loader12-u3eba3787 1s linear alternate infinite;
     top: 350px;
     margin: -25px auto 0; }
 
-@-webkit-keyframes loader12-u0f1c445b {
+@-webkit-keyframes loader12-u3eba3787 {
   0% {
     -webkit-box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2);
             box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2); }
@@ -37,7 +37,7 @@
     -webkit-box-shadow: -36px 20px 0 0 rgba(0, 82, 236, 0.2), -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 2px #0052ec;
             box-shadow: -36px 20px 0 0 rgba(0, 82, 236, 0.2), -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 2px #0052ec; } }
 
-@keyframes loader12-u0f1c445b {
+@keyframes loader12-u3eba3787 {
   0% {
     -webkit-box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2);
             box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2); }
@@ -66,6 +66,22 @@ body {
   body a, body ul, body li {
     text-decoration: none;
     list-style: none; }
+
+/* LOGIN PAGE */
+#login .container #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 320px;
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA; }
+  #login .container #login-row #login-column #login-box .text-info {
+    font-size: 1rem; }
+
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px; }
+
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px; }
 
 /* HEADER */
 .header {
