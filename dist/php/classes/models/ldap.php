@@ -13,7 +13,7 @@ namespace php\classes\models;
 // */
 define('LDAP_HOST', 'ldaps://148.239.32.244');
 define('PORT', '636');
-define('DN', 'ou=users,ou=Dossier,ou=localapps,dc=auchan,dc=corp'); /* ou=ANNE - для АНЕЕ */
+define('DN', 'ou=users,ou=ANEE,ou=localapps,dc=auchan,dc=corp'); /* ou=ANNE - для АНЕЕ */
 
 class ldap {
 

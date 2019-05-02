@@ -129,8 +129,8 @@ class AjaxController extends AppController {
       $sheet->setCellValue('E' . $row, AneeModel::getSupplierName($v['frs']));
       $sheet->setCellValue('F' . $row, $v['billing_cost_per_service']);
       $sheet->setCellValue('G' . $row, $v['comments']);
-      $sheet->setCellValue('H' . $row, '');
-      $sheet->setCellValue('I' . $row, $v['article'] . ', ' . date("d.m.Y", strtotime($v['start_date'])) . ' - ' . date("d.m.Y", strtotime($v['end_date'])));
+      $sheet->setCellValue('H' . $row, $v['article']);
+      $sheet->setCellValue('I' . $row, date("d.m.Y", strtotime($v['start_date'])) . ' - ' . date("d.m.Y", strtotime($v['end_date'])));
       $sheet->setCellValue('J' . $row, date('d.m.Y'));
       $sheet->setCellValue('K' . $row, '');
       $sheet->setCellValue('L' . $row, $v['cost_total']);

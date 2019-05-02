@@ -15,12 +15,12 @@
     height: 10px;
     border-radius: 50%;
     position: relative;
-    -webkit-animation: loader12-u3eba3787 1s linear alternate infinite;
-            animation: loader12-u3eba3787 1s linear alternate infinite;
+    -webkit-animation: loader12-u322d8547 1s linear alternate infinite;
+            animation: loader12-u322d8547 1s linear alternate infinite;
     top: 350px;
     margin: -25px auto 0; }
 
-@-webkit-keyframes loader12-u3eba3787 {
+@-webkit-keyframes loader12-u322d8547 {
   0% {
     -webkit-box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2);
             box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2); }
@@ -37,7 +37,7 @@
     -webkit-box-shadow: -36px 20px 0 0 rgba(0, 82, 236, 0.2), -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 2px #0052ec;
             box-shadow: -36px 20px 0 0 rgba(0, 82, 236, 0.2), -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 2px #0052ec; } }
 
-@keyframes loader12-u3eba3787 {
+@keyframes loader12-u322d8547 {
   0% {
     -webkit-box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2);
             box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2); }
@@ -82,6 +82,13 @@ body {
 
 #login .container #login-row #login-column #login-box #login-form #register-link {
   margin-top: -85px; }
+
+.error-message {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #ff0c00;
+  font-weight: 700;
+  text-align: center; }
 
 /* HEADER */
 .header {
