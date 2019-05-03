@@ -3,6 +3,7 @@
 namespace php\classes\controllers;
 
 use php\classes\models\SupModel;
+use php\classes\models\User;
 
 class SupController extends AppController {
 
@@ -19,9 +20,44 @@ class SupController extends AppController {
 
   public function setData() {
     $table = $this->sup->getDataFromFinal($this->formHandler());
-    $buyers = self::$anee->getBuyers(2019);
-    $groups = self::$anee->getGroups(2019);
+    $buyers = $this->getAccessFilter()['buyers'];
+    $groups = $this->getAccessFilter()['groups'];
     $this->set(compact('table', 'buyers', 'groups'));
+  }
+
+  public function getAccessFilter() {
+    $access = User::getUserAccess();
+    $userList = $this->arrToStr(User::getUserLink());
+    $result = [];
+
+    switch ($access[0]['user_access']) {
+      case 1:
+      case 2:
+        $result['buyers'] = self::$anee->getBuyers(2019);
+        $result['groups'] = self::$anee->getGroups(2019);
+        break;
+      case 3:
+        $result['buyers'] = self::$anee->getBuyersWithFilter(2019, $userList);
+        $result['groups'] = self::$anee->getGroupsWithFilter(2019, $userList);
+        break;
+    }
+    return $result;
+  }
+
+  public function arrToStr($array) {
+    $newArr = [];
+    foreach ($array as $item) {
+      foreach ($item as $val) {
+        $newArr[] = $val;
+      }
+    }
+
+    $result = array_map(function($value) {
+      return "'" . $value . "'";
+    }, $newArr);
+
+    $result = implode(",", $result);
+    return $result;
   }
 
   public function getSource($startDate, $endDate) {

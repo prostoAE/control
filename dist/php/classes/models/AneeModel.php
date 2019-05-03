@@ -15,6 +15,13 @@ class AneeModel {
     return $buyers;
   }
 
+  public function getBuyersListFiltered($year = 2019, $buyers = '') {
+    $query = /** @lang Oracle */
+        "SELECT usr.name AS buyer FROM agreement agr LEFT JOIN USER_ACCOUNT usr ON agr.ID_KEY_BUYER = usr.ID_USER_ACCOUNT WHERE agr.YEAR = ? AND usr.name IN ($buyers) AND usr.name IS not null GROUP BY usr.name ORDER BY usr.name";
+    $buyers = Db::select(Db::connectAnee(), $query, [$year]);
+    return $buyers;
+  }
+
   /**
    * Метод получает из АНЕЕ перечень групп за указаный год
    * @param int $year
@@ -22,6 +29,12 @@ class AneeModel {
    */
   public function getGroupList($year = 2019) {
     $query = "select short_condition as groupe from agreement where id_agr_status in ('SGN', 'CAN', 'WFS') and year = ? group by short_condition order by short_condition";
+    $groups = Db::select(Db::connectAnee(), $query, [$year]);
+    return $groups;
+  }
+
+  public function getGroupListFiltered($year = 2019, $buyers = '') {
+    $query = "select agr.short_condition as groupe from agreement agr LEFT JOIN USER_ACCOUNT usr ON agr.ID_KEY_BUYER = usr.ID_USER_ACCOUNT where agr.id_agr_status in ('SGN', 'CAN', 'WFS') and agr.year = ? AND usr.name IN ($buyers) group by agr.short_condition order by agr.short_condition";
     $groups = Db::select(Db::connectAnee(), $query, [$year]);
     return $groups;
   }

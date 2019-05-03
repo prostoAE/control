@@ -16,5 +16,3 @@ use php\core\App;
 
 new App();
 
-
-//debug(\php\core\Router::getRoutes());

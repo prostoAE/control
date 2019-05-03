@@ -10,8 +10,16 @@ class AneeController extends AneeModel {
     return $this->getBuyersList($year);
   }
 
+  public function getBuyersWithFilter($year, $buyers) {
+    return $this->getBuyersListFiltered($year, $buyers);
+  }
+
   public function getGroups($year) {
     return $this->getGroupList($year);
+  }
+
+  public function getGroupsWithFilter($year, $buyers) {
+    return $this->getGroupListFiltered($year, $buyers);
   }
 
   public function getCca($year) {

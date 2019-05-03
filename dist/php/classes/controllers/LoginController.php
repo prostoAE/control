@@ -9,7 +9,6 @@ class LoginController extends AppController {
   public function indexAction () {
     $this->layout = 'authorise';
     $this->setMeta("Войти", "Страница авторизации на портале СУП", "login, authorise");
-
     $this->authorization();
   }
 
@@ -30,6 +29,8 @@ class LoginController extends AppController {
 
       if($ldap->bind($user, $pass)) {
         $_SESSION['auth'] = true;
+        $_SESSION['ukr'] = $user;
+        $_SESSION['psw'] = $pass;
         header('location: main');
       } else {
         $_SESSION['auth'] = true;
