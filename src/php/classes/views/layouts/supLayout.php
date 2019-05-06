@@ -24,6 +24,7 @@
           <li><a href="main" data-text="Главная">Главная</a></li>
           <li><a href="sup" data-text="SUP">SUP</a></li>
           <li><a href="" data-text="Настройки">Настройки</a></li>
+          <li><a href="" data-text="Выход" id="logOut">Выход</a></li>
         </ul>
       </nav>
     </header>

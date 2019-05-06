@@ -140,12 +140,23 @@ function setFilterFromStorage() {
 }
 
 /* Сброс фильтров */
-$(".reset-btn").on("click", function (e) {
+$(".reset-btn").on("click", function () {
   sessionStorage.removeItem("filter");
 });
 
 
+$("#logOut").on('click', function (e) {
+  e.preventDefault();
 
+  $.ajax({
+    type: 'post',
+    url: 'ajax/logout',
+    dataType: 'html',
+    complete: function () {
+      location.reload();
+    }
+  });
+});
 
 
 

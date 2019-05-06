@@ -359,4 +359,8 @@ class AjaxController extends AppController {
     $writer->save('php://output');
   }
 
+  public function logoutAction() {
+    session_destroy();
+  }
+
 }

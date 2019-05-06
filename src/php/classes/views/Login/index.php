@@ -24,4 +24,3 @@
     </div>
   </div>
 </div>
-<?php //debug($errors); ?>
