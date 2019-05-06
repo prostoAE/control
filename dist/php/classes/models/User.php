@@ -14,15 +14,24 @@ class User {
   }
 
   public static function getUserName() {
-    self::$ldap = new ldap();
-    $name = self::$ldap->getUserName(self::$ukr, self::$password);
-    return $name;
+    $query = /** @lang MySQL */
+        "select full_name from cdg_users where ukr = ? group by full_name";
+    $array = Db::select(Db::connectSql(), $query, [self::$ukr]);
+    $result = '';
+    foreach ($array as $value) {
+      $result = $value['full_name'];
+    }
+    return $result;
   }
 
   public static function getUserAccess() {
     $query = /** @lang MySQL */
         "select user_access from cdg_users where ukr = ? group by user_access";
-    $result = Db::select(Db::connectSql(), $query, [self::$ukr]);
+    $array = Db::select(Db::connectSql(), $query, [self::$ukr]);
+    $result = 0;
+    foreach ($array as $value) {
+      $result = $value['user_access'];
+    }
     return $result;
   }
 

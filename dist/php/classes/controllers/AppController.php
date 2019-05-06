@@ -9,10 +9,10 @@ class AppController extends Controller {
 
   public function __construct($route) {
     parent::__construct($route);
-    $this->createUser();
+    $this->userInit();
   }
 
-  public function createUser() {
+  public function userInit() {
     if(isset($_SESSION['ukr']) && isset($_SESSION['psw'])) {
       new User($_SESSION['ukr'], $_SESSION['psw']);
     }

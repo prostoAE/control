@@ -320,13 +320,16 @@ GROUP BY
   /**
    * Метод формирует запрос по данным из фильтра
    * @param $array
+   * @param $users
    * @return string
    */
-  public function filter($array) {
+  public function filter($array, $users) {
     $dateFrom = ' and start_date >= '. "'" .$array['date-from'] . "'";
     $dateTo = ' and end_date <= '. "'" . $array['date-to'] . "'";
     if($array['buyer'] != '' && $array['buyer'] != 'BUYER') {
       $buyer = ' and buyer = ' . "'" . $array['buyer'] . "'";
+    } elseif($array['buyer'] == 'BUYER' && User::getUserAccess() > 2) {
+      $buyer = ' and buyer in('.$users.') ';
     }
     if($array['group'] != '' && $array['group'] != 'GROUP') {
       $group = ' and short_condition = ' . "'" . $array['group'] . "'";
@@ -382,6 +385,7 @@ GROUP BY
        if(mag_037_confirmed is null, mag_037, mag_037_confirmed)) as cost_total
       from sup_final where {$cond}";
 
+//    echo $query;
     return $query;
   }
 

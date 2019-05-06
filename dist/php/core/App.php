@@ -8,7 +8,7 @@ class App {
 
   public function __construct() {
     session_start();
-    if (isset($_SESSION['auth']) && $_SESSION['auth'] === true) {
+    if (isset($_SESSION['auth']) && $_SESSION['auth'] === true && isset($_SESSION['ukr'])) {
       $query = trim(substr($_SERVER['REQUEST_URI'], 13), '/'); /*XAMPP = 13, oc = 5*/
     } else {
       $query = 'login';

@@ -9,17 +9,19 @@ class SupController extends AppController {
 
   public $sup;
   private static $anee;
+  public $userList;
 
   public function indexAction() {
     $this->layout = 'supLayout';
     $this->setMeta('Система СУП', 'Система управления промо', 'Promo, sup, тарифы');
     $this->sup = new SupModel();
     self::$anee = new AneeController();
+    $this->getAccessFilter();
     $this->setData();
   }
 
   public function setData() {
-    $table = $this->sup->getDataFromFinal($this->formHandler());
+    $table = $this->sup->getDataFromFinal($this->formHandler($this->userList));
     $buyers = $this->getAccessFilter()['buyers'];
     $groups = $this->getAccessFilter()['groups'];
     $this->set(compact('table', 'buyers', 'groups'));
@@ -28,15 +30,21 @@ class SupController extends AppController {
   public function getAccessFilter() {
     $access = User::getUserAccess();
     $userList = $this->arrToStr(User::getUserLink());
+    $this->userList = $userList;
     $result = [];
 
-    switch ($access[0]['user_access']) {
+    switch ($access) {
       case 1:
       case 2:
         $result['buyers'] = self::$anee->getBuyers(2019);
         $result['groups'] = self::$anee->getGroups(2019);
         break;
       case 3:
+        $result['buyers'] = self::$anee->getBuyersWithFilter(2019, User::getUserName());
+        $result['groups'] = self::$anee->getGroupsWithFilter(2019, User::getUserName());
+        break;
+      case 4:
+      case 5:
         $result['buyers'] = self::$anee->getBuyersWithFilter(2019, $userList);
         $result['groups'] = self::$anee->getGroupsWithFilter(2019, $userList);
         break;
@@ -72,7 +80,7 @@ class SupController extends AppController {
     $this->sup->insertToFinalTable($data);
   }
 
-  public function formHandler() {
+  public function formHandler($userList) {
     if(isset($_POST) && isset($_POST['submit'])) {
       $filters = [];
       $filters['date-from'] = $_POST['date-from'];
@@ -81,8 +89,7 @@ class SupController extends AppController {
       $filters['group'] = $_POST['group'];
       $filters['supplier'] = $_POST['supplier'];
       $filters['article'] = $_POST['article'];
-
-      $query = $this->sup->filter($filters);
+      $query = $this->sup->filter($filters, $userList);
 
 //      $this->ccaUpdate('2019');
 //      $this->serviceUpdate('2019');
