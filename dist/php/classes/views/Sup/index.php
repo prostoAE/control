@@ -55,7 +55,7 @@
 <!--REPORT TABLE-->
 <section class="report-table">
   <div class="table-box">
-    <table class="sortable">
+    <table class="dragtable">
       <?php if($table): ?>
       <thead>
         <tr>
@@ -103,6 +103,7 @@
         <?php
         foreach ($table as $val):
           ?>
+        <tbody>
           <tr>
             <td><?= $val['start_date'] ?></td>
             <td><?= $val['end_date'] ?></td>
@@ -447,6 +448,7 @@
             <?php endif; ?>
 
           </tr>
+        </tbody>
         <?php
         endforeach;
       endif;
