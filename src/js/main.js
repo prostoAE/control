@@ -23,7 +23,6 @@ function hideLoader() {
   $(".loader-bg").fadeOut(500);
 }
 
-
 /* Show tarif modal */
 $('.edit-cost').on('click', showTarifModal);
 

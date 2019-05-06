@@ -343,3 +343,29 @@ body {
     }
   }
 }
+
+/* Page setting */
+.setting-header {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: $text-color;
+}
+
+.settings {
+  margin-top: 2rem;
+  &__link {
+    a {
+      font-size: 1rem;
+    }
+  }
+
+  &__content {
+    @include report-table();
+    &-header {
+      color: $text-color;
+      font-size: 1.3rem;
+      text-align: center;
+    }
+  }
+}
+

@@ -15,12 +15,12 @@
     height: 10px;
     border-radius: 50%;
     position: relative;
-    -webkit-animation: loader12-u59f0c2d0 1s linear alternate infinite;
-            animation: loader12-u59f0c2d0 1s linear alternate infinite;
+    -webkit-animation: loader12-u39b6cbfe 1s linear alternate infinite;
+            animation: loader12-u39b6cbfe 1s linear alternate infinite;
     top: 350px;
     margin: -25px auto 0; }
 
-@-webkit-keyframes loader12-u59f0c2d0 {
+@-webkit-keyframes loader12-u39b6cbfe {
   0% {
     -webkit-box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2);
             box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2); }
@@ -37,7 +37,7 @@
     -webkit-box-shadow: -36px 20px 0 0 rgba(0, 82, 236, 0.2), -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 2px #0052ec;
             box-shadow: -36px 20px 0 0 rgba(0, 82, 236, 0.2), -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 2px #0052ec; } }
 
-@keyframes loader12-u59f0c2d0 {
+@keyframes loader12-u39b6cbfe {
   0% {
     -webkit-box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2);
             box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2); }
@@ -461,3 +461,33 @@ body {
       outline: none; }
       .modal .tarif-form__button:hover {
         background: #b2b2b2; }
+
+/* Page setting */
+.setting-header {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #989898; }
+
+.settings {
+  margin-top: 2rem; }
+  .settings__link a {
+    font-size: 1rem; }
+  .settings__content table {
+    margin: 0 auto; }
+    .settings__content table th, .settings__content table td {
+      border: 1px solid #79e0ff;
+      border-collapse: collapse;
+      padding: .4rem;
+      font-size: .8rem;
+      text-align: left;
+      white-space: nowrap; }
+    .settings__content table th {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      background: #5acbd2;
+      color: #ffffff; }
+  .settings__content-header {
+    color: #989898;
+    font-size: 1.3rem;
+    text-align: center; }
