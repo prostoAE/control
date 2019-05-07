@@ -15,12 +15,12 @@
     height: 10px;
     border-radius: 50%;
     position: relative;
-    -webkit-animation: loader12-u39b6cbfe 1s linear alternate infinite;
-            animation: loader12-u39b6cbfe 1s linear alternate infinite;
+    -webkit-animation: loader12-u766427c1 1s linear alternate infinite;
+            animation: loader12-u766427c1 1s linear alternate infinite;
     top: 350px;
     margin: -25px auto 0; }
 
-@-webkit-keyframes loader12-u39b6cbfe {
+@-webkit-keyframes loader12-u766427c1 {
   0% {
     -webkit-box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2);
             box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2); }
@@ -37,7 +37,7 @@
     -webkit-box-shadow: -36px 20px 0 0 rgba(0, 82, 236, 0.2), -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 2px #0052ec;
             box-shadow: -36px 20px 0 0 rgba(0, 82, 236, 0.2), -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 2px #0052ec; } }
 
-@keyframes loader12-u39b6cbfe {
+@keyframes loader12-u766427c1 {
   0% {
     -webkit-box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2);
             box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2); }
@@ -359,6 +359,8 @@ body {
       outline: none; }
       .filters .filter-form .excel-btn:hover {
         background: #30d652; }
+      .filters .filter-form .excel-btn .fa-file-excel {
+        margin-left: 0.7rem; }
 
 .table-box {
   margin: 1rem  auto;
@@ -469,7 +471,7 @@ body {
   color: #989898; }
 
 .settings {
-  margin-top: 2rem; }
+  margin-top: 1rem; }
   .settings__link a {
     font-size: 1rem; }
   .settings__content table {
@@ -488,6 +490,103 @@ body {
       background: #5acbd2;
       color: #ffffff; }
   .settings__content-header {
-    color: #989898;
     font-size: 1.3rem;
+    font-weight: 700;
     text-align: center; }
+  .settings .setting-block {
+    padding: 1.5rem;
+    width: 98%;
+    background: rgba(123, 213, 246, 0.2);
+    border-radius: 0.7rem; }
+    .settings .setting-block__header {
+      margin-bottom: 1rem;
+      color: #989898;
+      font-size: 1rem;
+      text-align: center;
+      font-weight: 700; }
+    .settings .setting-block label {
+      margin-right: 1rem;
+      font-size: 1rem; }
+    .settings .setting-block select {
+      margin-left: 1rem;
+      padding: .2rem;
+      background: #5acbd2;
+      font-size: 1rem;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      outline: none; }
+    .settings .setting-block input[type=text] {
+      width: 6rem;
+      padding: .2rem;
+      background: #5acbd2;
+      font-size: 1rem;
+      line-height: 1rem;
+      text-align: center;
+      color: #ffffff;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 5px;
+      outline: none; }
+      .settings .setting-block input[type=text]::-webkit-input-placeholder {
+        padding: .2rem;
+        font-size: .8rem;
+        line-height: 1rem;
+        color: #ffffff; }
+      .settings .setting-block input[type=text]:-ms-input-placeholder {
+        padding: .2rem;
+        font-size: .8rem;
+        line-height: 1rem;
+        color: #ffffff; }
+      .settings .setting-block input[type=text]::-ms-input-placeholder {
+        padding: .2rem;
+        font-size: .8rem;
+        line-height: 1rem;
+        color: #ffffff; }
+      .settings .setting-block input[type=text]::placeholder {
+        padding: .2rem;
+        font-size: .8rem;
+        line-height: 1rem;
+        color: #ffffff; }
+    .settings .setting-block input[type=date] {
+      width: 9rem;
+      padding: .1rem;
+      background: #5acbd2;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      outline: none; }
+      .settings .setting-block input[type=date]::-webkit-input-placeholder {
+        padding: .2rem;
+        font-size: 1rem;
+        line-height: 1rem;
+        color: #ffffff; }
+      .settings .setting-block input[type=date]:-ms-input-placeholder {
+        padding: .2rem;
+        font-size: 1rem;
+        line-height: 1rem;
+        color: #ffffff; }
+      .settings .setting-block input[type=date]::-ms-input-placeholder {
+        padding: .2rem;
+        font-size: 1rem;
+        line-height: 1rem;
+        color: #ffffff; }
+      .settings .setting-block input[type=date]::placeholder {
+        padding: .2rem;
+        font-size: 1rem;
+        line-height: 1rem;
+        color: #ffffff; }
+    .settings .setting-block button {
+      position: relative;
+      padding: .3rem .8rem;
+      background: #989898;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 5px;
+      outline: none; }
+      .settings .setting-block button:hover {
+        background: #b2b2b2; }

@@ -425,4 +425,13 @@ GROUP BY
     }
   }
 
+  /**
+   * Метод устанавливает год агримента из АНЕЕ
+   * @param $year
+   */
+  public function setAgreementYear($year) {
+    $query = "UPDATE cdg_agr_year SET agr_year = '$year'";
+    Db::set(Db::connectSql(), $query);
+  }
+
 }

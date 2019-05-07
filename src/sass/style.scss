@@ -257,6 +257,9 @@ body {
     }
     .excel-btn {
       @include primary-btn($button-color);
+      .fa-file-excel {
+        margin-left: 0.7rem;
+      }
     }
   }
 }
@@ -352,7 +355,7 @@ body {
 }
 
 .settings {
-  margin-top: 2rem;
+  margin-top: 1rem;
   &__link {
     a {
       font-size: 1rem;
@@ -362,9 +365,77 @@ body {
   &__content {
     @include report-table();
     &-header {
-      color: $text-color;
       font-size: 1.3rem;
+      font-weight: 700;
       text-align: center;
+    }
+  }
+
+  .setting-block {
+    padding: 1.5rem;
+    width: 98%;
+    background: $light-blue;
+    border-radius: 0.7rem;
+    &__header {
+      margin-bottom: 1rem;
+      color: $text-color;
+      font-size: 1rem;
+      text-align: center;
+      font-weight: 700;
+    }
+    label {
+      margin-right: 1rem;
+      font-size: 1rem;
+    }
+
+    select {
+      margin-left: 1rem;
+      padding: .2rem;
+      background: $thead;
+      font-size: 1rem;
+      color: $white;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+    }
+    input[type=text] {
+      width: 6rem;
+      padding: .2rem;
+      background: $thead;
+      font-size: 1rem;
+      line-height: 1rem;
+      text-align: center;
+      color: $white;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      &::placeholder {
+        padding: .2rem;
+        font-size: .8rem;
+        line-height: 1rem;
+        color: $white;
+      }
+    }
+    input[type=date] {
+      width: 9rem;
+      padding: .1rem;
+      background: $thead;
+      font-size: 1rem;
+      line-height: 1rem;
+      color: $white;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+      &::placeholder {
+        padding: .2rem;
+        font-size: 1rem;
+        line-height: 1rem;
+        color: $white;
+      }
+    }
+    button {
+      @include primary-btn($text-color);
     }
   }
 }

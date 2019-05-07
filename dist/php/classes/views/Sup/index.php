@@ -30,10 +30,10 @@
             </select>
           </label>
           <label>
-            <input id="from" name="date-from" type="text" placeholder="Дата с:" onfocus="(this.type='date')" onblur="(this.type='text')" required value="2019.03.01">
+            <input id="from" name="date-from" type="text" placeholder="Дата с:" onfocus="(this.type='date')" onblur="(this.type='text')" required value="2019.01.01">
           </label>
           <label>
-            <input id="to" name="date-to" type="text" placeholder="Дата по:" onfocus="(this.type='date')" onblur="(this.type='text')" required value="2019.04.30">
+            <input id="to" name="date-to" type="text" placeholder="Дата по:" onfocus="(this.type='date')" onblur="(this.type='text')" required value="<?= date("Y.m.d") ?>">
           </label>
         </div>
         <div class="form-row">
@@ -45,7 +45,7 @@
           </label>
           <button class="filter-btn" name="submit" type="submit">Применить<i class="fas fa-filter"></i></button>
           <button class="reset-btn" title="Сбросить фильтры"><i class="fas fa-power-off"></i></button>
-          <button class="excel-btn" name="to-excel">В ексель</button>
+          <button class="excel-btn" name="to-excel">В Excel<i class="far fa-file-excel"></i></button>
         </div>
       </form>
     </div>

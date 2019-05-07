@@ -359,8 +359,56 @@ class AjaxController extends AppController {
     $writer->save('php://output');
   }
 
+  /* LogOut из системы */
   public function logoutAction() {
     session_destroy();
+  }
+
+  /**
+   * Метод устанавливает год агримента в базе данных
+   * @void
+   */
+  public function agreementUpdateAction() {
+    $sup = new SupModel();
+    $sup->setAgreementYear($_POST['agrYear']);
+  }
+
+  /**
+   * Обновление таблицы ССА в базе данных
+   * @void
+   */
+  public function ccaUpdateAction() {
+    $anee = new AneeModel();
+    $sup = new SupModel();
+    $data = $anee->getCcaList($_POST['agrYear']);
+    $sup->insertToCcaTable($data, $_POST['agrYear']);
+  }
+
+  /**
+   * Обновление тарифов промо в базе данных
+   * @void
+   */
+  public function serviceUpdateAction() {
+    $anee = new AneeModel();
+    $sup = new SupModel();
+    $data = $anee->getServiceList($_POST['agrYear']);
+    $sup->insertServiceToTable($data);
+  }
+
+  /**
+   * Метод загружает данные из СУП в таблицу источник и финальную таблицу
+   * @void
+   */
+  public function supLoadAction() {
+    $from = date("d.m.Y", strtotime($_POST['date-from']));
+    $to = date("d.m.Y", strtotime($_POST['date-to']));
+    $sup = new SupModel();
+    $sup->setStartDate($from);
+    $sup->setEndDate($to);
+    $sourceData = $sup->loadSourceData();
+    $sup->insertSourceData($sourceData);
+    $data = $sup->getDataFromSourceTable($from, $to);
+    $sup->insertToFinalTable($data);
   }
 
 }

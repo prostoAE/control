@@ -143,7 +143,7 @@ $(".reset-btn").on("click", function () {
   sessionStorage.removeItem("filter");
 });
 
-
+/* LogOut */
 $("#logOut").on('click', function (e) {
   e.preventDefault();
 
@@ -157,5 +157,82 @@ $("#logOut").on('click', function (e) {
   });
 });
 
+/* Установка года агримента */
+$("#agrYearBtn").on("click", function (e) {
+  e.preventDefault();
 
+  var data = $("#agrYearForm").serialize();
 
+  $.ajax({
+    type: 'post',
+    url: 'ajax/agreement-update',
+    data: data,
+    dataType: 'html',
+    complete: function () {
+      alert('Год изменен!');
+    }
+  });
+});
+
+/* Обновление таблицы CCA */
+$("#ccaUpdateBtn").on("click", function (e) {
+  e.preventDefault();
+
+  var data = $("#ccaUpdateForm").serialize();
+
+  $.ajax({
+    type: 'post',
+    url: 'ajax/cca-update',
+    data: data,
+    dataType: 'html',
+    beforeSend: function() {
+      showLoader();
+    },
+    complete: function() {
+      hideLoader();
+      alert('Обновление таблицы CCA завершено!');
+    }
+  });
+});
+
+/* Обновление таблицы anee_service */
+$("#serviceUpdateBtn").on("click", function (e) {
+  e.preventDefault();
+
+  var data = $("#serviceUpdateForm").serialize();
+
+  $.ajax({
+    type: 'post',
+    url: 'ajax/service-update',
+    data: data,
+    dataType: 'html',
+    beforeSend: function() {
+      showLoader();
+    },
+    complete: function() {
+      hideLoader();
+      alert('Обновление таблицы anee_service завершено!');
+    }
+  });
+});
+
+/* Загрузка данных из СУП */
+$("#supLoadBtn").on("click", function (e) {
+  e.preventDefault();
+
+  var data = $("#supLoadForm").serialize();
+
+  $.ajax({
+    type: 'post',
+    url: 'ajax/sup-load',
+    data: data,
+    dataType: 'html',
+    beforeSend: function() {
+      showLoader();
+    },
+    complete: function() {
+      hideLoader();
+      alert('Загрузка данных из СУП завершена!');
+    }
+  });
+});
