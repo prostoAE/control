@@ -15,4 +15,4 @@ require_once dirname(__DIR__) . '/vendor/autoload.php';
 use php\core\App;
 
 new App();
-
+echo 'test';
