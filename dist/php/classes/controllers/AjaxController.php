@@ -429,21 +429,24 @@ class AjaxController extends AppController {
    */
   public function addUserAction() {
     $array = json_decode($_POST['data'], true);
-//    $count = count($array) - 2;
-
+    $count = count($array);
     $mainUser = $array[0]['value'];
+    $mainUserName = AneeModel::getFullnameByUkr($array[0]['value']);
     $accessLvl = $array[1]['value'];
 
-    for ($i = 2; $i < count($array); $i++) {
+    echo $count;
+    if($count > 2) {
+      for ($i = 2; $i < count($array); $i++) {
+        $userLink = AneeModel::getFullnameByUkr($array[$i]['value']);
+        $query = /** @lang MySQL */
+            "insert into cdg_users (ukr, full_name, user_access, user_link) values ('$mainUser', '$mainUserName', '$accessLvl', '$userLink')";
+        Db::insert(Db::connectSql(), $query);
+      }
+    } else {
       $query = /** @lang MySQL */
-          "INSERT INTO cdg_users (ukr,full_name,user_access,user_link) VALUES ('{$mainUser}','hgmnjhmkjh,',3)";
-      echo $array[$i]['value'] . PHP_EOL;
-      echo $i . PHP_EOL;
+          "insert into cdg_users (ukr, full_name, user_access) values ('$mainUser', '$mainUserName', '$accessLvl')";
+      Db::insert(Db::connectSql(), $query);
     }
-
-
-//    debug($mainUser);
-
   }
 
 }

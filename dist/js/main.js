@@ -261,16 +261,14 @@ $("#addUserBtn").on("click", function (e) {
 
   var arr = $("#addUserForm").serializeArray();
   var formData = JSON.stringify(arr);
-  // console.log(arr);
 
   $.ajax({
     type: 'post',
     url: 'ajax/add-user',
     data: {data : formData},
     dataType: 'html',
-    success: function(response) {
-      console.log(response);
-      // location.reload();
+    complete: function() {
+      location.reload();
     }
   });
 

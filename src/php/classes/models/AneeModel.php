@@ -11,6 +11,13 @@ class AneeModel {
     return $buyers;
   }
 
+  public static function getFullnameByUkr($ukr) {
+    $query = /** @lang Oracle */
+        "SELECT usr.name AS buyer FROM USER_ACCOUNT usr WHERE usr.ID_USER_ACCOUNT = ? GROUP BY usr.NAME,usr.ID_USER_ACCOUNT";
+    $name = Db::selectOne(Db::connectAnee(), $query, [$ukr]);
+    return $name;
+  }
+
   /**
    * Метод получает из АНЕЕ перечень закупщиков за указаный год
    * @param int $year
