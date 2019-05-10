@@ -91,11 +91,6 @@ class SupController extends AppController {
       $filters['article'] = $_POST['article'];
       $query = $this->sup->filter($filters, $userList);
 
-//      $this->ccaUpdate('2019');
-//      $this->serviceUpdate('2019');
-//      $this->getSource('27.03.2019', '23.04.2019');
-//      $this->loadToFinalTable('27.03.2019', '23.04.2019');
-
       $_SESSION['supQuery'] = $query;
       return $query;
     }
