@@ -42,4 +42,11 @@ class User {
     return $result;
   }
 
+  public static function getAllUsers() {
+    $query = /** @lang MySQL */
+        "select id, full_name, user_access, ukr, user_link from cdg_users order by full_name";
+    $result = Db::select(Db::connectSql(), $query);
+    return $result;
+  }
+
 }

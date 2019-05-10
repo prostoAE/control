@@ -363,11 +363,67 @@ body {
   }
 
   &__content {
-    @include report-table();
+    .users-table {
+      margin: 1rem auto;
+      width: 100%;
+      max-height: 15rem;
+      overflow: auto;
+      background: $white;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      @include report-table();
+      .fa-user-minus {
+        color: $text-color;
+        cursor: pointer;
+        &:hover {
+          color: $edit-color;
+        }
+      }
+    }
     &-header {
       font-size: 1.3rem;
       font-weight: 700;
       text-align: center;
+    }
+
+    .user-add {
+      width: 100%;
+      margin-top: 2rem;
+      .form {
+        padding: 1.5rem;
+        width: 100%;
+        background: $light-blue;
+        border-radius: 0.7rem;
+        &__select {
+          display: block;
+          margin-left: 1rem;
+          padding: .2rem;
+          background: $thead;
+          font-size: 1rem;
+          color: $white;
+          border: none;
+          border-radius: 5px;
+          outline: none;
+        }
+        &__fieldset {
+          margin: 0.8rem 1rem;
+          display: inline-block;
+          padding: .2rem;
+          font-size: 0.8rem;
+          label {
+            margin-left: 0.5rem;
+            input {
+              margin-right: 0.3rem;
+              vertical-align: middle;
+            }
+          }
+        }
+        &__button {
+          display: block;
+          margin: 0 auto;
+          padding: .2rem;
+          @include primary-btn($text-color);
+        }
+      }
     }
   }
 

@@ -4,6 +4,13 @@ namespace php\classes\models;
 
 class AneeModel {
 
+  public function getAllUsers() {
+    $query = /** @lang Oracle */
+        "SELECT usr.name AS buyer, usr.ID_USER_ACCOUNT AS ukr FROM USER_ACCOUNT usr GROUP BY usr.NAME,usr.ID_USER_ACCOUNT ORDER BY usr.NAME,usr.ID_USER_ACCOUNT";
+    $buyers = Db::select(Db::connectAnee(), $query);
+    return $buyers;
+  }
+
   /**
    * Метод получает из АНЕЕ перечень закупщиков за указаный год
    * @param int $year

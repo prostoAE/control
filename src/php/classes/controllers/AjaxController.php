@@ -411,4 +411,30 @@ class AjaxController extends AppController {
     $sup->insertToFinalTable($data);
   }
 
+  /**
+   * Метод удаляет пользователя из таблицы cdg_users
+   * @void
+   */
+  public function deleteUserAction() {
+    $id = $_POST['user'];
+    $query = /** @lang MySQL */
+        "delete from cdg_users where id = {$id}";
+    Db::set(Db::connectSql(), $query);
+  }
+
+  /**
+   * Метод удаляет пользователя из таблицы cdg_users
+   * @void
+   */
+  public function addUserAction() {
+//    $array = json_decode($_POST['data'], true);
+//    $count = count($array) - 2;
+
+
+    debug($_POST);
+
+
+
+  }
+
 }

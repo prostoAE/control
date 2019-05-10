@@ -15,12 +15,12 @@
     height: 10px;
     border-radius: 50%;
     position: relative;
-    -webkit-animation: loader12-u766427c1 1s linear alternate infinite;
-            animation: loader12-u766427c1 1s linear alternate infinite;
+    -webkit-animation: loader12-u672fa3e1 1s linear alternate infinite;
+            animation: loader12-u672fa3e1 1s linear alternate infinite;
     top: 350px;
     margin: -25px auto 0; }
 
-@-webkit-keyframes loader12-u766427c1 {
+@-webkit-keyframes loader12-u672fa3e1 {
   0% {
     -webkit-box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2);
             box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2); }
@@ -37,7 +37,7 @@
     -webkit-box-shadow: -36px 20px 0 0 rgba(0, 82, 236, 0.2), -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 2px #0052ec;
             box-shadow: -36px 20px 0 0 rgba(0, 82, 236, 0.2), -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 2px #0052ec; } }
 
-@keyframes loader12-u766427c1 {
+@keyframes loader12-u672fa3e1 {
   0% {
     -webkit-box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2);
             box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2); }
@@ -474,25 +474,81 @@ body {
   margin-top: 1rem; }
   .settings__link a {
     font-size: 1rem; }
-  .settings__content table {
-    margin: 0 auto; }
-    .settings__content table th, .settings__content table td {
-      border: 1px solid #79e0ff;
-      border-collapse: collapse;
-      padding: .4rem;
-      font-size: .8rem;
-      text-align: left;
-      white-space: nowrap; }
-    .settings__content table th {
-      position: -webkit-sticky;
-      position: sticky;
-      top: 0;
-      background: #5acbd2;
-      color: #ffffff; }
+  .settings__content .users-table {
+    margin: 1rem auto;
+    width: 100%;
+    max-height: 15rem;
+    overflow: auto;
+    background: #ffffff;
+    -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); }
+    .settings__content .users-table table {
+      margin: 0 auto; }
+      .settings__content .users-table table th, .settings__content .users-table table td {
+        border: 1px solid #79e0ff;
+        border-collapse: collapse;
+        padding: .4rem;
+        font-size: .8rem;
+        text-align: left;
+        white-space: nowrap; }
+      .settings__content .users-table table th {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        background: #5acbd2;
+        color: #ffffff; }
+    .settings__content .users-table .fa-user-minus {
+      color: #989898;
+      cursor: pointer; }
+      .settings__content .users-table .fa-user-minus:hover {
+        color: #ff0c00; }
   .settings__content-header {
     font-size: 1.3rem;
     font-weight: 700;
     text-align: center; }
+  .settings__content .user-add {
+    width: 100%;
+    margin-top: 2rem; }
+    .settings__content .user-add .form {
+      padding: 1.5rem;
+      width: 100%;
+      background: rgba(123, 213, 246, 0.2);
+      border-radius: 0.7rem; }
+      .settings__content .user-add .form__select {
+        display: block;
+        margin-left: 1rem;
+        padding: .2rem;
+        background: #5acbd2;
+        font-size: 1rem;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        outline: none; }
+      .settings__content .user-add .form__fieldset {
+        margin: 0.8rem 1rem;
+        display: inline-block;
+        padding: .2rem;
+        font-size: 0.8rem; }
+        .settings__content .user-add .form__fieldset label {
+          margin-left: 0.5rem; }
+          .settings__content .user-add .form__fieldset label input {
+            margin-right: 0.3rem;
+            vertical-align: middle; }
+      .settings__content .user-add .form__button {
+        display: block;
+        margin: 0 auto;
+        padding: .2rem;
+        position: relative;
+        padding: .3rem .8rem;
+        background: #989898;
+        font-size: 1rem;
+        line-height: 1rem;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+        border-radius: 5px;
+        outline: none; }
+        .settings__content .user-add .form__button:hover {
+          background: #b2b2b2; }
   .settings .setting-block {
     padding: 1.5rem;
     width: 98%;
