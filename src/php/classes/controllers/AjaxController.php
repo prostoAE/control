@@ -360,7 +360,7 @@ class AjaxController extends AppController {
     $writer->save('php://output');
   }
 
-  /* LogOut из системы */
+  /* Выход из системы */
   public function logoutAction() {
     session_destroy();
   }
@@ -434,7 +434,6 @@ class AjaxController extends AppController {
     $mainUserName = AneeModel::getFullnameByUkr($array[0]['value']);
     $accessLvl = $array[1]['value'];
 
-    echo $count;
     if($count > 2) {
       for ($i = 2; $i < count($array); $i++) {
         $userLink = AneeModel::getFullnameByUkr($array[$i]['value']);
