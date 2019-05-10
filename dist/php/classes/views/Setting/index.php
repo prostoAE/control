@@ -123,8 +123,8 @@
                     </select>
                   </label>
                   <button id="serviceUpdateBtn">Save</button>
-                </div>
-              </form>
+                </form>
+              </div>
               <hr>
 
               <div class="setting-block">

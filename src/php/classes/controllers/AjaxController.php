@@ -424,7 +424,7 @@ class AjaxController extends AppController {
   }
 
   /**
-   * Метод удаляет пользователя из таблицы cdg_users
+   * Метод добавляет пользователя в таблицу cdg_users
    * @void
    */
   public function addUserAction() {
