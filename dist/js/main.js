@@ -6,8 +6,8 @@ $(document).ready(function () {
 
 /*Смена класса меню*/
 function toogleClassMenu() {
-  menuButton = $('.toogle');
-  menu = $('.menu');
+  var menuButton = $('.toogle');
+  var menu = $('.menu');
   menuButton.on('click', function() {
     menuButton.toggleClass('active');
     menu.toggleClass('active');
@@ -235,4 +235,43 @@ $("#supLoadBtn").on("click", function (e) {
       alert('Загрузка данных из СУП завершена!');
     }
   });
+});
+
+/* Удаление пользователя */
+$(".delUser").on("click", function (e) {
+  e.preventDefault();
+
+  var id = $(this).attr('data-id');
+
+  $.ajax({
+    type: 'post',
+    url: 'ajax/delete-user',
+    data: {user : id},
+    dataType: 'html',
+    complete: function() {
+      location.reload();
+    }
+  });
+
+});
+
+/* Добавление пользователя */
+$("#addUserBtn").on("click", function (e) {
+  e.preventDefault();
+
+  var arr = $("#addUserForm").serialize();
+  formData = JSON.stringify(arr);
+  // console.log(arr);
+
+  $.ajax({
+    type: 'post',
+    url: 'ajax/add-user',
+    data: arr,
+    dataType: 'html',
+    success: function(response) {
+      console.log(response);
+      // location.reload();
+    }
+  });
+
 });

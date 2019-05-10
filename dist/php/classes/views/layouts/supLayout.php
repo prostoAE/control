@@ -14,6 +14,10 @@
 </head>
 <body>
 
+<div class="loader-bg">
+  <div class="loader"></div>
+</div>
+
 <div class="container-fluid">
   <div class="row">
     <header class="header">
@@ -23,7 +27,9 @@
         <ul>
           <li><a href="main" data-text="Главная">Главная</a></li>
           <li><a href="sup" data-text="SUP">SUP</a></li>
+          <?php if(\php\classes\models\User::getUserAccess() == 1): ?>
           <li><a href="setting" data-text="Настройки">Настройки</a></li>
+          <?php endif; ?>
           <li><a href="" data-text="Выход" id="logOut">Выход</a></li>
         </ul>
       </nav>
