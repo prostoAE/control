@@ -259,14 +259,14 @@ $(".delUser").on("click", function (e) {
 $("#addUserBtn").on("click", function (e) {
   e.preventDefault();
 
-  var arr = $("#addUserForm").serialize();
-  formData = JSON.stringify(arr);
+  var arr = $("#addUserForm").serializeArray();
+  var formData = JSON.stringify(arr);
   // console.log(arr);
 
   $.ajax({
     type: 'post',
     url: 'ajax/add-user',
-    data: arr,
+    data: {data : formData},
     dataType: 'html',
     success: function(response) {
       console.log(response);

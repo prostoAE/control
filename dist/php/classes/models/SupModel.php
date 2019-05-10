@@ -44,32 +44,132 @@ class SupModel {
     null as super_ind,
     --	mnt.BUDGET,
     --	mag.CODE AS num_mag,
-    sum(CASE mag.CODE WHEN '001' then mnt.BUDGET ELSE 0 end) AS \"001\",
-    sum(CASE mag.CODE WHEN '003' then mnt.BUDGET ELSE 0 end) AS \"003\",
-    sum(CASE mag.CODE WHEN '007' then mnt.BUDGET ELSE 0 end) AS \"007\",
-    sum(CASE mag.CODE WHEN '009' then mnt.BUDGET ELSE 0 end) AS \"009\",
-    sum(CASE mag.CODE WHEN '010' then mnt.BUDGET ELSE 0 end) AS \"010\",
-    sum(CASE mag.CODE WHEN '011' then mnt.BUDGET ELSE 0 end) AS \"011\",
-    sum(CASE mag.CODE WHEN '012' then mnt.BUDGET ELSE 0 end) AS \"012\",
-    sum(CASE mag.CODE WHEN '014' then mnt.BUDGET ELSE 0 end) AS \"014\",
-    sum(CASE mag.CODE WHEN '015' then mnt.BUDGET ELSE 0 end) AS \"015\",
-    sum(CASE mag.CODE WHEN '016' then mnt.BUDGET ELSE 0 end) AS \"016\",
-    sum(CASE mag.CODE WHEN '018' then mnt.BUDGET ELSE 0 end) AS \"018\",
-    sum(CASE mag.CODE WHEN '020' then mnt.BUDGET ELSE 0 end) AS \"020\",
-    sum(CASE mag.CODE WHEN '022' then mnt.BUDGET ELSE 0 end) AS \"022\",
-    sum(CASE mag.CODE WHEN '023' then mnt.BUDGET ELSE 0 end) AS \"023\",
-    sum(CASE mag.CODE WHEN '024' then mnt.BUDGET ELSE 0 end) AS \"024\",
-    sum(CASE mag.CODE WHEN '025' then mnt.BUDGET ELSE 0 end) AS \"025\",
-    sum(CASE mag.CODE WHEN '026' then mnt.BUDGET ELSE 0 end) AS \"026\",
+    sum(CASE mag.CODE WHEN '001' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"001\",
+    sum(CASE mag.CODE WHEN '003' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"003\",
+    sum(CASE mag.CODE WHEN '007' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"007\",
+    sum(CASE mag.CODE WHEN '009' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"009\",
+    sum(CASE mag.CODE WHEN '010' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"010\",
+    sum(CASE mag.CODE WHEN '011' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"011\",
+    sum(CASE mag.CODE WHEN '012' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"012\",
+    sum(CASE mag.CODE WHEN '014' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"014\",
+    sum(CASE mag.CODE WHEN '015' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"015\",
+    sum(CASE mag.CODE WHEN '016' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"016\",
+    sum(CASE mag.CODE WHEN '018' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"018\",
+    sum(CASE mag.CODE WHEN '020' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"020\",
+    sum(CASE mag.CODE WHEN '022' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"022\",
+    sum(CASE mag.CODE WHEN '023' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"023\",
+    sum(CASE mag.CODE WHEN '024' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"024\",
+    sum(CASE mag.CODE WHEN '025' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"025\",
+    sum(CASE mag.CODE WHEN '026' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"026\",
     null AS \"027\",
-    sum(CASE mag.CODE WHEN '028' then mnt.BUDGET ELSE 0 end) AS \"028\",
-    sum(CASE mag.CODE WHEN '029' then mnt.BUDGET ELSE 0 end) AS \"029\",
-    sum(CASE mag.CODE WHEN '030' then mnt.BUDGET ELSE 0 end) AS \"030\",
-    sum(CASE mag.CODE WHEN '031' then mnt.BUDGET ELSE 0 end) AS \"031\",
-    sum(CASE mag.CODE WHEN '032' then mnt.BUDGET ELSE 0 end) AS \"032\",
-    sum(CASE mag.CODE WHEN '033' then mnt.BUDGET ELSE 0 end) AS \"033\",
-    sum(CASE mag.CODE WHEN '034' then mnt.BUDGET ELSE 0 end) AS \"034\",
-    sum(CASE mag.CODE WHEN '035' then mnt.BUDGET ELSE 0 end) AS \"035\",
+    sum(CASE mag.CODE WHEN '028' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"028\",
+    sum(CASE mag.CODE WHEN '029' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"029\",
+    sum(CASE mag.CODE WHEN '030' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"030\",
+    sum(CASE mag.CODE WHEN '031' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"031\",
+    sum(CASE mag.CODE WHEN '032' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"032\",
+    sum(CASE mag.CODE WHEN '033' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"033\",
+    sum(CASE mag.CODE WHEN '034' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"034\",
+    sum(CASE mag.CODE WHEN '035' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"035\",
     null AS \"037\"
   FROM
     PROMO6.PROMOACTION pr
@@ -147,7 +247,11 @@ class SupModel {
   null AS \"024\",
   null AS \"025\",
   null AS \"026\",
-  sum(CASE mag.CODE WHEN '027' then mnt.BUDGET ELSE 0 end) AS \"027\",
+  sum(CASE mag.CODE WHEN '027' then 
+      (case mnt.COMMENTS when 'TP' then 
+        (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+      end)
+    ELSE 0 end) AS \"027\",
   null AS \"028\",
   null AS \"029\",
   null AS \"030\",
@@ -156,7 +260,11 @@ class SupModel {
   null AS \"033\",
   null AS \"034\",
   null AS \"035\",
-  sum(CASE mag.CODE WHEN '037' then mnt.BUDGET ELSE 0 end) AS \"037\"
+  sum(CASE mag.CODE WHEN '037' then 
+    (case mnt.COMMENTS when 'TP' then 
+      (CASE mnt.BUDGET WHEN 0 THEN mnt.CHANGE_BUDGET ELSE mnt.BUDGET END)
+    end)
+  ELSE 0 end) AS \"037\"
 FROM
   PROMO6.PROMOACTION pr
     LEFT JOIN

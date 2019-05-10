@@ -30,6 +30,7 @@ class AjaxController extends AppController {
     $spreadsheet = new Spreadsheet();
 
     $sheet = $spreadsheet->getActiveSheet();
+    $sheet->setTitle('Feuil1');
 
     /* Установка автофильтра */
     $sheet->setAutoFilter('A2:AO2');
@@ -427,13 +428,21 @@ class AjaxController extends AppController {
    * @void
    */
   public function addUserAction() {
-//    $array = json_decode($_POST['data'], true);
+    $array = json_decode($_POST['data'], true);
 //    $count = count($array) - 2;
 
+    $mainUser = $array[0]['value'];
+    $accessLvl = $array[1]['value'];
 
-    debug($_POST);
+    for ($i = 2; $i < count($array); $i++) {
+      $query = /** @lang MySQL */
+          "INSERT INTO cdg_users (ukr,full_name,user_access,user_link) VALUES ('{$mainUser}','hgmnjhmkjh,',3)";
+      echo $array[$i]['value'] . PHP_EOL;
+      echo $i . PHP_EOL;
+    }
 
 
+//    debug($mainUser);
 
   }
 
