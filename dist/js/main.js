@@ -2,6 +2,7 @@ $(document).ready(function () {
   toogleClassMenu();
   hideLoader();
   setFilterFromStorage();
+  getWorkDate();
 });
 
 /*Смена класса меню*/
@@ -32,6 +33,13 @@ function showTarifModal() {
   var cost = string.find('td#cost').text();
   var option = $('#newCost');
   var formButton = $('.tarif-form__button');
+  var periodFrom = string.find("td.dateFrom").text();
+  var periodTo = string.find("td.dateTo").text();
+
+  if(checkWorkPeriod(periodFrom, periodTo) === true) {
+    alert("Период обработки данных закрыт администратором!!");
+    return false;
+  }
 
   if (cost != 0) {
     option.text(cost);
@@ -81,6 +89,7 @@ function updateCell(id, store, tarif) {
   var oldTarif;
   var newTarif;
   var path = $('.edit-cost[data-id='+id+'][data-store='+store+']').parent();
+  console.log(path);
   var regExp = /[^\/]*/;
 
   oldTarif = path.text().match(regExp);
@@ -273,3 +282,32 @@ $("#addUserBtn").on("click", function (e) {
   });
 
 });
+
+/* Получение преода обработки данных СУП */
+function getWorkDate() {
+
+  $.ajax({
+    type: 'post',
+    url: 'ajax/work-period',
+    dataType: 'text',
+    success: function(data) {
+      sessionStorage.setItem("period", data);
+    }
+  });
+
+}
+
+/* Проверка периода обработки данных */
+function checkWorkPeriod(dateFrom, dateTo) {
+  getWorkDate();
+
+  var data = sessionStorage.getItem("period");
+  var arr = JSON.parse(data);
+  var workFrom = arr[0]['date_from'];
+  var workTo = arr[0]['date_to'];
+
+  if(dateFrom < workFrom || dateTo > workTo) {
+    return true;
+  }
+
+}

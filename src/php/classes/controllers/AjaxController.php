@@ -448,4 +448,12 @@ class AjaxController extends AppController {
     }
   }
 
+  public function workPeriodAction() {
+    $query = /** @lang MySQL */
+        "select * from cdg_work_period";
+    $array = Db::select(Db::connectSql(), $query);
+    $result = json_encode($array);
+    echo $result;
+  }
+
 }
