@@ -342,12 +342,7 @@ $("#v-pills-profile-tab").on("click", function () {
 
 /* Преобразование формата даты */
 function dateFormat(date) {
-  var formatDate = new Date(date);
-  var d = formatDate.getDate();
-  var m = formatDate.getMonth();
-  m += 1;
-  var y = formatDate.getFullYear();
-
-  var result = d + "." + m + "." + y;
-  return result;
+  var dateAr = date.split('-');
+  var newDate = dateAr[1] + '.' + dateAr[2] + '.' + dateAr[0];
+  return newDate;
 }
