@@ -89,7 +89,6 @@ function updateCell(id, store, tarif) {
   var oldTarif;
   var newTarif;
   var path = $('.edit-cost[data-id='+id+'][data-store='+store+']').parent();
-  console.log(path);
   var regExp = /[^\/]*/;
 
   oldTarif = path.text().match(regExp);
@@ -297,6 +296,25 @@ function getWorkDate() {
 
 }
 
+/* Установка периода обработки данных */
+$("#setPeriod").on("click", function (e) {
+  e.preventDefault();
+
+  var data = $("#setPeriodForm").serialize();
+  // var formData = JSON.stringify(arr);
+
+  $.ajax({
+    type: 'post',
+    url: 'ajax/set-period',
+    data: data,
+    dataType: 'html',
+    complete: function() {
+      location.reload();
+    }
+  });
+
+});
+
 /* Проверка периода обработки данных */
 function checkWorkPeriod(dateFrom, dateTo) {
   getWorkDate();
@@ -310,4 +328,26 @@ function checkWorkPeriod(dateFrom, dateTo) {
     return true;
   }
 
+}
+
+/* Отображение текущего состояния установленых рабочих дней */
+$("#v-pills-profile-tab").on("click", function () {
+  var data = sessionStorage.getItem("period");
+  var arr = JSON.parse(data);
+  var workFrom = dateFormat(arr[0]['date_from']);
+  var workTo = dateFormat(arr[0]['date_to']);
+
+  $(".setting-block__info span").text(workFrom + ' - ' + workTo);
+});
+
+/* Преобразование формата даты */
+function dateFormat(date) {
+  var formatDate = new Date(date);
+  var d = formatDate.getDate();
+  var m = formatDate.getMonth();
+  m += 1;
+  var y = formatDate.getFullYear();
+
+  var result = d + "." + m + "." + y;
+  return result;
 }

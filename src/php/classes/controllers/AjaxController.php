@@ -456,4 +456,13 @@ class AjaxController extends AppController {
     echo $result;
   }
 
+  public function setPeriodAction() {
+    $from = $_POST['date-from'];
+    $to = $_POST['date-to'];
+    $query = /** @lang MySQL */
+        "UPDATE cdg_work_period SET date_from = '$from', date_to = '$to'";
+        echo $query;
+    Db::set(Db::connectSql(), $query);
+  }
+
 }
