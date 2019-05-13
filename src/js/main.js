@@ -2,6 +2,7 @@ $(document).ready(function () {
   toogleClassMenu();
   hideLoader();
   setFilterFromStorage();
+  getWorkDate();
 });
 
 /*Смена класса меню*/
@@ -32,6 +33,13 @@ function showTarifModal() {
   var cost = string.find('td#cost').text();
   var option = $('#newCost');
   var formButton = $('.tarif-form__button');
+  var periodFrom = string.find("td.dateFrom").text();
+  var periodTo = string.find("td.dateTo").text();
+
+  if(checkWorkPeriod(periodFrom, periodTo) === true) {
+    alert("Период обработки данных закрыт администратором!!");
+    return false;
+  }
 
   if (cost != 0) {
     option.text(cost);
@@ -273,3 +281,73 @@ $("#addUserBtn").on("click", function (e) {
   });
 
 });
+
+/* Получение преода обработки данных СУП */
+function getWorkDate() {
+
+  $.ajax({
+    type: 'post',
+    url: 'ajax/work-period',
+    dataType: 'text',
+    success: function(data) {
+      sessionStorage.setItem("period", data);
+    }
+  });
+
+}
+
+/* Установка периода обработки данных */
+$("#setPeriod").on("click", function (e) {
+  e.preventDefault();
+
+  var data = $("#setPeriodForm").serialize();
+  // var formData = JSON.stringify(arr);
+
+  $.ajax({
+    type: 'post',
+    url: 'ajax/set-period',
+    data: data,
+    dataType: 'html',
+    complete: function() {
+      location.reload();
+    }
+  });
+
+});
+
+/* Проверка периода обработки данных */
+function checkWorkPeriod(dateFrom, dateTo) {
+  getWorkDate();
+
+  var data = sessionStorage.getItem("period");
+  var arr = JSON.parse(data);
+  var workFrom = arr[0]['date_from'];
+  var workTo = arr[0]['date_to'];
+
+  if(dateFrom < workFrom || dateTo > workTo) {
+    return true;
+  }
+
+}
+
+/* Отображение текущего состояния установленых рабочих дней */
+$("#v-pills-profile-tab").on("click", function () {
+  var data = sessionStorage.getItem("period");
+  var arr = JSON.parse(data);
+  var workFrom = dateFormat(arr[0]['date_from']);
+  var workTo = dateFormat(arr[0]['date_to']);
+
+  $(".setting-block__info span").text(workFrom + ' - ' + workTo);
+});
+
+/* Преобразование формата даты */
+function dateFormat(date) {
+  var formatDate = new Date(date);
+  var d = formatDate.getDate();
+  var m = formatDate.getMonth();
+  m += 1;
+  var y = formatDate.getFullYear();
+
+  var result = d + "." + m + "." + y;
+  return result;
+}

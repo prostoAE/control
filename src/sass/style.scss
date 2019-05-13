@@ -433,11 +433,17 @@ body {
     background: $light-blue;
     border-radius: 0.7rem;
     &__header {
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       color: $text-color;
       font-size: 1rem;
       text-align: center;
       font-weight: 700;
+    }
+    &__info {
+      font-size: 0.7rem;
+      span {
+        color: $edit-color;
+      }
     }
     label {
       margin-right: 1rem;

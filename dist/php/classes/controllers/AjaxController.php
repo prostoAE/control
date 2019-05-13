@@ -360,7 +360,7 @@ class AjaxController extends AppController {
     $writer->save('php://output');
   }
 
-  /* LogOut из системы */
+  /* Выход из системы */
   public function logoutAction() {
     session_destroy();
   }
@@ -424,7 +424,7 @@ class AjaxController extends AppController {
   }
 
   /**
-   * Метод удаляет пользователя из таблицы cdg_users
+   * Метод добавляет пользователя в таблицу cdg_users
    * @void
    */
   public function addUserAction() {
@@ -434,7 +434,6 @@ class AjaxController extends AppController {
     $mainUserName = AneeModel::getFullnameByUkr($array[0]['value']);
     $accessLvl = $array[1]['value'];
 
-    echo $count;
     if($count > 2) {
       for ($i = 2; $i < count($array); $i++) {
         $userLink = AneeModel::getFullnameByUkr($array[$i]['value']);
@@ -447,6 +446,23 @@ class AjaxController extends AppController {
           "insert into cdg_users (ukr, full_name, user_access) values ('$mainUser', '$mainUserName', '$accessLvl')";
       Db::insert(Db::connectSql(), $query);
     }
+  }
+
+  public function workPeriodAction() {
+    $query = /** @lang MySQL */
+        "select * from cdg_work_period";
+    $array = Db::select(Db::connectSql(), $query);
+    $result = json_encode($array);
+    echo $result;
+  }
+
+  public function setPeriodAction() {
+    $from = $_POST['date-from'];
+    $to = $_POST['date-to'];
+    $query = /** @lang MySQL */
+        "UPDATE cdg_work_period SET date_from = '$from', date_to = '$to'";
+        echo $query;
+    Db::set(Db::connectSql(), $query);
   }
 
 }

@@ -123,8 +123,8 @@
                     </select>
                   </label>
                   <button id="serviceUpdateBtn">Save</button>
-                </div>
-              </form>
+                </form>
+              </div>
               <hr>
 
               <div class="setting-block">
@@ -143,13 +143,16 @@
 
               <div class="setting-block">
                 <h3 class="setting-block__header">Установить период редактирования данных</h3>
-                <label>
-                  <input name="date-from" type="text" placeholder="Дата с:" onfocus="(this.type='date')" onblur="(this.type='text')" required>
-                </label>
-                <label>
-                  <input name="date-to" type="text" placeholder="Дата по:" onfocus="(this.type='date')" onblur="(this.type='text')" required>
-                </label>
-                <button>Установить</button>
+                <p class="setting-block__info">Текущий период: <span></span></p>
+                <form action="" class="form" method="post" id="setPeriodForm">
+                  <label>
+                    <input name="date-from" type="text" placeholder="Дата с:" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                  </label>
+                  <label>
+                    <input name="date-to" type="text" placeholder="Дата по:" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                  </label>
+                  <button id="setPeriod">Установить</button>
+                </form>
               </div>
               <hr>
 
