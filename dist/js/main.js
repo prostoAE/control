@@ -343,6 +343,6 @@ $("#v-pills-profile-tab").on("click", function () {
 /* Преобразование формата даты */
 function dateFormat(date) {
   var dateAr = date.split('-');
-  var newDate = dateAr[1] + '.' + dateAr[2] + '.' + dateAr[0];
+  var newDate = dateAr[2] + '.' + dateAr[1] + '.' + dateAr[0];
   return newDate;
 }
