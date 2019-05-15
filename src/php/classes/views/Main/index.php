@@ -26,9 +26,9 @@
             <?php foreach ($statistic as $user): ?>
             <tr>
               <th scope="row"><?= $user['short_condition'] ?></th>
-              <td><?= $user['sup_source'] ?></td>
-              <td><?= $user['sup_confirm'] ?></td>
-              <td><?= $user['sup_total'] ?></td>
+              <td><?= number_format($user['sup_source'], 0, '.', ' '); ?></td>
+              <td><?= number_format($user['sup_confirm'], 0, '.', ' '); ?></td>
+              <td><?= number_format($user['sup_total'], 0, '.', ' '); ?></td>
             </tr>
             </tbody>
             <?php endforeach; ?>
