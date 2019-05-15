@@ -18,7 +18,10 @@ class MainController extends AppController {
     $from = $period[0]['date_from'];
     $to = $period[0]['date_to'];
     $statistic = $sup->getStatisticData($from, $to);
-    $this->set(compact('statistic'));
+    $summSource = array_sum(array_column($statistic, "sup_source"));
+    $summConfirm = array_sum(array_column($statistic, "sup_confirm"));
+    $summTotal = array_sum(array_column($statistic, "sup_total"));
+    $this->set(compact('statistic', 'summSource', 'summConfirm', 'summTotal'));
   }
 
 }
