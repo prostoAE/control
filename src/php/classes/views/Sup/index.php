@@ -51,7 +51,7 @@
 <!--REPORT TABLE-->
 <section class="report-table">
   <div class="table-box">
-    <table class="dragtable">
+    <table>
       <?php if($table): ?>
       <thead>
         <tr>

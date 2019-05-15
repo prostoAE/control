@@ -5,6 +5,7 @@ namespace php\classes\controllers;
 use php\classes\models\AneeModel;
 use php\classes\models\Db;
 use php\classes\models\SupModel;
+use PhpOffice\PhpSpreadsheet\Calculation\DateTime;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
@@ -133,7 +134,7 @@ class AjaxController extends AppController {
       $sheet->setCellValue('H' . $row, $v['article']);
       $sheet->setCellValue('I' . $row, date("d.m.Y", strtotime($v['start_date'])) . ' - ' . date("d.m.Y", strtotime($v['end_date'])));
       $sheet->setCellValue('J' . $row, date('d.m.Y'));
-      $sheet->setCellValue('K' . $row, '');
+      $sheet->setCellValue('K' . $row, date("W", strtotime($v['start_date'])) . '-' . date("W", strtotime($v['end_date'])) ); //week
       $sheet->setCellValue('L' . $row, $v['cost_total']);
       $sheet->setCellValue('M' . $row, '');
       $sheet->setCellValue('N' . $row, $v['type_promo']);
