@@ -20,6 +20,7 @@
               <th scope="col">Бюджет SUP</th>
               <th scope="col">Бюджет добавлено</th>
               <th scope="col">Бюджет итого</th>
+              <th scope="col">%</th>
             </tr>
             </thead>
             <tbody>
@@ -29,9 +30,17 @@
               <td><?= number_format($user['sup_source'], 0, '.', ' '); ?></td>
               <td><?= number_format($user['sup_confirm'], 0, '.', ' '); ?></td>
               <td><?= number_format($user['sup_total'], 0, '.', ' '); ?></td>
+              <td><?= number_format(($user['sup_confirm'] / $user['sup_source']) * 100, 2, '.', '') . '%' ?></td>
+            </tr>
+            <?php endforeach; ?>
+            <tr>
+              <th>Total</th>
+              <td> <?= number_format($summSource, 0, '.', ' '); ?> </td>
+              <td> <?= number_format($summConfirm, 0, '.', ' '); ?> </td>
+              <td> <?= number_format($summTotal, 0, '.', ' '); ?> </td>
+              <td> <?= number_format(($summConfirm / $summSource) * 100, 2, '.', '') . '%' ?> </td>
             </tr>
             </tbody>
-            <?php endforeach; ?>
           </table>
         </div>
       </div>
