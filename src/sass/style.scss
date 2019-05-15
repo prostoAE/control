@@ -175,6 +175,18 @@ body {
 
 /* index Page */
 
+.statistics {
+  margin-top: 5rem;
+}
+
+.statistic-table {
+  margin: 2rem auto;
+  width: 100%;
+  overflow: auto;
+  background: $white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  @include report-table();
+}
 
 /* Page SUP */
 .filters {

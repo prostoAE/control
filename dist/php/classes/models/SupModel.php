@@ -542,4 +542,119 @@ GROUP BY
     Db::set(Db::connectSql(), $query);
   }
 
+  public function getWorkPeriod() {
+    $query = /** @lang MySQL */
+        "select * from cdg_work_period";
+    return Db::select(Db::connectSql(), $query);
+  }
+
+  /**
+   * Метод возвращает сумму бюджетов из СУП + подтвержденные бюджеты
+   * @param $startDate
+   * @param $endDate
+   * @return mixed
+   */
+  public function getStatisticData($startDate, $endDate) {
+    $query = /** @lang MySQL */
+        "select
+  short_condition,
+  (
+    ifnull(sum(mag_001), 0)+
+    ifnull(sum(mag_003), 0)+
+    ifnull(sum(mag_007), 0)+
+    ifnull(sum(mag_009), 0)+
+    ifnull(sum(mag_010), 0)+
+    ifnull(sum(mag_011), 0)+
+    ifnull(sum(mag_012), 0)+
+    ifnull(sum(mag_014), 0)+
+    ifnull(sum(mag_015), 0)+
+    ifnull(sum(mag_016), 0)+
+    ifnull(sum(mag_018), 0)+
+    ifnull(sum(mag_020), 0)+
+    ifnull(sum(mag_022), 0)+
+    ifnull(sum(mag_023), 0)+
+    ifnull(sum(mag_024), 0)+
+    ifnull(sum(mag_025), 0)+
+    ifnull(sum(mag_026), 0)+
+    ifnull(sum(mag_028), 0)+
+    ifnull(sum(mag_029), 0)+
+    ifnull(sum(mag_030), 0)+
+    ifnull(sum(mag_031), 0)+
+    ifnull(sum(mag_032), 0)+
+    ifnull(sum(mag_033), 0)+
+    ifnull(sum(mag_034), 0)+
+    ifnull(sum(mag_035), 0)+
+    ifnull(sum(mag_027), 0)+
+    ifnull(sum(mag_037), 0) 
+  ) as sup_source,
+  (
+    ifnull(sum(mag_001_confirmed), 0)+
+    ifnull(sum(mag_003_confirmed), 0)+
+    ifnull(sum(mag_007_confirmed), 0)+
+    ifnull(sum(mag_009_confirmed), 0)+
+    ifnull(sum(mag_010_confirmed), 0)+
+    ifnull(sum(mag_011_confirmed), 0)+
+    ifnull(sum(mag_012_confirmed), 0)+
+    ifnull(sum(mag_014_confirmed), 0)+
+    ifnull(sum(mag_015_confirmed), 0)+
+    ifnull(sum(mag_016_confirmed), 0)+
+    ifnull(sum(mag_018_confirmed), 0)+
+    ifnull(sum(mag_020_confirmed), 0)+
+    ifnull(sum(mag_022_confirmed), 0)+
+    ifnull(sum(mag_023_confirmed), 0)+
+    ifnull(sum(mag_024_confirmed), 0)+
+    ifnull(sum(mag_025_confirmed), 0)+
+    ifnull(sum(mag_026_confirmed), 0)+
+    ifnull(sum(mag_028_confirmed), 0)+
+    ifnull(sum(mag_029_confirmed), 0)+
+    ifnull(sum(mag_030_confirmed), 0)+
+    ifnull(sum(mag_031_confirmed), 0)+
+    ifnull(sum(mag_032_confirmed), 0)+
+    ifnull(sum(mag_033_confirmed), 0)+
+    ifnull(sum(mag_034_confirmed), 0)+
+    ifnull(sum(mag_035_confirmed), 0)+
+    ifnull(sum(mag_027_confirmed), 0)+
+    ifnull(sum(mag_037_confirmed), 0) 
+  ) as sup_confirm,
+  (
+  	(ifnull(sum(mag_001), 0) + ifnull(sum(mag_001_confirmed), 0))+
+  	(ifnull(sum(mag_003), 0) + ifnull(sum(mag_003_confirmed), 0))+
+  	(ifnull(sum(mag_007), 0) + ifnull(sum(mag_007_confirmed), 0))+
+  	(ifnull(sum(mag_009), 0) + ifnull(sum(mag_009_confirmed), 0))+
+  	(ifnull(sum(mag_010), 0) + ifnull(sum(mag_010_confirmed), 0))+
+  	(ifnull(sum(mag_011), 0) + ifnull(sum(mag_011_confirmed), 0))+
+  	(ifnull(sum(mag_012), 0) + ifnull(sum(mag_012_confirmed), 0))+
+  	(ifnull(sum(mag_014), 0) + ifnull(sum(mag_014_confirmed), 0))+
+  	(ifnull(sum(mag_015), 0) + ifnull(sum(mag_015_confirmed), 0))+
+  	(ifnull(sum(mag_016), 0) + ifnull(sum(mag_016_confirmed), 0))+
+  	(ifnull(sum(mag_018), 0) + ifnull(sum(mag_018_confirmed), 0))+
+  	(ifnull(sum(mag_020), 0) + ifnull(sum(mag_020_confirmed), 0))+
+  	(ifnull(sum(mag_022), 0) + ifnull(sum(mag_022_confirmed), 0))+
+  	(ifnull(sum(mag_023), 0) + ifnull(sum(mag_023_confirmed), 0))+
+  	(ifnull(sum(mag_024), 0) + ifnull(sum(mag_024_confirmed), 0))+
+  	(ifnull(sum(mag_025), 0) + ifnull(sum(mag_025_confirmed), 0))+
+  	(ifnull(sum(mag_026), 0) + ifnull(sum(mag_026_confirmed), 0))+
+  	(ifnull(sum(mag_028), 0) + ifnull(sum(mag_028_confirmed), 0))+
+  	(ifnull(sum(mag_029), 0) + ifnull(sum(mag_029_confirmed), 0))+
+  	(ifnull(sum(mag_030), 0) + ifnull(sum(mag_030_confirmed), 0))+
+  	(ifnull(sum(mag_031), 0) + ifnull(sum(mag_031_confirmed), 0))+
+  	(ifnull(sum(mag_032), 0) + ifnull(sum(mag_032_confirmed), 0))+
+  	(ifnull(sum(mag_033), 0) + ifnull(sum(mag_033_confirmed), 0))+
+  	(ifnull(sum(mag_034), 0) + ifnull(sum(mag_034_confirmed), 0))+
+  	(ifnull(sum(mag_035), 0) + ifnull(sum(mag_035_confirmed), 0))+
+  	(ifnull(sum(mag_027), 0) + ifnull(sum(mag_027_confirmed), 0))+
+  	(ifnull(sum(mag_037), 0) + ifnull(sum(mag_037_confirmed), 0))
+  ) as sup_total
+from
+	sup_final
+where 
+  start_date >= ?
+  and end_date <= ?
+group by
+	short_condition";
+
+    $result = Db::select(Db::connectSql(), $query, [$startDate, $endDate]);
+    return $result;
+  }
+
 }

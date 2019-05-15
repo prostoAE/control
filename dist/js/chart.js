@@ -4,9 +4,9 @@ var ctxB = document.getElementById("barChart").getContext('2d');
 var myBarChart = new Chart(ctxB, {
   type: 'bar',
   data: {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    labels: ["PFls", "BZ1", "EEGP", "PGC1", "PGC2", "TEX"],
     datasets: [{
-      label: '# of Votes',
+      label: 'Сумма бюджетов',
       data: [12, 19, 3, 5, 2, 3],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
@@ -14,6 +14,7 @@ var myBarChart = new Chart(ctxB, {
         'rgba(255, 206, 86, 0.2)',
         'rgba(75, 192, 192, 0.2)',
         'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)',
         'rgba(255, 159, 64, 0.2)'
       ],
       borderColor: [
@@ -22,6 +23,7 @@ var myBarChart = new Chart(ctxB, {
         'rgba(255, 206, 86, 1)',
         'rgba(75, 192, 192, 1)',
         'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)',
         'rgba(255, 159, 64, 1)'
       ],
       borderWidth: 1
