@@ -21,6 +21,15 @@
 <div class="container-fluid">
   <div class="row">
     <header class="header">
+      <p class="header__caption">Hello:
+        <span>
+          <?php
+          $ldap = new \php\classes\models\ldap();
+          $userName = $ldap->getUserName($_SESSION['ukr'], $_SESSION['psw']);
+          echo $userName;
+          ?>
+        </span>
+      </p>
       <!-- MENU -->
       <div class="toogle"></div>
       <nav class="menu">

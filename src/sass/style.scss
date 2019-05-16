@@ -70,7 +70,16 @@ body {
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
+  &__caption {
+    margin: 0 1rem;
+    font-size: 1rem;
+    color: $white;
+    span {
+      font-size: .8rem;
+    }
+  }
 }
+
 
 .footer {
   position: fixed;
