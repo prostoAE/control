@@ -33,8 +33,11 @@ function showTarifModal() {
   var cost = string.find('td#cost').text();
   var option = $('#newCost');
   var formButton = $('.tarif-form__button');
-  var periodFrom = string.find("td.dateFrom").text();
-  var periodTo = string.find("td.dateTo").text();
+  var periodFrom = dateFormated(string.find("td.dateFrom").text());
+  var periodTo = dateFormated(string.find("td.dateTo").text());
+
+  periodFrom = new Date(periodFrom);
+  periodTo = new Date(periodTo);
 
   if(checkWorkPeriod(periodFrom, periodTo) === true) {
     alert("Период обработки данных закрыт администратором!!");
@@ -321,8 +324,8 @@ function checkWorkPeriod(dateFrom, dateTo) {
 
   var data = sessionStorage.getItem("period");
   var arr = JSON.parse(data);
-  var workFrom = arr[0]['date_from'];
-  var workTo = arr[0]['date_to'];
+  var workFrom = new Date(arr[0]['date_from']);
+  var workTo = new Date(arr[0]['date_to']);
 
   if(dateFrom < workFrom || dateTo > workTo) {
     return true;
@@ -340,9 +343,16 @@ $("#v-pills-profile-tab").on("click", function () {
   $(".setting-block__info span").text(workFrom + ' - ' + workTo);
 });
 
-/* Преобразование формата даты */
+/* Преобразование формата даты в dd.mm.yyyy */
 function dateFormat(date) {
   var dateAr = date.split('-');
   var newDate = dateAr[2] + '.' + dateAr[1] + '.' + dateAr[0];
+  return newDate;
+}
+
+/* Преобразование формата даты в yyyy-mm-dd */
+function dateFormated(date) {
+  var dateAr = date.split('.');
+  var newDate = dateAr[2] + '-' + dateAr[1] + '-' + dateAr[0];
   return newDate;
 }
