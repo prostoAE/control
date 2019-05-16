@@ -101,8 +101,8 @@
           ?>
         <tbody>
           <tr>
-            <td class="dateFrom"><?= $val['start_date'] ?></td>
-            <td class="dateTo"><?= $val['end_date'] ?></td>
+            <td class="dateFrom"><?= date("d.m.Y", strtotime($val['start_date'])) ?></td>
+            <td class="dateTo"><?= date("d.m.Y", strtotime($val['end_date'])) ?></td>
             <td><?= $val['buyer'] ?></td>
             <td><?= $val['short_condition'] ?></td>
             <td><?= $val['n_agreement'] ?></td>
