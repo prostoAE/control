@@ -134,7 +134,17 @@ class AjaxController extends AppController {
       $sheet->setCellValue('H' . $row, $v['article']);
       $sheet->setCellValue('I' . $row, date("d.m.Y", strtotime($v['start_date'])) . ' - ' . date("d.m.Y", strtotime($v['end_date'])));
       $sheet->setCellValue('J' . $row, date('d.m.Y'));
-      $sheet->setCellValue('K' . $row, '');
+
+      /* Расчёт номера промо недели */
+      $startDay = date("w", strtotime($v['start_date']));
+      $startWeek = date("W", strtotime($v['start_date']));
+      $startPeriod = $startDay < 3 ? $startWeek - 1 : $startWeek;
+
+      $endDay = date("w", strtotime($v['end_date']));
+      $endWeek = date("W", strtotime($v['end_date']));
+      $endPeriod = $endDay < 3 ? $endWeek - 1 : $endWeek;
+
+      $sheet->setCellValue('K' . $row, $startPeriod . '-' . $endPeriod);
       $sheet->setCellValue('L' . $row, $v['cost_total']);
       $sheet->setCellValue('M' . $row, '');
       $sheet->setCellValue('N' . $row, $v['type_promo']);
