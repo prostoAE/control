@@ -23,6 +23,7 @@
               <th scope="col">%</th>
             </tr>
             </thead>
+            <?php if($statistic): ?>
             <tbody>
             <?php foreach ($statistic as $user): ?>
             <tr>
@@ -44,6 +45,7 @@
               <td> <?= number_format(($summConfirm / $summSource) * 100, 2, '.', '') . '%' ?> </td>
             </tr>
             </tfoot>
+            <?php endif; ?>
           </table>
         </div>
       </div>
