@@ -1,6 +1,6 @@
 //bar
 
-var ctxB = document.getElementById("barChart").getContext('2d');
+/*var ctxB = document.getElementById("barChart").getContext('2d');
 var myBarChart = new Chart(ctxB, {
   type: 'bar',
   data: {
@@ -38,4 +38,4 @@ var myBarChart = new Chart(ctxB, {
       }]
     }
   }
-});
+});*/
