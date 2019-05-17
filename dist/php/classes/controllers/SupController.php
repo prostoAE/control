@@ -28,6 +28,8 @@ class SupController extends AppController {
   }
 
   public function getAccessFilter() {
+    $sup = new SupModel();
+    $year = $sup->getAgreementYear();
     $access = User::getUserAccess();
     $userList = $this->arrToStr(User::getUserLink());
     $this->userList = $userList;
@@ -36,17 +38,17 @@ class SupController extends AppController {
     switch ($access) {
       case 1:
       case 2:
-        $result['buyers'] = self::$anee->getBuyers(2019);
-        $result['groups'] = self::$anee->getGroups(2019);
+        $result['buyers'] = self::$anee->getBuyers($year);
+        $result['groups'] = self::$anee->getGroups($year);
         break;
       case 3:
-        $result['buyers'] = self::$anee->getBuyersWithFilter(2019, User::getUserName());
-        $result['groups'] = self::$anee->getGroupsWithFilter(2019, User::getUserName());
+        $result['buyers'] = self::$anee->getBuyersWithFilter($year, User::getUserName());
+        $result['groups'] = self::$anee->getGroupsWithFilter($year, User::getUserName());
         break;
       case 4:
       case 5:
-        $result['buyers'] = self::$anee->getBuyersWithFilter(2019, $userList);
-        $result['groups'] = self::$anee->getGroupsWithFilter(2019, $userList);
+        $result['buyers'] = self::$anee->getBuyersWithFilter($year, $userList);
+        $result['groups'] = self::$anee->getGroupsWithFilter($year, $userList);
         break;
     }
     return $result;

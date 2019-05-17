@@ -542,6 +542,17 @@ GROUP BY
     Db::set(Db::connectSql(), $query);
   }
 
+  /**
+   * Метод получает год агримента из базы данных
+   * @return mixed
+   */
+  public function getAgreementYear() {
+    $query = /** @lang MySQL */
+        "select agr_year from cdg_agr_year";
+    $year = Db::selectOne(Db::connectSql(), $query);
+    return $year;
+  }
+
   public function getWorkPeriod() {
     $query = /** @lang MySQL */
         "select * from cdg_work_period";
