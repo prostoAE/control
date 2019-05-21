@@ -15,12 +15,12 @@
     height: 10px;
     border-radius: 50%;
     position: relative;
-    -webkit-animation: loader12-ua68be37e 1s linear alternate infinite;
-            animation: loader12-ua68be37e 1s linear alternate infinite;
+    -webkit-animation: loader12-u400231c9 1s linear alternate infinite;
+            animation: loader12-u400231c9 1s linear alternate infinite;
     top: 350px;
     margin: -25px auto 0; }
 
-@-webkit-keyframes loader12-ua68be37e {
+@-webkit-keyframes loader12-u400231c9 {
   0% {
     -webkit-box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2);
             box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2); }
@@ -37,7 +37,7 @@
     -webkit-box-shadow: -36px 20px 0 0 rgba(0, 82, 236, 0.2), -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 2px #0052ec;
             box-shadow: -36px 20px 0 0 rgba(0, 82, 236, 0.2), -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 2px #0052ec; } }
 
-@keyframes loader12-ua68be37e {
+@keyframes loader12-u400231c9 {
   0% {
     -webkit-box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2);
             box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2); }
@@ -427,7 +427,7 @@ body {
       color: #ff9e99; }
 
 /* Tarif modal window */
-.modal {
+.modalTarif {
   display: none;
   width: 15rem;
   height: 8rem;
@@ -442,7 +442,7 @@ body {
   border-radius: .5rem;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); }
-  .modal--close {
+  .modalTarif--close {
     width: 1.5rem;
     height: 1.5rem;
     position: absolute;
@@ -453,13 +453,13 @@ body {
     line-height: 1.5rem;
     text-align: center;
     cursor: pointer; }
-  .modal__header {
+  .modalTarif__header {
     padding: .3rem;
     font-size: 1rem;
     color: #ffffff;
     text-align: center;
     background: #5acbd2; }
-  .modal .tarif-form {
+  .modalTarif .tarif-form {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -475,7 +475,7 @@ body {
     -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
             flex-wrap: wrap; }
-    .modal .tarif-form__select {
+    .modalTarif .tarif-form__select {
       display: block;
       width: 50%;
       padding: .3rem;
@@ -485,7 +485,7 @@ body {
       border: none;
       border-radius: 5px;
       outline: none; }
-    .modal .tarif-form__button {
+    .modalTarif .tarif-form__button {
       margin-top: 1rem;
       display: block;
       padding: .3rem .8rem;
@@ -495,8 +495,47 @@ body {
       color: #ffffff;
       border-radius: 5px;
       outline: none; }
-      .modal .tarif-form__button:hover {
+      .modalTarif .tarif-form__button:hover {
         background: #b2b2b2; }
+
+/* Edit table column modal */
+.editTableBtn {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: .7rem;
+  color: #989898;
+  background: #ffffff; }
+
+.control-block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  max-height: 250px; }
+  .control-block__wrapper {
+    margin-bottom: .5rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: .8rem;
+    color: #989898; }
+    .control-block__wrapper input {
+      margin-right: .5rem; }
 
 /* Page setting */
 .setting-header {

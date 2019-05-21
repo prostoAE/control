@@ -28,7 +28,7 @@ function hideLoader() {
 $('.edit-cost').on('click', showTarifModal);
 
 function showTarifModal() {
-  var tarifModal = $('.modal');
+  var tarifModal = $('.modalTarif');
   var string = $(this).parent().parent();
   var cost = string.find('td#cost').text();
   var option = $('#newCost');
@@ -57,10 +57,10 @@ function showTarifModal() {
 }
 
 /* Hide tarif modal */
-$(".modal--close").on('click', hideTarifModal);
+$(".modalTarif--close").on('click', hideTarifModal);
 
 function hideTarifModal() {
-  var tarifModal = $('.modal');
+  var tarifModal = $('.modalTarif');
   tarifModal.fadeOut();
 }
 
@@ -356,3 +356,110 @@ function dateFormated(date) {
   var newDate = dateAr[2] + '-' + dateAr[1] + '-' + dateAr[0];
   return newDate;
 }
+
+/* Вывод кнопки редактирования таблицы из контекстного меню */
+$("table").contextmenu(function (e) {
+  e.preventDefault();
+
+  var x = e.pageX;
+  var y = e.pageY;
+  var btn = $(".editTableBtn");
+
+  btn.css("left", x);
+  btn.css("top", y);
+  btn.show();
+
+  showCheckboxList();
+});
+
+/* Скрытие кнопки редактирования таблицы */
+$(".editTableBtn").on("click", function () {
+  $(".editTableBtn").hide();
+});
+
+/* заполнение перечня столбцов в филтре */
+function showCheckboxList() {
+  var data = $("table th[data-colIndex]");
+  var block = $(".control-block");
+  var out = '';
+
+  for (var i = 0; i < data.length; i++) {
+    out += '<div class="control-block__wrapper">';
+    out += '<input type="checkbox" id="colNum_' + i + '" checked>';
+    out += '<label for="colNum_' + i + '">' + data[i].textContent + ' </label>';
+    out += '</div>';
+  }
+
+  block.html(out);
+  inputsMark();
+}
+
+function inputsMark() {
+  var sstrFilter = JSON.parse(sessionStorage.getItem("colFilter"));
+  if(sstrFilter.length > 0) {
+    for (var i = 0; i < sstrFilter.length; i++) {
+      var inp = $("#" + sstrFilter[i]['id']);
+      inp.prop("checked", sstrFilter[i]['value']);
+      if(inp.prop("checked") === false) {
+        hideColumn(i);
+      } else {
+        showColumn(i);
+      }
+    }
+  }
+}
+
+/* Управление отображение/скрытием столбцов таблицы */
+$(".control-block").on("change", "input", function () {
+  var status = $(this).prop('checked');
+  var ind = $(this).attr("id").split("_");
+  var colIndex = ind[1];
+
+  if(status === false) {
+    hideColumn(colIndex);
+  } else {
+    showColumn(colIndex);
+  }
+});
+
+/* скрыть столбец таблицы */
+function hideColumn(index) {
+  var data = $("table th[data-colIndex=" + index + "],td[data-colIndex=" + index + "]");
+  data.each(function () {
+    $(this).css("display", "none");
+  });
+}
+
+/* отобразить столбец таблицы */
+function showColumn(index) {
+  var data = $("table th[data-colIndex=" + index + "],td[data-colIndex=" + index + "]");
+  data.each(function() {
+    $(this).css("display", "table-cell");
+  });
+}
+
+/* Созранение фильтра столбцов таблицы */
+$("#colFilterSave").on("click", function (e) {
+  e.preventDefault();
+
+  var inputs = $(".control-block input");
+  var sessionData = [];
+
+  for (var i = 0; i < inputs.length; i++) {
+    sessionData.push({ id: $(inputs[i]).attr("id"), value: $(inputs[i]).prop('checked') });
+  }
+
+  sessionStorage.setItem("colFilter", JSON.stringify(sessionData));
+
+  $.ajax({
+    type: 'post',
+    url: 'ajax/col-filter',
+    data: {filter : JSON.stringify(sessionData)},
+    dataType: 'html',
+    success: function(response) {
+      console.log(response);
+    }
+  });
+
+  $('#exampleModalCenter').modal('hide');
+});
