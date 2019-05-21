@@ -56,84 +56,84 @@
       <thead>
         <tr>
           <?php
-          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][0] == 1) {
+          if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][0] == 1) {
             echo "<th data-colIndex=\"0\">start_date</th>";
           } else {
             echo "<th data-colIndex=\"0\" style=\"display: none\">start_date</th>";
           }
           ?>
           <?php
-          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][1] == 1) {
+          if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][1] == 1) {
             echo "<th data-colIndex=\"1\">end_date</th>";
           } else {
             echo "<th data-colIndex=\"1\" style=\"display: none\">end_date</th>";
           }
           ?>
           <?php
-          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][2] == 1) {
+          if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][2] == 1) {
             echo "<th data-colIndex=\"2\">buyer</th>";
           } else {
             echo "<th data-colIndex=\"2\" style=\"display: none\">buyer</th>";
           }
           ?>
           <?php
-          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][3] == 1) {
+          if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][3] == 1) {
             echo "<th data-colIndex=\"3\">short_condition</th>";
           } else {
             echo "<th data-colIndex=\"3\" style=\"display: none\">short_condition</th>";
           }
           ?>
           <?php
-          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][4] == 1) {
+          if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][4] == 1) {
             echo "<th data-colIndex=\"4\">n_agreement</th>";
           } else {
             echo "<th data-colIndex=\"4\" style=\"display: none\">n_agreement</th>";
           }
           ?>
           <?php
-          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][5] == 1) {
+          if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][5] == 1) {
             echo "<th data-colIndex=\"5\">segment</th>";
           } else {
             echo "<th data-colIndex=\"5\" style=\"display: none\">segment</th>";
           }
           ?>
           <?php
-          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][6] == 1) {
+          if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][6] == 1) {
             echo "<th data-colIndex=\"6\">frs</th>";
           } else {
             echo "<th data-colIndex=\"6\" style=\"display: none\">frs</th>";
           }
           ?>
           <?php
-          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][7] == 1) {
+          if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][7] == 1) {
             echo "<th data-colIndex=\"7\">frs name</th>";
           } else {
             echo "<th data-colIndex=\"7\" style=\"display: none\">frs name</th>";
           }
           ?>
           <?php
-          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][8] == 1) {
+          if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][8] == 1) {
             echo "<th data-colIndex=\"8\">article</th>";
           } else {
             echo "<th data-colIndex=\"8\" style=\"display: none\">article8/th>";
           }
           ?>
           <?php
-          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][9] == 1) {
+          if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][9] == 1) {
             echo "<th data-colIndex=\"9\">type_promo</th>";
           } else {
             echo "<th data-colIndex=\"9\" style=\"display: none\">type_promo/th>";
           }
           ?>
           <?php
-          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][10] == 1) {
+          if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][10] == 1) {
             echo "<th data-colIndex=\"10\">comments</th>";
           } else {
             echo "<th data-colIndex=\"10\" style=\"display: none\">comments/th>";
           }
           ?>
           <?php
-          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][11] == 1) {
+          if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][11] == 1) {
             echo "<th data-colIndex=\"11\">billing_cost_per_service</th>";
           } else {
             echo "<th data-colIndex=\"11\" style=\"display: none\">billing_cost_per_service/th>";
@@ -174,61 +174,61 @@
         <tbody>
           <tr>
 
-            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][0] == 1): ?>
+            <?php if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][0] == 1): ?>
             <td class="dateFrom" data-colIndex="0"><?= date("d.m.Y", strtotime($val['start_date'])) ?></td>
             <?php else: ?>
             <td class="dateFrom" data-colIndex="0" style="display: none"><?= date("d.m.Y", strtotime($val['start_date'])) ?></td>
             <?php endif; ?>
 
-            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][1] == 1): ?>
+            <?php if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][1] == 1): ?>
             <td class="dateTo" data-colIndex="1"><?= date("d.m.Y", strtotime($val['end_date'])) ?></td>
             <?php else: ?>
             <td class="dateTo" data-colIndex="1" style="display: none"><?= date("d.m.Y", strtotime($val['end_date'])) ?></td>
             <?php endif; ?>
 
-            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][2] == 1): ?>
+            <?php if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][2] == 1): ?>
             <td data-colIndex="2"><?= $val['buyer'] ?></td>
             <?php else: ?>
             <td data-colIndex="2" style="display: none"><?= $val['buyer'] ?></td>
             <?php endif; ?>
 
-            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][3] == 1): ?>
+            <?php if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][3] == 1): ?>
             <td data-colIndex="3"><?= $val['short_condition'] ?></td>
             <?php else: ?>
             <td data-colIndex="3" style="display: none"><?= $val['short_condition'] ?></td>
             <?php endif; ?>
 
-            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][4] == 1): ?>
+            <?php if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][4] == 1): ?>
             <td data-colIndex="4"><?= $val['n_agreement'] ?></td>
             <?php else: ?>
             <td data-colIndex="4" style="display: none"><?= $val['n_agreement'] ?></td>
             <?php endif; ?>
 
-            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][5] == 1): ?>
+            <?php if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][5] == 1): ?>
             <td data-colIndex="5"><?= $val['segment'] ?></td>
             <?php else: ?>
             <td data-colIndex="5" style="display: none"><?= $val['segment'] ?></td>
             <?php endif; ?>
 
-            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][6] == 1): ?>
+            <?php if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][6] == 1): ?>
             <td data-colIndex="6"><?= $val['frs'] ?></td>
             <?php else: ?>
             <td data-colIndex="6" style="display: none"><?= $val['frs'] ?></td>
             <?php endif; ?>
 
-            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][7] == 1): ?>
+            <?php if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][7] == 1): ?>
             <td data-colIndex="7"><?= \php\classes\models\AneeModel::getSupplierName($val['frs']) ?></td>
             <?php else: ?>
             <td data-colIndex="7" style="display: none"><?= \php\classes\models\AneeModel::getSupplierName($val['frs']) ?></td>
             <?php endif; ?>
 
-            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][8] == 1): ?>
+            <?php if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][8] == 1): ?>
             <td data-colIndex="8"><?= $val['article'] ?></td>
             <?php else: ?>
             <td data-colIndex="8" style="display: none"><?= $val['article'] ?></td>
             <?php endif; ?>
 
-            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][9] == 1): ?>
+            <?php if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][9] == 1): ?>
             <?php if($val['super_ind'] == 1): ?>
             <td data-colIndex="9"><?= $val['type_promo'] . ' - super' ?></td>
             <?php else: ?>
@@ -242,13 +242,13 @@
             <?php endif; ?>
             <?php endif; ?>
 
-            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][10] == 1): ?>
+            <?php if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][10] == 1): ?>
             <td data-colIndex="10"><?= $val['comments'] ?></td>
             <?php else: ?>
             <td data-colIndex="10" style="display: none"><?= $val['comments'] ?></td>
             <?php endif; ?>
 
-            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][11] == 1): ?>
+            <?php if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][11] == 1): ?>
             <td data-colIndex="11"id="cost"><?= $val['billing_cost_per_service'] ?></td>
             <?php else: ?>
             <td data-colIndex="11"id="cost" style="display: none"><?= $val['billing_cost_per_service'] ?></td>
