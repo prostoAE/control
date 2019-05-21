@@ -55,18 +55,90 @@
       <?php if($table): ?>
       <thead>
         <tr>
-          <th>start_date</th>
-          <th>end_date</th>
-          <th>buyer</th>
-          <th>short_condition</th>
-          <th>n_agreement</th>
-          <th>segment</th>
-          <th>frs</th>
-          <th>frs name</th>
-          <th>article</th>
-          <th>type_promo</th>
-          <th>comments</th>
-          <th>billing_cost_per_service</th>
+          <?php
+          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][0] == 1) {
+            echo "<th data-colIndex=\"0\">start_date</th>";
+          } else {
+            echo "<th data-colIndex=\"0\" style=\"display: none\">start_date</th>";
+          }
+          ?>
+          <?php
+          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][1] == 1) {
+            echo "<th data-colIndex=\"1\">end_date</th>";
+          } else {
+            echo "<th data-colIndex=\"1\" style=\"display: none\">end_date</th>";
+          }
+          ?>
+          <?php
+          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][2] == 1) {
+            echo "<th data-colIndex=\"2\">buyer</th>";
+          } else {
+            echo "<th data-colIndex=\"2\" style=\"display: none\">buyer</th>";
+          }
+          ?>
+          <?php
+          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][3] == 1) {
+            echo "<th data-colIndex=\"3\">short_condition</th>";
+          } else {
+            echo "<th data-colIndex=\"3\" style=\"display: none\">short_condition</th>";
+          }
+          ?>
+          <?php
+          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][4] == 1) {
+            echo "<th data-colIndex=\"4\">n_agreement</th>";
+          } else {
+            echo "<th data-colIndex=\"4\" style=\"display: none\">n_agreement</th>";
+          }
+          ?>
+          <?php
+          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][5] == 1) {
+            echo "<th data-colIndex=\"5\">segment</th>";
+          } else {
+            echo "<th data-colIndex=\"5\" style=\"display: none\">segment</th>";
+          }
+          ?>
+          <?php
+          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][6] == 1) {
+            echo "<th data-colIndex=\"6\">frs</th>";
+          } else {
+            echo "<th data-colIndex=\"6\" style=\"display: none\">frs</th>";
+          }
+          ?>
+          <?php
+          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][7] == 1) {
+            echo "<th data-colIndex=\"7\">frs name</th>";
+          } else {
+            echo "<th data-colIndex=\"7\" style=\"display: none\">frs name</th>";
+          }
+          ?>
+          <?php
+          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][8] == 1) {
+            echo "<th data-colIndex=\"8\">article</th>";
+          } else {
+            echo "<th data-colIndex=\"8\" style=\"display: none\">article8/th>";
+          }
+          ?>
+          <?php
+          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][9] == 1) {
+            echo "<th data-colIndex=\"9\">type_promo</th>";
+          } else {
+            echo "<th data-colIndex=\"9\" style=\"display: none\">type_promo/th>";
+          }
+          ?>
+          <?php
+          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][10] == 1) {
+            echo "<th data-colIndex=\"10\">comments</th>";
+          } else {
+            echo "<th data-colIndex=\"10\" style=\"display: none\">comments/th>";
+          }
+          ?>
+          <?php
+          if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][11] == 1) {
+            echo "<th data-colIndex=\"11\">billing_cost_per_service</th>";
+          } else {
+            echo "<th data-colIndex=\"11\" style=\"display: none\">billing_cost_per_service/th>";
+          }
+          ?>
           <th>mag_001</th>
           <th>mag_003</th>
           <th>mag_007</th>
@@ -101,22 +173,86 @@
           ?>
         <tbody>
           <tr>
-            <td class="dateFrom"><?= date("d.m.Y", strtotime($val['start_date'])) ?></td>
-            <td class="dateTo"><?= date("d.m.Y", strtotime($val['end_date'])) ?></td>
-            <td><?= $val['buyer'] ?></td>
-            <td><?= $val['short_condition'] ?></td>
-            <td><?= $val['n_agreement'] ?></td>
-            <td><?= $val['segment'] ?></td>
-            <td><?= $val['frs'] ?></td>
-            <td><?= \php\classes\models\AneeModel::getSupplierName($val['frs']) ?></td>
-            <td><?= $val['article'] ?></td>
-            <?php if($val['super_ind'] == 1): ?>
-            <td><?= $val['type_promo'] . ' - super' ?></td>
+
+            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][0] == 1): ?>
+            <td class="dateFrom" data-colIndex="0"><?= date("d.m.Y", strtotime($val['start_date'])) ?></td>
             <?php else: ?>
-            <td><?= $val['type_promo'] ?></td>
+            <td class="dateFrom" data-colIndex="0" style="display: none"><?= date("d.m.Y", strtotime($val['start_date'])) ?></td>
             <?php endif; ?>
-            <td><?= $val['comments'] ?></td>
-            <td id="cost"><?= $val['billing_cost_per_service'] ?></td>
+
+            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][1] == 1): ?>
+            <td class="dateTo" data-colIndex="1"><?= date("d.m.Y", strtotime($val['end_date'])) ?></td>
+            <?php else: ?>
+            <td class="dateTo" data-colIndex="1" style="display: none"><?= date("d.m.Y", strtotime($val['end_date'])) ?></td>
+            <?php endif; ?>
+
+            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][2] == 1): ?>
+            <td data-colIndex="2"><?= $val['buyer'] ?></td>
+            <?php else: ?>
+            <td data-colIndex="2" style="display: none"><?= $val['buyer'] ?></td>
+            <?php endif; ?>
+
+            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][3] == 1): ?>
+            <td data-colIndex="3"><?= $val['short_condition'] ?></td>
+            <?php else: ?>
+            <td data-colIndex="3" style="display: none"><?= $val['short_condition'] ?></td>
+            <?php endif; ?>
+
+            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][4] == 1): ?>
+            <td data-colIndex="4"><?= $val['n_agreement'] ?></td>
+            <?php else: ?>
+            <td data-colIndex="4" style="display: none"><?= $val['n_agreement'] ?></td>
+            <?php endif; ?>
+
+            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][5] == 1): ?>
+            <td data-colIndex="5"><?= $val['segment'] ?></td>
+            <?php else: ?>
+            <td data-colIndex="5" style="display: none"><?= $val['segment'] ?></td>
+            <?php endif; ?>
+
+            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][6] == 1): ?>
+            <td data-colIndex="6"><?= $val['frs'] ?></td>
+            <?php else: ?>
+            <td data-colIndex="6" style="display: none"><?= $val['frs'] ?></td>
+            <?php endif; ?>
+
+            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][7] == 1): ?>
+            <td data-colIndex="7"><?= \php\classes\models\AneeModel::getSupplierName($val['frs']) ?></td>
+            <?php else: ?>
+            <td data-colIndex="7" style="display: none"><?= \php\classes\models\AneeModel::getSupplierName($val['frs']) ?></td>
+            <?php endif; ?>
+
+            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][8] == 1): ?>
+            <td data-colIndex="8"><?= $val['article'] ?></td>
+            <?php else: ?>
+            <td data-colIndex="8" style="display: none"><?= $val['article'] ?></td>
+            <?php endif; ?>
+
+            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][9] == 1): ?>
+            <?php if($val['super_ind'] == 1): ?>
+            <td data-colIndex="9"><?= $val['type_promo'] . ' - super' ?></td>
+            <?php else: ?>
+            <td data-colIndex="9"><?= $val['type_promo'] ?></td>
+            <?php endif; ?>
+            <?php else: ?>
+            <?php if($val['super_ind'] == 1): ?>
+              <td data-colIndex="9" style="display: none"><?= $val['type_promo'] . ' - super' ?></td>
+            <?php else: ?>
+              <td data-colIndex="9" style="display: none"><?= $val['type_promo'] ?></td>
+            <?php endif; ?>
+            <?php endif; ?>
+
+            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][10] == 1): ?>
+            <td data-colIndex="10"><?= $val['comments'] ?></td>
+            <?php else: ?>
+            <td data-colIndex="10" style="display: none"><?= $val['comments'] ?></td>
+            <?php endif; ?>
+
+            <?php if(isset($_SESSION['colFilter']) && $_SESSION['colFilter'][11] == 1): ?>
+            <td data-colIndex="11"id="cost"><?= $val['billing_cost_per_service'] ?></td>
+            <?php else: ?>
+            <td data-colIndex="11"id="cost" style="display: none"><?= $val['billing_cost_per_service'] ?></td>
+            <?php endif; ?>
 
             <?php if($val['mag_001'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP' && $val['super_ind'] != 1): ?>
             <td><?php
@@ -454,10 +590,10 @@
 </section>
 
 <!--MODAL-->
-<div class="modal">
-  <span class="modal--close">x</span>
-  <h2 class="modal__header">Изменение тарифа</h2>
-  <div class="modal__body">
+<div class="modalTarif">
+  <span class="modalTarif--close">x</span>
+  <h2 class="modalTarif__header">Изменение тарифа</h2>
+  <div class="modalTarif__body">
     <form action="" class="tarif-form">
       <select class="tarif-form__select">
         <option id="curentCost">0</option>
@@ -465,5 +601,33 @@
       </select>
       <button class="tarif-form__button">Подтвердить</button>
     </form>
+  </div>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary editTableBtn" data-toggle="modal" data-target="#exampleModalCenter">
+  Редактировать столбцы таблицы
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Управление столбцами таблицы</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="control-block">
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary" id="colFilterSave">Созранить</button>
+      </div>
+    </div>
   </div>
 </div>

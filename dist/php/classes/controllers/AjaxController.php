@@ -476,4 +476,11 @@ class AjaxController extends AppController {
     Db::set(Db::connectSql(), $query);
   }
 
+  public function colFilterAction() {
+    $data = json_decode($_POST['filter']);
+    $filter = array_column($data, 'value');
+    $_SESSION['colFilter'] = $filter;
+//    debug($filter);
+  }
+  
 }

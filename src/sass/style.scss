@@ -307,7 +307,7 @@ body {
 }
 
 /* Tarif modal window */
-.modal {
+.modalTarif {
   display: none;
   width: 15rem;
   height: 8rem;
@@ -367,6 +367,34 @@ body {
       &:hover {
         background: lighten($text-color, 10%);
       }
+    }
+  }
+}
+
+/* Edit table column modal */
+.editTableBtn {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: .7rem;
+  color: $text-color;
+  background: $white;
+}
+
+.control-block {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 250px;
+  &__wrapper {
+    margin-bottom: .5rem;
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+    color: $text-color;
+    input {
+      margin-right: .5rem;
     }
   }
 }
