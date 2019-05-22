@@ -8,6 +8,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-grid.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
   <!-- Font Awesome-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <!-- Custom CSS -->
@@ -57,6 +58,7 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
 <!-- Custom JS -->
 <script src="js/main.js"></script>
 </body>

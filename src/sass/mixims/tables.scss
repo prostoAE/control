@@ -15,6 +15,10 @@
       top: 0;
       background: $thead;
       color: $white;
+      text-align: center;
+      span {
+        display: block;
+      }
     }
   }
 }

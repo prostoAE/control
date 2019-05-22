@@ -3,7 +3,24 @@ $(document).ready(function () {
   hideLoader();
   setFilterFromStorage();
   getWorkDate();
+  runPicker();
 });
+
+function runPicker() {
+  $('#from').datepicker({
+    format : 	'yyyy-mm-dd',
+    calendarWeeks : true,
+    todayHighlight : true,
+    weekStart : 1
+  });
+
+  $('#to').datepicker({
+    format : 	'yyyy-mm-dd',
+    calendarWeeks : true,
+    todayHighlight : true,
+    weekStart : 1
+  });
+}
 
 /*Смена класса меню*/
 function toogleClassMenu() {
