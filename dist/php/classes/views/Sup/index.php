@@ -25,12 +25,28 @@
               <?php endforeach; ?>
             </select>
           </label>
+<!--          <label>-->
+<!--            <input id="from" name="date-from" type="text" placeholder="Дата с:" onfocus="(this.type='week')" onblur="(this.type='text')" required value="--><?//= date("Y.m.01") ?><!--">-->
+<!--          </label>-->
+
           <label>
-            <input id="from" name="date-from" type="text" placeholder="Дата с:" onfocus="(this.type='date')" onblur="(this.type='text')" required value="<?= date("Y.m.01") ?>">
+            <input type="text" class="form-control" placeholder="Дата с:" name="date-from" id="from" <?= date("Y.m.01") ?> autocomplete="off" required>
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-th"></span>
+            </div>
           </label>
+
+<!--          <label>-->
+<!--            <input id="to" name="date-to" type="text" placeholder="Дата по:" onfocus="(this.type='date')" onblur="(this.type='text')" required value="--><?//= date("Y.m.d") ?><!--">-->
+<!--          </label>-->
+
           <label>
-            <input id="to" name="date-to" type="text" placeholder="Дата по:" onfocus="(this.type='date')" onblur="(this.type='text')" required value="<?= date("Y.m.d") ?>">
+            <input type="text" class="form-control" placeholder="Дата по:" name="date-to" id="to" <?= date("Y.m.01") ?> autocomplete="off" required>
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-th"></span>
+            </div>
           </label>
+
         </div>
         <div class="form-row">
           <label>
@@ -139,33 +155,33 @@
             echo "<th data-colIndex=\"11\" style=\"display: none\">billing_cost_per_service/th>";
           }
           ?>
-          <th>mag_001</th>
-          <th>mag_003</th>
-          <th>mag_007</th>
-          <th>mag_009</th>
-          <th>mag_010</th>
-          <th>mag_011</th>
-          <th>mag_012</th>
-          <th>mag_014</th>
-          <th>mag_015</th>
-          <th>mag_016</th>
-          <th>mag_018</th>
-          <th>mag_020</th>
-          <th>mag_022</th>
-          <th>mag_023</th>
-          <th>mag_024</th>
-          <th>mag_025</th>
-          <th>mag_026</th>
-          <th>mag_027</th>
-          <th>mag_028</th>
-          <th>mag_029</th>
-          <th>mag_030</th>
-          <th>mag_031</th>
-          <th>mag_032</th>
-          <th>mag_033</th>
-          <th>mag_034</th>
-          <th>mag_035</th>
-          <th>mag_037</th>
+          <th>001 <span>PETR</span></th>
+          <th>003 <span>KILTS</span></th>
+          <th>007 <span>BELICH</span></th>
+          <th>009 <span>LVIV</span></th>
+          <th>010 <span>RAD</span></th>
+          <th>011 <span>ZAPOROG</span></th>
+          <th>012 <span>KRIV.R</span></th>
+          <th>014 <span>RIVE G</span></th>
+          <th>015 <span>LIBI</span></th>
+          <th>016 <span>FONT</span></th>
+          <th>018 <span>TCHERN</span></th>
+          <th>020 <span>PIVD</span></th>
+          <th>022 <span>LVIV</span></th>
+          <th>023 <span>Hluck</span></th>
+          <th>024 <span>Sosn</span></th>
+          <th>025 <span>LUGOV</span></th>
+          <th>026 <span>Kharkiv</span></th>
+          <th>027 <span>Tarasiv</span></th>
+          <th>028 <span>Khark</span></th>
+          <th>029 <span>DNIPR</span></th>
+          <th>030 <span>Zhytom</span></th>
+          <th>031 <span>Chern</span></th>
+          <th>032 <span>Вильям</span></th>
+          <th>033 <span>Лепсе</span></th>
+          <th>034 <span>Правди</span></th>
+          <th>035 <span>Фрунзе</span></th>
+          <th>037 <span>DAFI</span></th>
         </tr>
       </thead>
         <?php
