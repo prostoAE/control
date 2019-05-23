@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+error_reporting(-1);
 spl_autoload_register(function ($class) {
   $file = ROOT . '/' . str_replace('\\', '/', strtolower($class)) . '.php';
   if(file_exists($file)) {

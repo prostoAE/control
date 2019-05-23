@@ -394,6 +394,14 @@ $(".editTableBtn").on("click", function () {
   $(".editTableBtn").hide();
 });
 
+$(document).mouseup(function (e){ // событие клика по веб-документу
+  var div = $(".editTableBtn"); // тут указываем ID элемента
+  if (!div.is(e.target) && div.has(e.target).length === 0) { // если клик был не по нашему блоку и не по его дочерним элементам
+    div.hide(); // скрываем его
+  }
+});
+
+
 /* заполнение перечня столбцов в филтре */
 function showCheckboxList() {
   var data = $("table th[data-colIndex]");
