@@ -291,47 +291,47 @@ class AjaxController extends AppController {
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
             ->getStartColor()->setARGB('FEFFCF');
       }
-      if($v['mag_027_confirmed'] >= '0') {
+      if($v['mag_028_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AF' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
             ->getStartColor()->setARGB('FEFFCF');
       }
-      if($v['mag_028_confirmed'] >= '0') {
+      if($v['mag_029_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AG' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
             ->getStartColor()->setARGB('FEFFCF');
       }
-      if($v['mag_029_confirmed'] >= '0') {
+      if($v['mag_030_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AH' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
             ->getStartColor()->setARGB('FEFFCF');
       }
-      if($v['mag_030_confirmed'] >= '0') {
+      if($v['mag_031_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AI' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
             ->getStartColor()->setARGB('FEFFCF');
       }
-      if($v['mag_031_confirmed'] >= '0') {
+      if($v['mag_032_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AJ' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
             ->getStartColor()->setARGB('FEFFCF');
       }
-      if($v['mag_032_confirmed'] >= '0') {
+      if($v['mag_033_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AK' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
             ->getStartColor()->setARGB('FEFFCF');
       }
-      if($v['mag_033_confirmed'] >= '0') {
+      if($v['mag_034_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AL' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
             ->getStartColor()->setARGB('FEFFCF');
       }
-      if($v['mag_034_confirmed'] >= '0') {
+      if($v['mag_035_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AM' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
             ->getStartColor()->setARGB('FEFFCF');
       }
-      if($v['mag_035_confirmed'] >= '0') {
+      if($v['mag_027_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AN' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
             ->getStartColor()->setARGB('FEFFCF');
