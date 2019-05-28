@@ -310,6 +310,9 @@ body {
   background: $white;
   box-shadow: 0 0 30px rgba(0,0,0,0.2);
   @include report-table();
+  tbody {
+    tr:nth-child(even) {background: lighten($light-blue, 15%) }
+  }
   .edit-cost {
     margin-left: .5rem;
     cursor: pointer;

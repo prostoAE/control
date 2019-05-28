@@ -184,10 +184,10 @@
           <th>037 <span>DAFI</span></th>
         </tr>
       </thead>
+        <tbody>
         <?php
         foreach ($table as $val):
           ?>
-        <tbody>
           <tr>
 
             <?php if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][0] == 1): ?>
@@ -594,13 +594,15 @@
             <?php else: ?>
             <td><?= $val['mag_037'] ?></td>
             <?php endif; ?>
-
           </tr>
-        </tbody>
         <?php
         endforeach;
+        ?>
+        </tbody>
+      <?php
       endif;
       ?>
+
     </table>
   </div>
 </section>
