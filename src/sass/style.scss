@@ -20,7 +20,7 @@
 /* Basic settings */
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 0 1.2rem 0;
   font-size: 10px;
   font-family: sans-serif;
   dl, ol, ul, label {
@@ -312,6 +312,10 @@ body {
   @include report-table();
   tbody {
     tr:nth-child(even) {background: lighten($light-blue, 15%) }
+  }
+  .mark-tarif {
+    color: $hover-color;
+    font-weight: 700;
   }
   .edit-cost {
     margin-left: .5rem;
