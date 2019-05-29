@@ -4,6 +4,7 @@ $(document).ready(function () {
   setFilterFromStorage();
   getWorkDate();
   runPicker();
+  getTotalSumm();
 });
 
 function runPicker() {
@@ -99,6 +100,7 @@ $(".tarif-form__button").on('click', function (e) {
     data: data,
     complete:function () {
       cell = updateCell(data['id'], data['store'], data['tarif']);
+      getSummByStores(data['id']);
       hideTarifModal();
     }
   });
@@ -488,3 +490,35 @@ $("#colFilterSave").on("click", function (e) {
 
   $('#exampleModalCenter').modal('hide');
 });
+
+/* Общая сумма со всех магазинов */
+function getSummByStores(rowId) {
+  var cell = $("table td[data-numrow = " + rowId + "]"); // Ячека куда поиестить результат
+  var cells = cell.parent().find("td"); // Коллекция ячеек
+  var cIndex = cell[0].cellIndex + 2; // Индекс столбца, с которого считать общую сумму
+  var totalSum = 0;
+
+  for (var i = cIndex; i < cells.length; i++) {
+    var cellData = cells[i].textContent;
+    var arr = cellData.split('/');
+    var val;
+
+    if(parseInt(arr[1]) >= 0) {
+      val = parseInt(arr[1]);
+    } else {
+      val = parseInt(arr[0]);
+    }
+
+    totalSum += val;
+  }
+
+  cell.text(totalSum);
+}
+
+function getTotalSumm() {
+  var rows = $("table td[data-numrow]");
+
+  rows.each(function () {
+    getSummByStores($(this).attr("data-numrow"));
+  });
+}
