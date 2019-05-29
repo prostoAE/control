@@ -131,28 +131,28 @@
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][8] == 1) {
             echo "<th data-colIndex=\"8\">Article</th>";
           } else {
-            echo "<th data-colIndex=\"8\" style=\"display: none\">Article/th>";
+            echo "<th data-colIndex=\"8\" style=\"display: none\">Article</th>";
           }
           ?>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][9] == 1) {
             echo "<th data-colIndex=\"9\">Type</th>";
           } else {
-            echo "<th data-colIndex=\"9\" style=\"display: none\">Type/th>";
+            echo "<th data-colIndex=\"9\" style=\"display: none\">Type</th>";
           }
           ?>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][10] == 1) {
             echo "<th data-colIndex=\"10\">Ошибка</th>";
           } else {
-            echo "<th data-colIndex=\"10\" style=\"display: none\">Ошибка/th>";
+            echo "<th data-colIndex=\"10\" style=\"display: none\">Ошибка</th>";
           }
           ?>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][11] == 1) {
             echo "<th data-colIndex=\"11\">Tarif</th>";
           } else {
-            echo "<th data-colIndex=\"11\" style=\"display: none\">Tarif/th>";
+            echo "<th data-colIndex=\"11\" style=\"display: none\">Tarif</th>";
           }
           ?>
           <th>001 <span>PETR</span></th>
