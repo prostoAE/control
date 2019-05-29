@@ -150,9 +150,16 @@
           ?>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][11] == 1) {
-            echo "<th data-colIndex=\"11\">Tarif</th>";
+            echo "<th data-colIndex=\"11\">Total</th>";
           } else {
-            echo "<th data-colIndex=\"11\" style=\"display: none\">Tarif</th>";
+            echo "<th data-colIndex=\"11\" style=\"display: none\">Total</th>";
+          }
+          ?>
+          <?php
+          if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][11] == 1) {
+            echo "<th data-colIndex=\"12\">Tarif</th>";
+          } else {
+            echo "<th data-colIndex=\"12\" style=\"display: none\">Tarif</th>";
           }
           ?>
           <th>001 <span>PETR</span></th>
@@ -275,9 +282,15 @@
             <?php endif; ?>
 
             <?php if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][11] == 1): ?>
-            <td class="mark-tarif" data-colIndex="11"id="cost"><?= $val['billing_cost_per_service'] ?></td>
+            <td data-colIndex="11" data-numrow="<?= $val['id'] ?>">0</td>
             <?php else: ?>
-            <td class="mark-tarif" data-colIndex="11"id="cost" style="display: none"><?= $val['billing_cost_per_service'] ?></td>
+            <td data-colIndex="11" style="display: none" data-numrow="<?= $val['id'] ?>">0</td>
+            <?php endif; ?>
+
+            <?php if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][11] == 1): ?>
+            <td class="mark-tarif" data-colIndex="12" id="cost"><?= $val['billing_cost_per_service'] ?></td>
+            <?php else: ?>
+            <td class="mark-tarif" data-colIndex="12" id="cost" style="display: none"><?= $val['billing_cost_per_service'] ?></td>
             <?php endif; ?>
 
             <?php if($val['mag_001'] == 0 && $val['super_ind'] != 1 || $val['comments'] == 'TP' && $val['super_ind'] != 1): ?>
