@@ -15,12 +15,12 @@
     height: 10px;
     border-radius: 50%;
     position: relative;
-    -webkit-animation: loader12-u798d4dcb 1s linear alternate infinite;
-            animation: loader12-u798d4dcb 1s linear alternate infinite;
+    -webkit-animation: loader12-uc6b3fee9 1s linear alternate infinite;
+            animation: loader12-uc6b3fee9 1s linear alternate infinite;
     top: 350px;
     margin: -25px auto 0; }
 
-@-webkit-keyframes loader12-u798d4dcb {
+@-webkit-keyframes loader12-uc6b3fee9 {
   0% {
     -webkit-box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2);
             box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2); }
@@ -37,7 +37,7 @@
     -webkit-box-shadow: -36px 20px 0 0 rgba(0, 82, 236, 0.2), -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 2px #0052ec;
             box-shadow: -36px 20px 0 0 rgba(0, 82, 236, 0.2), -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 2px #0052ec; } }
 
-@keyframes loader12-u798d4dcb {
+@keyframes loader12-uc6b3fee9 {
   0% {
     -webkit-box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2);
             box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2); }
@@ -248,6 +248,8 @@ body {
           box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); }
   .statistic-table table {
     margin: 0 auto; }
+    .statistic-table table thead {
+      background: #5acbd2; }
     .statistic-table table th, .statistic-table table td {
       border: 1px solid #79e0ff;
       border-collapse: collapse;
@@ -424,6 +426,8 @@ body {
           box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); }
   .table-box table {
     margin: 0 auto; }
+    .table-box table thead {
+      background: #5acbd2; }
     .table-box table th, .table-box table td {
       border: 1px solid #79e0ff;
       border-collapse: collapse;
@@ -589,6 +593,8 @@ body {
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); }
     .settings__content .users-table table {
       margin: 0 auto; }
+      .settings__content .users-table table thead {
+        background: #5acbd2; }
       .settings__content .users-table table th, .settings__content .users-table table td {
         border: 1px solid #79e0ff;
         border-collapse: collapse;

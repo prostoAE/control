@@ -2,6 +2,9 @@
 @mixin report-table () {
   table {
     margin: 0 auto;
+    thead {
+      background: $thead;
+    }
     th, td {
       border: 1px solid #79e0ff;
       border-collapse: collapse;
