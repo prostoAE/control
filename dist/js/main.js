@@ -465,7 +465,7 @@ function showColumn(index) {
   });
 }
 
-/* Созранение фильтра столбцов таблицы */
+/* Сохзранение фильтра столбцов таблицы */
 $("#colFilterSave").on("click", function (e) {
   e.preventDefault();
 

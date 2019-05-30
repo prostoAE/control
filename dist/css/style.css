@@ -15,12 +15,12 @@
     height: 10px;
     border-radius: 50%;
     position: relative;
-    -webkit-animation: loader12-u76405fdd 1s linear alternate infinite;
-            animation: loader12-u76405fdd 1s linear alternate infinite;
+    -webkit-animation: loader12-u798d4dcb 1s linear alternate infinite;
+            animation: loader12-u798d4dcb 1s linear alternate infinite;
     top: 350px;
     margin: -25px auto 0; }
 
-@-webkit-keyframes loader12-u76405fdd {
+@-webkit-keyframes loader12-u798d4dcb {
   0% {
     -webkit-box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2);
             box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2); }
@@ -37,7 +37,7 @@
     -webkit-box-shadow: -36px 20px 0 0 rgba(0, 82, 236, 0.2), -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 2px #0052ec;
             box-shadow: -36px 20px 0 0 rgba(0, 82, 236, 0.2), -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 2px #0052ec; } }
 
-@keyframes loader12-u76405fdd {
+@keyframes loader12-u798d4dcb {
   0% {
     -webkit-box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2);
             box-shadow: -36px 20px 0 2px #0052ec, -18px 20px 0 0 rgba(0, 82, 236, 0.2), 0 20px 0 0 rgba(0, 82, 236, 0.2), 18px 20px 0 0 rgba(0, 82, 236, 0.2), 36px 20px 0 0 rgba(0, 82, 236, 0.2); }
@@ -262,6 +262,10 @@ body {
       background: #5acbd2;
       color: #ffffff;
       text-align: center; }
+      .statistic-table table th i {
+        margin-left: .5rem;
+        color: #cbcbcb;
+        cursor: pointer; }
       .statistic-table table th span {
         display: block; }
   .statistic-table tfoot {
@@ -434,10 +438,16 @@ body {
       background: #5acbd2;
       color: #ffffff;
       text-align: center; }
+      .table-box table th i {
+        margin-left: .5rem;
+        color: #cbcbcb;
+        cursor: pointer; }
       .table-box table th span {
         display: block; }
   .table-box tbody tr:nth-child(even) {
     background: rgba(195, 236, 251, 0.2); }
+  .table-box .mark-total {
+    color: #23af40; }
   .table-box .mark-tarif {
     color: #4381ff;
     font-weight: 700; }
@@ -593,6 +603,10 @@ body {
         background: #5acbd2;
         color: #ffffff;
         text-align: center; }
+        .settings__content .users-table table th i {
+          margin-left: .5rem;
+          color: #cbcbcb;
+          cursor: pointer; }
         .settings__content .users-table table th span {
           display: block; }
     .settings__content .users-table .fa-user-minus {

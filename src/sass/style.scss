@@ -313,6 +313,9 @@ body {
   tbody {
     tr:nth-child(even) {background: lighten($light-blue, 15%) }
   }
+  .mark-total {
+    color: $button-color;
+  }
   .mark-tarif {
     color: $hover-color;
     font-weight: 700;
