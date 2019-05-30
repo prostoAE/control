@@ -25,9 +25,6 @@
               <?php endforeach; ?>
             </select>
           </label>
-<!--          <label>-->
-<!--            <input id="from" name="date-from" type="text" placeholder="Дата с:" onfocus="(this.type='week')" onblur="(this.type='text')" required value="--><?//= date("Y.m.01") ?><!--">-->
-<!--          </label>-->
 
           <label>
             <input type="text" class="form-control" placeholder="Дата с:" name="date-from" id="from" <?= date("Y.m.01") ?> autocomplete="off" required>
@@ -35,10 +32,6 @@
               <span class="glyphicon glyphicon-th"></span>
             </div>
           </label>
-
-<!--          <label>-->
-<!--            <input id="to" name="date-to" type="text" placeholder="Дата по:" onfocus="(this.type='date')" onblur="(this.type='text')" required value="--><?//= date("Y.m.d") ?><!--">-->
-<!--          </label>-->
 
           <label>
             <input type="text" class="form-control" placeholder="Дата по:" name="date-to" id="to" <?= date("Y.m.01") ?> autocomplete="off" required>
@@ -67,99 +60,99 @@
 <!--REPORT TABLE-->
 <section class="report-table">
   <div class="table-box">
-    <table>
+    <table id="sup-report-table">
       <?php if($table): ?>
       <thead>
         <tr>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][0] == 1) {
-            echo "<th data-colIndex=\"0\">Start_date</th>";
+            echo "<th data-colIndex=\"0\">Start_date<i class=\"fas fa-thumbtack\"></i></th>";
           } else {
-            echo "<th data-colIndex=\"0\" style=\"display: none\">Start_date</th>";
+            echo "<th data-colIndex=\"0\" style=\"display: none\">Start_date<i class=\"fas fa-thumbtack\"></i></th>";
           }
           ?>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][1] == 1) {
-            echo "<th data-colIndex=\"1\">End_date</th>";
+            echo "<th data-colIndex=\"1\">End_date<i class=\"fas fa-thumbtack\"></i></th>";
           } else {
-            echo "<th data-colIndex=\"1\" style=\"display: none\">End_date</th>";
+            echo "<th data-colIndex=\"1\" style=\"display: none\">End_date<i class=\"fas fa-thumbtack\"></i></th>";
           }
           ?>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][2] == 1) {
-            echo "<th data-colIndex=\"2\">Buyer</th>";
+            echo "<th data-colIndex=\"2\">Buyer<i class=\"fas fa-thumbtack\"></i></th>";
           } else {
-            echo "<th data-colIndex=\"2\" style=\"display: none\">Buyer</th>";
+            echo "<th data-colIndex=\"2\" style=\"display: none\">Buyer<i class=\"fas fa-thumbtack\"></i></th>";
           }
           ?>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][3] == 1) {
-            echo "<th data-colIndex=\"3\">Group</th>";
+            echo "<th data-colIndex=\"3\">Group<i class=\"fas fa-thumbtack\"></i></th>";
           } else {
-            echo "<th data-colIndex=\"3\" style=\"display: none\">Group</th>";
+            echo "<th data-colIndex=\"3\" style=\"display: none\">Group<i class=\"fas fa-thumbtack\"></i></th>";
           }
           ?>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][4] == 1) {
-            echo "<th data-colIndex=\"4\">Week</th>";
+            echo "<th data-colIndex=\"4\">Week<i class=\"fas fa-thumbtack\"></i></th>";
           } else {
-            echo "<th data-colIndex=\"4\" style=\"display: none\">Week</th>";
+            echo "<th data-colIndex=\"4\" style=\"display: none\">Week<i class=\"fas fa-thumbtack\"></i></th>";
           }
           ?>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][5] == 1) {
-            echo "<th data-colIndex=\"5\">Segm</th>";
+            echo "<th data-colIndex=\"5\">Segm<i class=\"fas fa-thumbtack\"></i></th>";
           } else {
-            echo "<th data-colIndex=\"5\" style=\"display: none\">Segm</th>";
+            echo "<th data-colIndex=\"5\" style=\"display: none\">Segm<i class=\"fas fa-thumbtack\"></i></th>";
           }
           ?>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][6] == 1) {
-            echo "<th data-colIndex=\"6\">№ пост.</th>";
+            echo "<th data-colIndex=\"6\">№ пост.<i class=\"fas fa-thumbtack\"></i></th>";
           } else {
-            echo "<th data-colIndex=\"6\" style=\"display: none\">№ пост.</th>";
+            echo "<th data-colIndex=\"6\" style=\"display: none\">№ пост.<i class=\"fas fa-thumbtack\"></i></th>";
           }
           ?>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][7] == 1) {
-            echo "<th data-colIndex=\"7\">Назв. пост</th>";
+            echo "<th data-colIndex=\"7\">Назв. пост<i class=\"fas fa-thumbtack\"></i></th>";
           } else {
-            echo "<th data-colIndex=\"7\" style=\"display: none\">Назв. пост</th>";
+            echo "<th data-colIndex=\"7\" style=\"display: none\">Назв. пост<i class=\"fas fa-thumbtack\"></i></th>";
           }
           ?>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][8] == 1) {
-            echo "<th data-colIndex=\"8\">Article</th>";
+            echo "<th data-colIndex=\"8\">Article<i class=\"fas fa-thumbtack\"></i></th>";
           } else {
-            echo "<th data-colIndex=\"8\" style=\"display: none\">Article</th>";
+            echo "<th data-colIndex=\"8\" style=\"display: none\">Article<i class=\"fas fa-thumbtack\"></i></th>";
           }
           ?>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][9] == 1) {
-            echo "<th data-colIndex=\"9\">Type</th>";
+            echo "<th data-colIndex=\"9\">Type<i class=\"fas fa-thumbtack\"></i></th>";
           } else {
-            echo "<th data-colIndex=\"9\" style=\"display: none\">Type</th>";
+            echo "<th data-colIndex=\"9\" style=\"display: none\">Type<i class=\"fas fa-thumbtack\"></i></th>";
           }
           ?>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][10] == 1) {
-            echo "<th data-colIndex=\"10\">Ошибка</th>";
+            echo "<th data-colIndex=\"10\">Ошибка<i class=\"fas fa-thumbtack\"></i></th>";
           } else {
-            echo "<th data-colIndex=\"10\" style=\"display: none\">Ошибка</th>";
+            echo "<th data-colIndex=\"10\" style=\"display: none\">Ошибка<i class=\"fas fa-thumbtack\"></i></th>";
           }
           ?>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][11] == 1) {
-            echo "<th data-colIndex=\"11\">Total</th>";
+            echo "<th data-colIndex=\"11\">Total<i class=\"fas fa-thumbtack\"></i></th>";
           } else {
-            echo "<th data-colIndex=\"11\" style=\"display: none\">Total</th>";
+            echo "<th data-colIndex=\"11\" style=\"display: none\">Total<i class=\"fas fa-thumbtack\"></i></th>";
           }
           ?>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][11] == 1) {
-            echo "<th data-colIndex=\"12\">Tarif</th>";
+            echo "<th data-colIndex=\"12\">Tarif<i class=\"fas fa-thumbtack\"></i></th>";
           } else {
-            echo "<th data-colIndex=\"12\" style=\"display: none\">Tarif</th>";
+            echo "<th data-colIndex=\"12\" style=\"display: none\">Tarif<i class=\"fas fa-thumbtack\"></i></th>";
           }
           ?>
           <th>001 <span>PETR</span></th>
@@ -282,9 +275,9 @@
             <?php endif; ?>
 
             <?php if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][11] == 1): ?>
-            <td data-colIndex="11" data-numrow="<?= $val['id'] ?>">0</td>
+            <td class="mark-total" data-colIndex="11" data-numrow="<?= $val['id'] ?>">0</td>
             <?php else: ?>
-            <td data-colIndex="11" style="display: none" data-numrow="<?= $val['id'] ?>">0</td>
+            <td class="mark-total" data-colIndex="11" style="display: none" data-numrow="<?= $val['id'] ?>">0</td>
             <?php endif; ?>
 
             <?php if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][11] == 1): ?>

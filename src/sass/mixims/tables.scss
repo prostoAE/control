@@ -16,6 +16,11 @@
       background: $thead;
       color: $white;
       text-align: center;
+      i {
+        margin-left: .5rem;
+        color: lighten($text-color, 20%);
+        cursor: pointer;
+      }
       span {
         display: block;
       }

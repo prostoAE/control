@@ -61,5 +61,6 @@
 <script src="js/bootstrap-datepicker.min.js"></script>
 <!-- Custom JS -->
 <script src="js/main.js"></script>
+<script src="js/column-fix.js"></script>
 </body>
 </html>
