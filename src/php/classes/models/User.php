@@ -21,7 +21,7 @@ class User {
     foreach ($array as $value) {
       $result = $value['full_name'];
     }
-    return $result;
+    return trim($result);
   }
 
   public static function getUserAccess() {
