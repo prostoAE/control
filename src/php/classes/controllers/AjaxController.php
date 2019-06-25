@@ -209,137 +209,137 @@ class AjaxController extends AppController {
       if($v['mag_001_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('O' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
         }
       if($v['mag_003_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('P' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_007_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('Q' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_009_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('R' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_010_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('S' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_011_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('T' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_012_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('U' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_014_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('V' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_015_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('W' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_016_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('X' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_018_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('Y' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_020_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('Z' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_022_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AA' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_023_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AB' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_024_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AC' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_025_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AD' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_026_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AE' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_028_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AF' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_029_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AG' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_030_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AH' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_031_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AI' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_032_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AJ' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_033_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AK' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_034_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AL' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_035_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AM' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_027_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AN' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
       if($v['mag_037_confirmed'] >= '0') {
         $spreadsheet->getActiveSheet()->getStyle('AO' . $row)->getFill()
             ->setFillType(\PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID)
-            ->getStartColor()->setARGB('FEFFCF');
+            ->getStartColor()->setARGB('fcff33');
       }
 
       $row++;
