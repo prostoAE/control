@@ -145,8 +145,8 @@ class AjaxController extends AppController {
       $endPeriod = $endDay < 3 ? $endWeek - 1 : $endWeek;
 
       $sheet->setCellValue('K' . $row, $startPeriod . '-' . $endPeriod);
-      $sheet->setCellValue('L' . $row, $v['cost_total']);
-      $sheet->setCellValue('M' . $row, '');
+      $sheet->setCellValue('L' . $row, $v['cost_total']);   /*Сумма после обработки*/
+      $sheet->setCellValue('M' . $row, $v['cost_source']);  /*Исходная сумма*/
       $sheet->setCellValue('N' . $row, $v['type_promo']);
       $sheet->setCellValue('O' . $row, $v['mag_001_confirmed'] >= '0'? $v['mag_001_confirmed']: $v['mag_001']);
       $sheet->setCellValue('P' . $row, $v['mag_003_confirmed'] >= '0'? $v['mag_003_confirmed']: $v['mag_003']);

@@ -490,7 +490,34 @@ GROUP BY
        if(mag_034_confirmed is null, mag_034, mag_034_confirmed) +
        if(mag_035_confirmed is null, mag_035, mag_035_confirmed) +
        if(mag_027_confirmed is null, mag_027, mag_027_confirmed) +
-       if(mag_037_confirmed is null, mag_037, mag_037_confirmed)) as cost_total
+       if(mag_037_confirmed is null, mag_037, mag_037_confirmed)) as cost_total,
+      (mag_001+
+       mag_003+
+       mag_007+
+       mag_009+
+       mag_010+
+       mag_011+
+       mag_012+
+       mag_014+
+       mag_015+
+       mag_016+
+       mag_018+
+       mag_020+
+       mag_022+
+       mag_023+
+       mag_024+
+       mag_025+
+       mag_026+
+       mag_028+
+       mag_029+
+       mag_030+
+       mag_031+
+       mag_032+
+       mag_033+
+       mag_034+
+       mag_035+
+       mag_027+
+       mag_037) as cost_source
       from sup_final where {$cond}";
 
 //    echo $query;
