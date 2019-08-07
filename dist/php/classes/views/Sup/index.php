@@ -66,16 +66,16 @@
         <tr>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][0] == 1) {
-            echo "<th data-colIndex=\"0\">Start_date<i class=\"fas fa-thumbtack\"></i></th>";
+            echo "<th data-colIndex=\"0\">Начало пер.<i class=\"fas fa-thumbtack\"></i></th>";
           } else {
-            echo "<th data-colIndex=\"0\" style=\"display: none\">Start_date<i class=\"fas fa-thumbtack\"></i></th>";
+            echo "<th data-colIndex=\"0\" style=\"display: none\">Начало пер.<i class=\"fas fa-thumbtack\"></i></th>";
           }
           ?>
           <?php
           if(!isset($_SESSION['colFilter']) || $_SESSION['colFilter'][1] == 1) {
-            echo "<th data-colIndex=\"1\">End_date<i class=\"fas fa-thumbtack\"></i></th>";
+            echo "<th data-colIndex=\"1\">Конец пер.<i class=\"fas fa-thumbtack\"></i></th>";
           } else {
-            echo "<th data-colIndex=\"1\" style=\"display: none\">End_date<i class=\"fas fa-thumbtack\"></i></th>";
+            echo "<th data-colIndex=\"1\" style=\"display: none\">Конец пер.<i class=\"fas fa-thumbtack\"></i></th>";
           }
           ?>
           <?php
