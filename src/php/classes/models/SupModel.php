@@ -518,7 +518,10 @@ GROUP BY
        mag_035+
        mag_027+
        mag_037) as cost_source
-      from sup_final where {$cond}";
+      from sup_final where {$cond}
+      ORDER BY 
+        buyer,
+        frs";
 
 //    echo $query;
     return $query;
