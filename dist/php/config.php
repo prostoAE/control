@@ -19,14 +19,14 @@ return [
   define("SQL_PASS", ''),
 
   /* ANEE conection */
-  define("ANEE_DBNAME", 'ANEE'),
-  define("ANEE_USER", 'anee'),
-  define("ANEE_PASS", 'ANEE'),
+  define("ANEE_DBNAME", ''),
+  define("ANEE_USER", ''),
+  define("ANEE_PASS", ''),
 
   /* SUP conection */
-  define("SUP_DBNAME", 'SUP'),
-  define("SUP_USER", 'PROMO6'),
-  define("SUP_PASS", 'PROMO6')
+  define("SUP_DBNAME", ''),
+  define("SUP_USER", ''),
+  define("SUP_PASS", '')
 ];
 
 
